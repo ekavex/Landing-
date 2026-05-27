@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import {
@@ -34,97 +36,13 @@ const SplitReveal = ({ children, className = '', delay = 0 }) => {
   );
 };
 
-// ── Card definitions ────────────────────────────────────────────────
-const cards = [
-  {
-    id: 'web',
-    span: 'md:col-span-2',
-    icon: Code,
-    label: '01 / Digital Architectures',
-    title: 'Premium Web Development',
-    desc: 'We design and construct blazing-fast, responsive, and SEO-optimized web applications utilizing Next.js, React, and modular structures. Optimized for organic search, speed, and premium user interaction.',
-    tags: ['Next.js', 'React.js', 'Vite', 'Node.js', 'PostgreSQL'],
-    cta: 'Explore Engineering Capabilities',
-    bg: 'bg-alabaster/40',
-    speed: 0.2,
-  },
-  {
-    id: 'automation',
-    span: '',
-    icon: Cpu,
-    label: '02 / Workflow Systems',
-    title: 'AI Automation',
-    desc: 'Automate repetitive workflows, connect legacy business databases, and supercharge staff efficiency using custom-built AI agents.',
-    tags: ['LangChain', 'Make.com', 'n8n', 'Zapier'],
-    cta: 'Learn More',
-    bg: 'bg-alabaster/40',
-    speed: -0.1,
-  },
-  {
-    id: 'ai',
-    span: '',
-    icon: Brain,
-    label: '03 / Artificial Intelligence',
-    title: 'Intelligent AI Engines',
-    desc: 'Implement conversational custom LLMs, vector search databases, semantic models, and predictive algorithms natively in your workflow.',
-    tags: [],
-    cta: 'Configure AI',
-    bg: 'bg-alabaster/40',
-    speed: 0.4,
-  },
-  {
-    id: 'metrics',
-    span: '',
-    icon: Award,
-    label: '04 / Performance Matrix',
-    title: null, // special metrics card
-    desc: null,
-    tags: [],
-    cta: null,
-    bg: 'bg-navy text-alabaster shadow-xl',
-    speed: -0.15,
-  },
-  {
-    id: 'design',
-    span: '',
-    icon: Layers,
-    label: '05 / Editorial Aesthetics',
-    title: 'Luxurious UI/UX Design',
-    desc: 'Tailored visual identities using our strict signature layout rules: perfect geometric balance, gorgeous typography, and micro-animations.',
-    tags: [],
-    cta: 'View Design Style',
-    bg: 'bg-alabaster/40',
-    speed: 0.25,
-  },
-  {
-    id: 'mobile',
-    span: '',
-    icon: Smartphone,
-    label: '06 / Native Platforms',
-    title: 'Mobile Application Suite',
-    desc: 'Build crisp, high-performance native iOS and Android experiences utilizing React Native and Expo frameworks.',
-    tags: [],
-    cta: 'Start App Build',
-    bg: 'bg-alabaster/40',
-    speed: -0.2,
-  },
-  {
-    id: 'security',
-    span: 'md:col-span-2',
-    icon: Shield,
-    label: '07 / Threat Protection',
-    title: 'Enterprise Cybersecurity',
-    desc: 'Thorough penetration auditing, API vulnerability shield architectures, SSL enforcement, DDOS prevention layers, and compliant security frameworks to safeguard private consumer records and data pipelines.',
-    tags: ['Penetration Testing', 'API Auditing', 'OAuth 2.1', 'SSL Shield'],
-    cta: 'Request Security Audit',
-    bg: 'bg-alabaster/40',
-    speed: 0.3,
-  },
-];
+import { bentoGridData, bentoGridHeader } from '../data/homeData';
+
+const iconMap = { Code, Cpu, Brain, Layers, Smartphone, Shield, Award };
 
 // ── Individual parallax-floating card wrapper ────────────────────────
 const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
-  const IconComponent = card.icon;
+  const IconComponent = iconMap[card.iconName];
   const yOffset = useTransform(scrollYProgress, [0, 1], [0, card.speed * 120]);
   const isMetrics = card.id === 'metrics';
   const isLight = !card.bg.includes('navy');
@@ -232,11 +150,11 @@ const BentoGrid = ({ onNavigate }) => {
           viewport={{ once: true }}
           className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3"
         >
-          Specialized Competencies
+          {bentoGridHeader.subtitle}
         </motion.div>
 
         <h2 className="font-heading text-3xl md:text-5xl font-black tracking-tight text-navy leading-[1.1] mb-6">
-          <SplitReveal>Our Core Service Architecture</SplitReveal>
+          <SplitReveal>{bentoGridHeader.title}</SplitReveal>
         </h2>
 
         <motion.p
@@ -246,13 +164,13 @@ const BentoGrid = ({ onNavigate }) => {
           transition={{ delay: 0.2 }}
           className="font-sans text-navy/70 text-base md:text-lg leading-relaxed"
         >
-          Discover how we synthesize advanced digital architectures and AI systems to accelerate operational performance and digital growth.
+          {bentoGridHeader.description}
         </motion.p>
       </div>
 
       {/* Grid with per-cell scroll parallax */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {cards.map((card, i) => (
+        {bentoGridData.map((card, i) => (
           <ParallaxCard
             key={card.id}
             card={card}

@@ -1,14 +1,20 @@
+"use client";
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
+
+import { contactHeader, contactDetails, contactFormFields, contactSuccessMessage } from '../data/contactData';
+
+const iconMap = { Mail, Phone, MessageSquare };
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    service: 'Web Development',
-    budget: '₹25,000 - ₹50,000',
-    timeline: '1 Month',
+    service: contactFormFields.services[0],
+    budget: contactFormFields.budgets[0],
+    timeline: contactFormFields.timelines[0],
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -30,7 +36,7 @@ const ContactForm = () => {
             viewport={{ once: true }}
             className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3"
           >
-            Initiate Conversation
+            {contactHeader.subtitle}
           </motion.div>
           
           <motion.h2 
@@ -40,7 +46,7 @@ const ContactForm = () => {
             transition={{ delay: 0.1 }}
             className="font-heading text-3xl md:text-5xl font-black tracking-tight text-navy leading-[1.1] mb-6"
           >
-            Let's Engineer Something Remarkable
+            {contactHeader.title}
           </motion.h2>
 
           <motion.p 
@@ -50,51 +56,35 @@ const ContactForm = () => {
             transition={{ delay: 0.2 }}
             className="font-sans text-navy/70 text-base leading-relaxed mb-8"
           >
-            Whether you want to automate complex business pipelines with custom AI agents, scale your SaaS codebase, or launch a gorgeous digital presence, our developers are ready.
+            {contactHeader.description}
           </motion.p>
 
           <div className="space-y-6">
-            <motion.div 
-              whileHover={{ x: 5 }}
-              className="flex items-center gap-4 p-4 rounded-2xl glass-panel bg-alabaster/30 max-w-sm"
-            >
-              <div className="p-3 rounded-xl bg-coral/10 text-coral">
-                <Mail className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="font-mono text-[9px] text-navy/40 uppercase tracking-widest">Electronic Mail</div>
-                <div className="font-heading text-sm font-bold text-navy">hello@ecavex.com</div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              whileHover={{ x: 5 }}
-              className="flex items-center gap-4 p-4 rounded-2xl glass-panel bg-alabaster/30 max-w-sm"
-            >
-              <div className="p-3 rounded-xl bg-coral/10 text-coral">
-                <Phone className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="font-mono text-[9px] text-navy/40 uppercase tracking-widest">Voice Line</div>
-                <div className="font-heading text-sm font-bold text-navy">+91 98765 43210</div>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              whileHover={{ x: 5 }}
-              className="flex items-center gap-4 p-4 rounded-2xl glass-panel bg-alabaster/30 max-w-sm"
-            >
-              <div className="p-3 rounded-xl bg-coral/10 text-coral">
-                <MessageSquare className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="font-mono text-[9px] text-navy/40 uppercase tracking-widest">Availability</div>
-                <span className="inline-flex items-center gap-1.5 font-heading text-xs font-bold text-coral">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  Currently Accepting Projects
-                </span>
-              </div>
-            </motion.div>
+            {contactDetails.map((detail) => {
+              const Icon = iconMap[detail.iconName];
+              return (
+                <motion.div 
+                  key={detail.id}
+                  whileHover={{ x: 5 }}
+                  className="flex items-center gap-4 p-4 rounded-2xl glass-panel bg-alabaster/30 max-w-sm"
+                >
+                  <div className="p-3 rounded-xl bg-coral/10 text-coral">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="font-mono text-[9px] text-navy/40 uppercase tracking-widest">{detail.label}</div>
+                    {detail.pulse ? (
+                      <span className="inline-flex items-center gap-1.5 font-heading text-xs font-bold text-coral">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                        {detail.value}
+                      </span>
+                    ) : (
+                      <div className="font-heading text-sm font-bold text-navy">{detail.value}</div>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
@@ -112,9 +102,9 @@ const ContactForm = () => {
               className="flex flex-col items-center justify-center py-20 text-center"
             >
               <CheckCircle2 className="w-16 h-16 text-coral mb-6" />
-              <h3 className="font-heading text-2xl font-black text-navy mb-2">Transmission Received</h3>
+              <h3 className="font-heading text-2xl font-black text-navy mb-2">{contactSuccessMessage.title}</h3>
               <p className="font-sans text-sm text-navy/60 max-w-sm leading-relaxed">
-                Thank you. Your project brief has bypassed filters and reached our core engineering cell. We will follow up in 24 hours.
+                {contactSuccessMessage.description}
               </p>
             </motion.div>
           ) : (
@@ -153,11 +143,9 @@ const ContactForm = () => {
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full px-4 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none focus:border-coral cursor-pointer"
                   >
-                    <option>Web Development</option>
-                    <option>AI Automation</option>
-                    <option>UI/UX Design</option>
-                    <option>Mobile Applications</option>
-                    <option>Cybersecurity</option>
+                    {contactFormFields.services.map((service) => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
                   </select>
                 </div>
 
@@ -168,10 +156,9 @@ const ContactForm = () => {
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     className="w-full px-4 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none focus:border-coral cursor-pointer"
                   >
-                    <option>₹25,000 - ₹50,000</option>
-                    <option>₹50,000 - ₹1,00,000</option>
-                    <option>₹1,00,000 - ₹3,00,000</option>
-                    <option>₹3,00,000+ (Enterprise)</option>
+                    {contactFormFields.budgets.map((budget) => (
+                      <option key={budget} value={budget}>{budget}</option>
+                    ))}
                   </select>
                 </div>
 
@@ -182,9 +169,9 @@ const ContactForm = () => {
                     onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
                     className="w-full px-4 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none focus:border-coral cursor-pointer"
                   >
-                    <option>1 Month</option>
-                    <option>1 - 3 Months</option>
-                    <option>3+ Months</option>
+                    {contactFormFields.timelines.map((timeline) => (
+                      <option key={timeline} value={timeline}>{timeline}</option>
+                    ))}
                   </select>
                 </div>
               </div>

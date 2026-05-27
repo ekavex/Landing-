@@ -1,5 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* shadcn-compatible CSS variables (used by motion-footer color-mix functions) */
+  --background: oklch(0.99 0.005 90);
+  --foreground: oklch(0.15 0.03 260);
+  --primary: oklch(0.62 0.18 45);
+  --secondary: oklch(0.55 0.12 260);
+  --destructive: oklch(0.55 0.22 30);
+  --muted-foreground: oklch(0.45 0.02 260);
+  --border: oklch(0.88 0.01 90);
+}
 
 @theme {
   --color-alabaster: #FFFDF6;

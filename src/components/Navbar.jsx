@@ -1,6 +1,10 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Calendar, Menu, X } from 'lucide-react';
+
+import { navbarData } from '../data/commonData';
 
 const Navbar = ({ activeView, onViewChange }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -13,14 +17,6 @@ const Navbar = ({ activeView, onViewChange }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'services', label: 'Services' },
-    { id: 'portfolio', label: 'Case Studies' },
-    { id: 'blog', label: 'Blog' },
-    { id: 'contact', label: 'Contact' },
-  ];
 
   return (
     <>
@@ -58,13 +54,13 @@ const Navbar = ({ activeView, onViewChange }) => {
             </div>
 
             <span className="font-heading text-lg font-black tracking-[-0.03em] text-navy">
-              ECAVEX
+              {navbarData.brandName}
             </span>
           </div>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1.5">
-            {navItems.map((item) => {
+            {navbarData.navItems.map((item) => {
               const isActive = activeView === item.id;
               return (
                 <button
@@ -94,7 +90,7 @@ const Navbar = ({ activeView, onViewChange }) => {
               onClick={() => onViewChange('contact')}
               className="group relative overflow-hidden flex items-center gap-2 bg-navy text-alabaster font-heading text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-transform duration-300 hover:scale-105"
             >
-              <span className="relative z-10">Start a Project</span>
+              <span className="relative z-10">{navbarData.ctaButton}</span>
               <Sparkles className="w-3.5 h-3.5 text-coral relative z-10 transition-transform duration-500 group-hover:rotate-12" />
               <div className="absolute inset-0 bg-coral translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
             </button>
@@ -124,7 +120,7 @@ const Navbar = ({ activeView, onViewChange }) => {
           >
             <div className="glass-panel-heavy rounded-3xl p-6 border-navy/10 shadow-2xl shadow-navy/20">
               <div className="flex flex-col gap-3">
-                {navItems.map((item) => {
+                {navbarData.navItems.map((item) => {
                   const isActive = activeView === item.id;
                   return (
                     <button
@@ -154,7 +150,7 @@ const Navbar = ({ activeView, onViewChange }) => {
                   }}
                   className="flex items-center justify-center gap-2 bg-navy text-alabaster px-5 py-4 rounded-2xl font-heading text-xs font-bold uppercase tracking-wider shadow-lg shadow-navy/10 mt-2"
                 >
-                  <span>Start a Project</span>
+                  <span>{navbarData.ctaButton}</span>
                   <Calendar className="w-4 h-4 text-coral" />
                 </button>
               </div>

@@ -1,50 +1,14 @@
+"use client";
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, User, Clock, ArrowRight, Mail } from 'lucide-react';
 
+import { blogPosts, blogHeader, blogNewsletter } from '../data/blogData';
+
 const Blog = () => {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
-
-  const posts = [
-    {
-      id: 1,
-      title: 'How AI Automation Is Transforming Modern Business Workflows',
-      category: 'AI Systems',
-      date: 'April 24, 2026',
-      author: 'Vishal Jangid',
-      readTime: '8 Min Read',
-      summary: 'Explore how agentic AI workflows and LLM vector layers are removing repetitive administration tasks, scaling output, and reducing errors.',
-      isFeatured: true,
-    },
-    {
-      id: 2,
-      title: 'Why Next.js App Router is the Standard for SaaS Platforms',
-      category: 'Web Dev',
-      date: 'May 12, 2026',
-      author: 'Lokesh Borole',
-      readTime: '6 Min Read',
-      summary: 'Analyze why layout structures, streaming HTML components, server actions, and edge rendering enable ultra-fast load times.',
-    },
-    {
-      id: 3,
-      title: 'The Critical Checklist for Securing Consumer API Endpoints',
-      category: 'Security',
-      date: 'June 02, 2026',
-      author: 'Lokesh Borole',
-      readTime: '10 Min Read',
-      summary: 'Enforcing rate limits, securing standard token headers, pen auditing, and configuring compliant database encryptions.',
-    },
-    {
-      id: 4,
-      title: 'Designing with Impeccable Taste: The Editorial UI Aesthetic',
-      category: 'UI/UX Design',
-      date: 'June 18, 2026',
-      author: 'Vishal Jangid',
-      readTime: '7 Min Read',
-      summary: 'Rejects dark SaaS templates for luxurious alabaster white grids, Outfit font geometric shapes, and fluid spring animations.',
-    },
-  ];
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -53,21 +17,21 @@ const Blog = () => {
     setTimeout(() => setSubscribed(false), 5000);
   };
 
-  const featured = posts.find(p => p.isFeatured);
-  const gridPosts = posts.filter(p => !p.isFeatured);
+  const featured = blogPosts.find(p => p.isFeatured);
+  const gridPosts = blogPosts.filter(p => !p.isFeatured);
 
   return (
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Editorial Header */}
       <div className="border-b border-navy/10 pb-8 mb-16">
         <div className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3">
-          Knowledge Base & Insights
+          {blogHeader.subtitle}
         </div>
         <h2 className="font-heading text-4xl md:text-6xl font-black tracking-tight text-navy leading-[1.05]">
-          The Ecavex Editorial
+          {blogHeader.title}
         </h2>
         <p className="font-sans text-navy/60 text-base md:text-lg mt-4 max-w-2xl">
-          Deep engineering insights, systems optimization strategies, and UI/UX design theories compiled by our builders.
+          {blogHeader.description}
         </p>
       </div>
 
@@ -165,10 +129,10 @@ const Blog = () => {
         <div className="absolute top-0 right-0 w-64 h-64 bg-coral/5 rounded-full blur-3xl pointer-events-none" />
         
         <h3 className="font-heading text-2xl md:text-3xl font-black text-navy mb-3">
-          Join the Ecavex Intelligence Brief
+          {blogNewsletter.title}
         </h3>
         <p className="font-sans text-sm text-navy/60 max-w-md mx-auto mb-8 leading-relaxed">
-          Receive premium systems optimization blueprints, responsive front-end tutorials, and agentic AI reviews directly in your inbox.
+          {blogNewsletter.description}
         </p>
 
         {subscribed ? (
@@ -177,7 +141,7 @@ const Blog = () => {
             animate={{ opacity: 1 }}
             className="font-heading text-sm font-bold text-coral flex items-center justify-center gap-2"
           >
-            <span>Welcome to the brief. Inbox secured.</span>
+            <span>{blogNewsletter.successMessage}</span>
           </motion.div>
         ) : (
           <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -193,7 +157,7 @@ const Blog = () => {
               type="submit"
               className="bg-navy hover:bg-coral text-alabaster font-heading text-[10px] font-bold uppercase tracking-widest px-6 py-3 rounded-2xl transition-colors duration-300"
             >
-              Secure Entry
+              {blogNewsletter.buttonText}
             </button>
           </form>
         )}

@@ -1,64 +1,26 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Compass, Target, PenTool, Terminal, RefreshCw, Rocket, Heart } from 'lucide-react';
 
+import { timelineData, timelineHeader } from '../data/homeData';
+
+const iconMap = { Compass, Target, PenTool, Terminal, RefreshCw, Rocket, Heart };
+
 const Timeline = () => {
-  const steps = [
-    {
-      num: '01',
-      title: 'Systems Discovery',
-      icon: Compass,
-      desc: 'Collaborate to map workflow bottlenecks, specify technology limits, and structure feature benchmarks.',
-    },
-    {
-      num: '02',
-      title: 'Architectural Strategy',
-      icon: Target,
-      desc: 'Formulate detailed engineering specifications, database mapping templates, and component roadmaps.',
-    },
-    {
-      num: '03',
-      title: 'High-Fidelity UI/UX',
-      icon: PenTool,
-      desc: 'Synthesize beautiful editorial design layouts, glassmorphic prototypes, and custom responsive mockups.',
-    },
-    {
-      num: '04',
-      title: 'Agile Engineering',
-      icon: Terminal,
-      desc: 'Execute clean, modular frontends and robust backends powered by React, Next.js, and LLM integrations.',
-    },
-    {
-      num: '05',
-      title: 'Iterative Feedback Loop',
-      icon: RefreshCw,
-      desc: 'Staging deployments, customer sandbox runtimes, and active UI refinements to lock engineering specs.',
-    },
-    {
-      num: '06',
-      title: 'System Deployment',
-      icon: Rocket,
-      desc: 'Compile production-optimized code bundles, enforce secure HTTPS protocols, and run domain launches.',
-    },
-    {
-      num: '07',
-      title: 'Post-Launch Support',
-      icon: Heart,
-      desc: 'Provide one month of free technical coverage, active performance audits, and database scaling support.',
-    },
-  ];
 
   return (
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-navy/5 bg-alabaster/30">
       <div className="text-center max-w-3xl mx-auto mb-20">
         <div className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3">
-          Our Methodology
+          {timelineHeader.subtitle}
         </div>
         <h2 className="font-heading text-3xl md:text-5xl font-black tracking-tight text-navy leading-[1.1] mb-6">
-          The Engineering Lifecycle
+          {timelineHeader.title}
         </h2>
         <p className="font-sans text-navy/70 text-base md:text-lg">
-          We maintain full transparency through seven specialized development phases to guarantee impeccable delivery.
+          {timelineHeader.description}
         </p>
       </div>
 
@@ -67,8 +29,8 @@ const Timeline = () => {
         <div className="absolute left-[39px] md:left-1/2 top-0 bottom-0 w-[1px] bg-navy/10 transform md:-translate-x-1/2" />
 
         <div className="space-y-12">
-          {steps.map((step, idx) => {
-            const IconComponent = step.icon;
+          {timelineData.map((step, idx) => {
+            const IconComponent = iconMap[step.iconName];
             const isEven = idx % 2 === 0;
 
             return (
@@ -105,7 +67,7 @@ const Timeline = () => {
                       {step.title}
                     </h3>
                     <p className="font-sans text-xs md:text-sm text-navy/70 leading-relaxed">
-                      {step.desc}
+                      {step.description}
                     </p>
                   </motion.div>
                 </div>

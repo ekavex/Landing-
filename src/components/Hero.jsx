@@ -1,6 +1,10 @@
+"use client";
+
 import React from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { Sparkles, ArrowRight, Zap } from 'lucide-react';
+
+import { heroData } from '../data/homeData';
 
 // ── SplitReveal helper ──────────────────────────────────────────────
 // Breaks a string into individual character nodes that rotate-in on a 3D axis
@@ -74,28 +78,34 @@ export default function Hero({ onNavigate }) {
         {/* ── Left Column: Editorial Heading ──────────────────────────── */}
         <motion.div
           style={{ x: textParallaxX, y: textParallaxY }}
-          className="lg:col-span-7 flex flex-col space-y-8 text-left"
+          className="lg:col-span-7 flex flex-col items-center space-y-8 text-center"
         >
           {/* Status capsule */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center space-x-2 bg-coral/5 border border-coral/15 px-4 py-1.5 rounded-full w-fit"
+            className="inline-flex items-center justify-center space-x-2 bg-coral/5 border border-coral/15 px-4 py-1.5 rounded-full w-fit mx-auto"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-coral animate-pulse" />
             <span className="font-mono text-[9px] text-coral uppercase tracking-[0.15em] font-bold">
-              System Core v4.0.0_Active
+              {heroData.status}
             </span>
           </motion.div>
 
           {/* Headline — 3D character-split reveal */}
           <h1 className="font-heading text-5xl md:text-7xl font-black text-navy leading-[0.95] tracking-[-0.04em]">
-            <SplitReveal delay={0.3}>The Luxury</SplitReveal>
+            <SplitReveal delay={0.3} className={heroData.headline[0].highlight ? "text-coral" : ""}>
+              {heroData.headline[0].text}
+            </SplitReveal>
             <br />
-            <SplitReveal delay={0.55} className="text-coral">AI Operating System</SplitReveal>
+            <SplitReveal delay={0.55} className={heroData.headline[1].highlight ? "text-coral" : ""}>
+              {heroData.headline[1].text}
+            </SplitReveal>
             <br />
-            <SplitReveal delay={0.85}>for Elite Enterprises.</SplitReveal>
+            <SplitReveal delay={0.85} className={heroData.headline[2].highlight ? "text-coral" : ""}>
+              {heroData.headline[2].text}
+            </SplitReveal>
           </h1>
 
           {/* Sub-copy */}
@@ -103,10 +113,9 @@ export default function Hero({ onNavigate }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.8 }}
-            className="max-w-xl font-sans text-base md:text-lg text-navy/70 leading-relaxed"
+            className="max-w-xl font-sans text-base md:text-lg text-navy/70 leading-relaxed mx-auto"
           >
-            Ecavex engineers mathematically precise, technically sophisticated
-            neural intelligence platforms disguised as effortless user ecosystems.
+            {heroData.subHeadline}
           </motion.p>
 
           {/* CTAs */}
@@ -114,13 +123,13 @@ export default function Hero({ onNavigate }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.25 }}
-            className="flex items-center space-x-4 pt-4"
+            className="flex items-center justify-center space-x-4 pt-4"
           >
             <button
               onClick={() => onNavigate('contact')}
-              className="group relative overflow-hidden bg-navy hover:bg-coral text-alabaster px-8 py-4 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300 shadow-md hover:-translate-y-0.5 flex items-center gap-2"
+              className="group relative overflow-hidden bg-navy hover:bg-coral text-alabaster px-8 py-4 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300 shadow-md hover:-translate-y-0.5 flex items-center justify-center gap-2"
             >
-              <span className="relative z-10">Initialize Integration</span>
+              <span className="relative z-10">{heroData.primaryCta}</span>
               <ArrowRight className="w-4 h-4 text-coral group-hover:text-alabaster relative z-10 transition-transform group-hover:translate-x-1" />
               <div className="absolute inset-0 bg-coral translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
             </button>
@@ -129,7 +138,7 @@ export default function Hero({ onNavigate }) {
               onClick={() => onNavigate('services')}
               className="bg-transparent border border-navy/10 hover:border-coral/30 hover:bg-alabaster/60 text-navy px-8 py-4 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300"
             >
-              Review Architecture
+              {heroData.secondaryCta}
             </button>
           </motion.div>
         </motion.div>
@@ -162,7 +171,7 @@ export default function Hero({ onNavigate }) {
                 <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
               </div>
               <span className="font-mono text-[10px] uppercase tracking-wider text-navy/40">
-                Live Terminal
+                {heroData.stats.liveTerminal}
               </span>
             </div>
 
@@ -170,12 +179,12 @@ export default function Hero({ onNavigate }) {
               <div className="h-2 w-1/3 bg-navy/8 rounded" />
               <div className="h-12 w-full bg-alabaster/60 border border-navy/4 rounded-xl p-3 flex items-center justify-between">
                 <span className="font-mono text-xs text-navy/80">Automation.pulse</span>
-                <span className="font-mono text-xs text-coral font-bold">99.98%</span>
+                <span className="font-mono text-xs text-coral font-bold">{heroData.stats.automationPulse}</span>
               </div>
               <div className="h-16 w-full bg-navy rounded-xl p-3 flex items-center justify-between">
                 <div className="space-y-1">
                   <span className="block font-mono text-[10px] text-alabaster/40 uppercase tracking-wider">Neural Speed</span>
-                  <span className="block font-mono text-sm text-alabaster font-light">1.2ms Response</span>
+                  <span className="block font-mono text-sm text-alabaster font-light">{heroData.stats.neuralSpeed}</span>
                 </div>
                 <div className="w-14 h-7 bg-coral/20 rounded border border-coral/30 flex items-center justify-center">
                   <span className="font-mono text-[9px] text-coral font-bold">OPTIMAL</span>
@@ -197,7 +206,7 @@ export default function Hero({ onNavigate }) {
             </div>
             <div>
               <span className="block font-mono text-[10px] uppercase tracking-wider text-navy/40">Efficiency</span>
-              <span className="block font-heading text-lg font-bold text-navy tracking-tight">340%</span>
+              <span className="block font-heading text-lg font-bold text-navy tracking-tight">{heroData.stats.efficiency}</span>
             </div>
           </motion.div>
 
@@ -211,7 +220,7 @@ export default function Hero({ onNavigate }) {
           >
             <Sparkles className="w-3.5 h-3.5 text-coral animate-pulse" />
             <span className="font-mono text-[9px] text-alabaster/70 uppercase tracking-wider">
-              AetherAI Online
+              {heroData.stats.statusNode}
             </span>
           </motion.div>
 
@@ -220,11 +229,7 @@ export default function Hero({ onNavigate }) {
 
       {/* ── Value Proposition Cards ─────────────────────────────────── */}
       <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-        {[
-          { title: '100% Transparent', desc: 'Weekly code review staging, live ClickUp tasking, and active Slack channels.' },
-          { title: 'AI-Enhanced Speed', desc: 'Custom code pipeline automation cuts development loops and delivers projects 2x faster.' },
-          { title: '1-Month Support', desc: 'Every launch comes with a full month of free server tuning, code audits, and scale monitoring.' },
-        ].map((card, i) => (
+        {heroData.valueProps.map((card, i) => (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { preloaderData } from '../data/commonData';
 
 const Preloader = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
@@ -105,7 +108,7 @@ const Preloader = ({ onComplete }) => {
               transition={{ delay: 0.3 }}
               className="mt-8 mb-2 font-mono text-[9px] uppercase tracking-[0.25em] text-coral font-bold"
             >
-              System Initialization
+              {preloaderData.tagline}
             </motion.div>
 
             <motion.div 
@@ -114,7 +117,7 @@ const Preloader = ({ onComplete }) => {
               transition={{ delay: 0.4 }}
               className="font-heading text-lg font-black tracking-tight text-navy"
             >
-              ECAVEX DIGITAL CORE
+              {preloaderData.brandName}
             </motion.div>
 
             {/* Percentage counter */}
@@ -134,11 +137,22 @@ const Preloader = ({ onComplete }) => {
                 transition={{ duration: 0.1 }}
               />
             </div>
+            
+            {/* Skip Button */}
+            <button
+              onClick={() => {
+                setIsExiting(true);
+                setTimeout(onComplete, 800);
+              }}
+              className="mt-8 px-4 py-2 text-[10px] font-mono tracking-widest uppercase text-navy/40 hover:text-coral transition-colors duration-300"
+            >
+              {preloaderData.skipText}
+            </button>
           </div>
 
           {/* Fixed Footer text relative to the screen, NOT the content block, to avoid overlaps */}
           <div className="absolute bottom-10 left-0 right-0 text-center font-mono text-[9px] text-navy/40 tracking-[0.2em] pointer-events-none uppercase">
-            Taste & Digital Craftsmanship
+            {preloaderData.footerText}
           </div>
         </motion.div>
       )}
