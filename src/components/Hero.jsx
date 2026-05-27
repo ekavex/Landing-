@@ -144,7 +144,7 @@ export default function Hero({ onNavigate }) {
         </motion.div>
 
         {/* ── Right Column: Interactive Layered Dashboard ─────────────── */}
-        <div className="lg:col-span-5 relative w-full h-[480px] flex items-center justify-center">
+        <div className="lg:col-span-5 relative w-full h-120 flex items-center justify-center">
 
           {/* Decorative back-light leak */}
           <div className="absolute top-16 left-8 w-72 h-72 bg-coral/5 rounded-full blur-3xl pointer-events-none z-10" />
@@ -161,7 +161,7 @@ export default function Hero({ onNavigate }) {
               rotateY: rotateY1,
               transformStyle: 'preserve-3d',
             }}
-            className="absolute w-full max-w-[380px] h-[280px] rounded-3xl bg-alabaster/70 backdrop-blur-xl border border-navy/6 shadow-xl p-6 z-20"
+            className="absolute w-full max-w-95 h-70 rounded-3xl bg-alabaster/70 backdrop-blur-xl border border-navy/6 shadow-xl p-6 z-20"
           >
             {/* Card chrome */}
             <div className="flex justify-between items-center mb-6">
@@ -199,7 +199,7 @@ export default function Hero({ onNavigate }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.75, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             style={{ x: cardLayerTwoX, y: cardLayerTwoY }}
-            className="absolute bottom-10 -right-2 w-[185px] bg-alabaster/90 border border-navy/8 rounded-2xl p-4 shadow-lg z-30 flex items-center space-x-3 backdrop-blur-sm"
+            className="absolute bottom-10 -right-2 w-45 bg-alabaster/90 border border-navy/8 rounded-2xl p-4 shadow-lg z-30 flex items-center space-x-3 backdrop-blur-sm"
           >
             <div className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center text-coral shrink-0">
               <Zap className="w-4 h-4" />
@@ -235,7 +235,7 @@ export default function Hero({ onNavigate }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3 + i * 0.1 }}
             key={i}
-            className="glass-panel rounded-3xl p-6 md:p-8 bg-alabaster/40 bento-card-hover text-left flex flex-col justify-between"
+            className="glass-panel rounded-3xl p-6 md:p-8 bento-card-hover text-left flex flex-col justify-between"
           >
             <h4 className="font-heading text-base font-black text-navy mb-2 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-coral shrink-0" />

@@ -36,7 +36,7 @@ export default function HomePage() {
       </div>
 
       {/* Cinematic Hero (Scroll sequence) */}
-      <div className="-mt-16 mb-16 relative z-20 bg-[#FFFDF6]">
+      <div className="-mt-16 mb-16 relative z-20 bg-alabaster">
         {/* We use a subtle top gradient/mask if needed, but since it's full-bleed, 
             it will seamlessly follow the previous section. */}
         <CinematicHero />

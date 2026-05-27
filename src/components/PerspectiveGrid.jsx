@@ -9,15 +9,23 @@ export default function PerspectiveGrid() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
     const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
     let animationFrameId;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    let width = window.innerWidth;
+    let height = window.innerHeight;
 
     const handleResize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
     const handleMouseMove = (e) => {
@@ -25,15 +33,15 @@ export default function PerspectiveGrid() {
       mouseRef.current.targetY = e.clientY;
     };
 
+    handleResize();
     window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Grid configuration tokens
-    const gridSize = 60;
-    const dotRadius = 1;
-    const maxInfluence = 300;
-
     const render = () => {
+      const gridSize = width < 768 ? 72 : 60;
+      const dotRadius = width < 768 ? 1.2 : 1;
+      const maxInfluence = width < 768 ? 180 : 300;
+
       ctx.clearRect(0, 0, width, height);
 
       // Subtle radial gradient background that follows cursor loosely
@@ -178,7 +186,7 @@ export default function PerspectiveGrid() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-0 bg-[#FFFDF6]"
+      className="pointer-events-none fixed inset-0 z-0 bg-alabaster"
     />
   );
 }
