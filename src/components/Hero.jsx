@@ -2,16 +2,17 @@
 
 import React from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
-import { Sparkles, ArrowRight, Zap } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Cpu, ShieldCheck, Activity } from 'lucide-react';
 
 import { heroData } from '../data/homeData';
 
 // ── SplitReveal helper ──────────────────────────────────────────────
-// Breaks a string into individual character nodes that rotate-in on a 3D axis
+// Breaks a string into individual character nodes that rotate-in on a 3D axis.
+// Centered layout friendly.
 const SplitReveal = ({ children, className = '', delay = 0 }) => {
   const chars = String(children).split('');
   return (
-    <span className={`inline-flex flex-wrap ${className}`} style={{ perspective: '600px' }}>
+    <span className={`inline-flex flex-wrap justify-center ${className}`} style={{ perspective: '600px' }}>
       {chars.map((char, i) => (
         <motion.span
           key={i}
@@ -37,7 +38,7 @@ export default function Hero({ onNavigate }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Elastic spring response matching editorial metrics
+  // Elastic spring response matching premium editorial metrics
   const springConfig = { stiffness: 100, damping: 15, mass: 0.8 };
   const mouseX = useSpring(x, springConfig);
   const mouseY = useSpring(y, springConfig);
@@ -49,57 +50,262 @@ export default function Hero({ onNavigate }) {
   };
 
   // ── Parallax depth layers ─────────────────────────────────────────
-  // Text shifts gently in cursor direction
-  const textParallaxX = useTransform(mouseX, [-0.5, 0.5], [-15, 15]);
-  const textParallaxY = useTransform(mouseY, [-0.5, 0.5], [-15, 15]);
+  // Text shifts very gently in cursor direction
+  const textParallaxX = useTransform(mouseX, [-0.5, 0.5], [-10, 10]);
+  const textParallaxY = useTransform(mouseY, [-0.5, 0.5], [-10, 10]);
 
-  // Layer 1 — primary analytics card: moves toward cursor + tilts
-  const cardLayerOneX = useTransform(mouseX, [-0.5, 0.5], [35, -35]);
-  const cardLayerOneY = useTransform(mouseY, [-0.5, 0.5], [35, -35]);
-  const rotateX1 = useTransform(mouseY, [-0.5, 0.5], [10, -10]);
-  const rotateY1 = useTransform(mouseX, [-0.5, 0.5], [-10, 10]);
+  // Layer 1 — Left Card (Pulse Monitor): tilts toward cursor + drifts
+  const cardLeftX = useTransform(mouseX, [-0.5, 0.5], [45, -45]);
+  const cardLeftY = useTransform(mouseY, [-0.5, 0.5], [40, -40]);
+  const rotateLeftX = useTransform(mouseY, [-0.5, 0.5], [8, -8]);
+  const rotateLeftY = useTransform(mouseX, [-0.5, 0.5], [-8, 8]);
 
-  // Layer 2 — secondary metric badge: drifts inversely for severe depth
-  const cardLayerTwoX = useTransform(mouseX, [-0.5, 0.5], [-40, 40]);
-  const cardLayerTwoY = useTransform(mouseY, [-0.5, 0.5], [-40, 40]);
+  // Layer 2 — Right Card (Latency Dashboard): drifts inversely + tilts
+  const cardRightX = useTransform(mouseX, [-0.5, 0.5], [-40, 40]);
+  const cardRightY = useTransform(mouseY, [-0.5, 0.5], [-45, 45]);
+  const rotateRightX = useTransform(mouseY, [-0.5, 0.5], [-10, 10]);
+  const rotateRightY = useTransform(mouseX, [-0.5, 0.5], [10, -10]);
 
-  // Layer 3 — tertiary accent node: subtle opposite drift
-  const cardLayerThreeX = useTransform(mouseX, [-0.5, 0.5], [20, -20]);
-  const cardLayerThreeY = useTransform(mouseY, [-0.5, 0.5], [-25, 25]);
+  // Layer 3 — Badges on Left
+  const badgeLeftTopX = useTransform(mouseX, [-0.5, 0.5], [20, -20]);
+  const badgeLeftTopY = useTransform(mouseY, [-0.5, 0.5], [25, -25]);
+  const badgeLeftBottomX = useTransform(mouseX, [-0.5, 0.5], [50, -50]);
+  const badgeLeftBottomY = useTransform(mouseY, [-0.5, 0.5], [50, -50]);
+
+  // Layer 4 — Badges on Right
+  const badgeRightTopX = useTransform(mouseX, [-0.5, 0.5], [-20, 20]);
+  const badgeRightTopY = useTransform(mouseY, [-0.5, 0.5], [-25, 25]);
+  const badgeRightBottomX = useTransform(mouseX, [-0.5, 0.5], [-50, 50]);
+  const badgeRightBottomY = useTransform(mouseY, [-0.5, 0.5], [-50, 50]);
 
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative min-h-[85vh] w-full overflow-hidden px-6 md:px-12 pt-8 pb-20 flex flex-col justify-center items-center select-none z-10"
+      className="relative lg:min-h-[calc(100vh-12.5rem)] lg:h-auto min-h-[100vh] w-full overflow-x-hidden px-6 md:px-16 pt-3 pb-12 flex flex-col justify-between items-center select-none z-20"
       style={{ perspective: '1200px' }}
     >
-      <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* Decorative ambient spots of light */}
+      <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-coral/5 rounded-full blur-[110px] pointer-events-none z-10" />
+      <div className="absolute bottom-1/3 right-1/10 w-[450px] h-[450px] bg-coral/5 rounded-full blur-[140px] pointer-events-none z-10" />
 
-        {/* ── Left Column: Editorial Heading ──────────────────────────── */}
+      {/* ── 3D PARALLAX ENVIRONMENT: FLOATING ELEMENTS (Desktop Only) ── */}
+      {/* Positioned strictly in the upper & middle regions to prevent overlaps with value props at the bottom */}
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-20">
+        
+        {/* 1. Top-Left Badge (AI Workflow Active) */}
+        <motion.div
+          style={{ x: badgeLeftTopX, y: badgeLeftTopY }}
+          className="absolute top-[6%] left-[10%] xl:left-[14%] 2xl:left-[17%]"
+        >
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+            className="bg-navy rounded-full px-4.5 py-2 border border-alabaster/10 shadow-lg flex items-center space-x-2 backdrop-blur-sm pointer-events-auto"
+          >
+            <Sparkles className="w-3 h-3 text-coral animate-pulse" />
+            <span className="font-mono text-[9px] text-alabaster/90 uppercase tracking-widest font-semibold">
+              {heroData.stats.statusNode}
+            </span>
+          </motion.div>
+        </motion.div>
+
+        {/* 2. Center-Left Card (Pulse Monitor Terminal) */}
+        <motion.div
+          style={{
+            x: cardLeftX,
+            y: cardLeftY,
+            rotateX: rotateLeftX,
+            rotateY: rotateLeftY,
+            transformStyle: 'preserve-3d',
+          }}
+          className="absolute top-[20%] left-[3%] xl:left-[5%] 2xl:left-[7%] w-[290px] pointer-events-auto"
+        >
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+            className="rounded-2xl bg-alabaster/70 backdrop-blur-xl border border-navy/6 shadow-xl p-5"
+          >
+            {/* Card Window Controls */}
+            <div className="flex justify-between items-center mb-4.5">
+              <div className="flex space-x-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-coral" />
+                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
+                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
+              </div>
+              <span className="font-mono text-[8.5px] uppercase tracking-wider text-navy/40">
+                {heroData.stats.liveTerminal}
+              </span>
+            </div>
+
+            <div className="space-y-3.5">
+              <div className="h-2 w-1/3 bg-navy/8 rounded" />
+              <div className="h-11 w-full bg-alabaster/60 border border-navy/4 rounded-xl p-3 flex items-center justify-between">
+                <span className="font-mono text-[11px] text-navy/80">Automation.pulse</span>
+                <span className="font-mono text-[11px] text-coral font-bold">{heroData.stats.automationPulse}</span>
+              </div>
+              <div className="h-14 w-full bg-navy rounded-xl p-3 flex items-center justify-between">
+                <div className="space-y-0.5 text-left">
+                  <span className="block font-mono text-[8.5px] text-alabaster/40 uppercase tracking-wider">Neural Speed</span>
+                  <span className="block font-mono text-[11px] text-alabaster font-light">{heroData.stats.neuralSpeed}</span>
+                </div>
+                <div className="w-13 h-6 bg-coral/20 rounded border border-coral/30 flex items-center justify-center">
+                  <span className="font-mono text-[8.5px] text-coral font-bold">OPTIMAL</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* 3. Bottom-Left Badge (Efficiency metrics) - Positioned safely above value props */}
+        <motion.div
+          style={{ x: badgeLeftBottomX, y: badgeLeftBottomY }}
+          className="absolute top-[56%] left-[8%] xl:left-[11%] 2xl:left-[14%] pointer-events-auto"
+        >
+          <motion.div
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
+            className="bg-alabaster/90 border border-navy/8 rounded-2xl p-4 shadow-lg flex items-center space-x-3 backdrop-blur-sm"
+          >
+            <div className="w-8 h-8 rounded-lg bg-coral/10 flex items-center justify-center text-coral shrink-0">
+              <Zap className="w-3.5 h-3.5" />
+            </div>
+            <div className="text-left">
+              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-navy/40">Efficiency</span>
+              <span className="block font-heading text-sm font-bold text-navy tracking-tight">{heroData.stats.efficiency}</span>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* 4. Top-Right Badge (System Sync status) */}
+        <motion.div
+          style={{ x: badgeRightTopX, y: badgeRightTopY }}
+          className="absolute top-[8%] right-[10%] xl:right-[14%] 2xl:right-[17%] pointer-events-auto"
+        >
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 4.6, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+            className="bg-alabaster/90 border border-navy/6 rounded-full px-4.5 py-2 shadow-lg flex items-center space-x-2 backdrop-blur-sm"
+          >
+            <Activity className="w-3 h-3 text-coral animate-pulse" />
+            <span className="font-mono text-[9px] text-navy/70 uppercase tracking-widest font-semibold">
+              PIPELINE RECON
+            </span>
+          </motion.div>
+        </motion.div>
+
+        {/* 5. Center-Right Card (Latency Live Performance Histogram) */}
+        <motion.div
+          style={{
+            x: cardRightX,
+            y: cardRightY,
+            rotateX: rotateRightX,
+            rotateY: rotateRightY,
+            transformStyle: 'preserve-3d',
+          }}
+          className="absolute top-[20%] right-[3%] xl:right-[5%] 2xl:right-[7%] w-[290px] pointer-events-auto"
+        >
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
+            className="rounded-2xl bg-alabaster/70 backdrop-blur-xl border border-navy/6 shadow-xl p-5"
+          >
+            {/* Card Window Controls */}
+            <div className="flex justify-between items-center mb-4">
+              <div className="flex space-x-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-coral" />
+                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
+                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
+              </div>
+              <span className="font-mono text-[8.5px] uppercase tracking-wider text-navy/40">
+                Uptime Monitor
+              </span>
+            </div>
+
+            <div className="space-y-3.5">
+              <div className="flex justify-between items-center">
+                <div className="text-left">
+                  <span className="block font-mono text-[8.5px] text-navy/40 uppercase tracking-wider">Ping Latency</span>
+                  <span className="font-heading text-base font-bold text-navy">42ms</span>
+                </div>
+                <div className="bg-coral/10 text-coral rounded-md px-2 py-0.5 font-mono text-[8.5px] font-bold">
+                  STABLE
+                </div>
+              </div>
+
+              {/* Animated Histogram representing live traffic / pipeline sync */}
+              <div className="flex items-end justify-between h-12 px-1 pt-1 gap-1 border-b border-navy/5">
+                {[45, 75, 50, 95, 60, 85, 65, 100, 55, 80, 48, 90].map((val, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="w-full bg-coral/30 rounded-t"
+                    initial={{ height: "30%" }}
+                    animate={{ height: ["30%", `${val}%`, "30%"] }}
+                    transition={{
+                      duration: 1.3 + idx * 0.1,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                ))}
+              </div>
+
+              <div className="flex justify-between items-center font-mono text-[7.5px] text-navy/40">
+                <span>99.98% EFFECTIVE</span>
+                <span>SECURE SSL</span>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* 6. Bottom-Right Badge (Trust Stats) - Positioned safely above value props */}
+        <motion.div
+          style={{ x: badgeRightBottomX, y: badgeRightBottomY }}
+          className="absolute top-[58%] right-[8%] xl:right-[11%] 2xl:right-[14%] pointer-events-auto"
+        >
+          <motion.div
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 4.0, repeat: Infinity, ease: "easeInOut", delay: 1.1 }}
+            className="bg-navy border border-alabaster/10 rounded-2xl p-4 shadow-lg flex items-center space-x-3 backdrop-blur-sm"
+          >
+            <div className="w-8 h-8 rounded-lg bg-alabaster/10 flex items-center justify-center text-coral shrink-0">
+              <ShieldCheck className="w-3.5 h-3.5" />
+            </div>
+            <div className="text-left">
+              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-alabaster/40">Scale Delivery</span>
+              <span className="block font-heading text-sm font-bold text-alabaster tracking-tight">100% Secure</span>
+            </div>
+          </motion.div>
+        </motion.div>
+
+      </div>
+
+      {/* ── CENTRALIZED EDITORIAL TEXT CONTAINER ──────────────────── */}
+      {/* Scaled down headline and tightened spacings so everything fits elegantly within 100vh */}
+      <div className="w-full max-w-7xl flex flex-col items-center justify-center grow relative py-4">
         <motion.div
           style={{ x: textParallaxX, y: textParallaxY }}
-          className="lg:col-span-7 flex flex-col items-center space-y-8 text-center"
+          className="relative z-30 w-full max-w-4xl px-4 text-center flex flex-col items-center justify-center space-y-5 md:space-y-6"
         >
           {/* Status capsule */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center justify-center space-x-2 bg-coral/5 border border-coral/15 px-4 py-1.5 rounded-full w-fit mx-auto"
+            className="inline-flex items-center justify-center space-x-2 bg-coral/5 border border-coral/15 px-4.5 py-1.5 rounded-full w-fit mx-auto"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-coral animate-pulse" />
-            <span className="font-mono text-[9px] text-coral uppercase tracking-[0.15em] font-bold">
+            <span className="font-mono text-[9px] text-coral uppercase tracking-[0.18em] font-bold">
               {heroData.status}
             </span>
           </motion.div>
 
-          {/* Headline — 3D character-split reveal */}
-          <h1 className="font-heading text-5xl md:text-7xl font-black text-navy leading-[0.95] tracking-[-0.04em]">
+          {/* Headline — 3D character-split reveal, compact size on desktop to fit screen height */}
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[4.0rem] xl:text-[4.4rem] font-black text-navy leading-[1.0] lg:leading-[0.93] tracking-[-0.04em] max-w-4xl">
             <SplitReveal delay={0.3} className={heroData.headline[0].highlight ? "text-coral" : ""}>
               {heroData.headline[0].text}
             </SplitReveal>
-            <br />
-            <SplitReveal delay={0.55} className={heroData.headline[1].highlight ? "text-coral" : ""}>
+            <br className="hidden sm:block" />
+            <SplitReveal delay={0.55} className={heroData.headline[1].highlight ? "text-coral font-black" : ""}>
               {heroData.headline[1].text}
             </SplitReveal>
             <br />
@@ -108,26 +314,26 @@ export default function Hero({ onNavigate }) {
             </SplitReveal>
           </h1>
 
-          {/* Sub-copy */}
+          {/* Sub-copy with comfortable margins */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.8 }}
-            className="max-w-xl font-sans text-base md:text-lg text-navy/70 leading-relaxed mx-auto"
+            className="max-w-2xl font-sans text-xs sm:text-sm md:text-base text-navy/70 leading-relaxed mx-auto px-4"
           >
             {heroData.subHeadline}
           </motion.p>
 
-          {/* CTAs */}
+          {/* Centered Primary and Secondary CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.25 }}
-            className="flex items-center justify-center space-x-4 pt-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-1 w-full sm:w-auto px-4"
           >
             <button
               onClick={() => onNavigate('contact')}
-              className="group relative overflow-hidden bg-navy hover:bg-coral text-alabaster px-8 py-4 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300 shadow-md hover:-translate-y-0.5 flex items-center justify-center gap-2"
+              className="group relative overflow-hidden bg-navy hover:bg-coral text-alabaster px-8 py-3.5 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300 shadow-md hover:-translate-y-0.5 flex items-center justify-center gap-2 w-full sm:w-auto cursor-pointer"
             >
               <span className="relative z-10">{heroData.primaryCta}</span>
               <ArrowRight className="w-4 h-4 text-coral group-hover:text-alabaster relative z-10 transition-transform group-hover:translate-x-1" />
@@ -136,112 +342,92 @@ export default function Hero({ onNavigate }) {
 
             <button
               onClick={() => onNavigate('services')}
-              className="bg-transparent border border-navy/10 hover:border-coral/30 hover:bg-alabaster/60 text-navy px-8 py-4 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300"
+              className="bg-transparent border border-navy/10 hover:border-coral/30 hover:bg-alabaster/60 text-navy px-8 py-3.5 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300 w-full sm:w-auto cursor-pointer"
             >
               {heroData.secondaryCta}
             </button>
           </motion.div>
         </motion.div>
 
-        {/* ── Right Column: Interactive Layered Dashboard ─────────────── */}
-        <div className="lg:col-span-5 relative w-full h-[480px] flex items-center justify-center">
-
-          {/* Decorative back-light leak */}
-          <div className="absolute top-16 left-8 w-72 h-72 bg-coral/5 rounded-full blur-3xl pointer-events-none z-10" />
-
-          {/* Layer 1 — Primary Analytics Card (tilts toward cursor) */}
+        {/* ── RESPONSIVE ADAPTIVE LAYOUT: FLOATING COMPONENT DRAWER (Tablet & Mobile Only) ── */}
+        <div className="block lg:hidden w-full max-w-lg mt-10 px-4 relative z-30">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              x: cardLayerOneX,
-              y: cardLayerOneY,
-              rotateX: rotateX1,
-              rotateY: rotateY1,
-              transformStyle: 'preserve-3d',
-            }}
-            className="absolute w-full max-w-[380px] h-[280px] rounded-3xl bg-alabaster/70 backdrop-blur-xl border border-navy/6 shadow-xl p-6 z-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.35, duration: 0.8 }}
+            className="space-y-5"
           >
-            {/* Card chrome */}
-            <div className="flex justify-between items-center mb-6">
-              <div className="flex space-x-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-coral" />
-                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
-                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
-              </div>
-              <span className="font-mono text-[10px] uppercase tracking-wider text-navy/40">
-                {heroData.stats.liveTerminal}
-              </span>
-            </div>
-
-            <div className="space-y-4">
-              <div className="h-2 w-1/3 bg-navy/8 rounded" />
-              <div className="h-12 w-full bg-alabaster/60 border border-navy/4 rounded-xl p-3 flex items-center justify-between">
-                <span className="font-mono text-xs text-navy/80">Automation.pulse</span>
-                <span className="font-mono text-xs text-coral font-bold">{heroData.stats.automationPulse}</span>
-              </div>
-              <div className="h-16 w-full bg-navy rounded-xl p-3 flex items-center justify-between">
-                <div className="space-y-1">
-                  <span className="block font-mono text-[10px] text-alabaster/40 uppercase tracking-wider">Neural Speed</span>
-                  <span className="block font-mono text-sm text-alabaster font-light">{heroData.stats.neuralSpeed}</span>
+            {/* Mobile Terminal Card */}
+            <div className="rounded-3xl bg-alabaster/80 border border-navy/6 p-5 shadow-md">
+              <div className="flex justify-between items-center mb-3">
+                <div className="flex space-x-1.5">
+                  <div className="w-2 h-2 rounded-full bg-coral" />
+                  <div className="w-2 h-2 rounded-full bg-navy/10" />
+                  <div className="w-2 h-2 rounded-full bg-navy/10" />
                 </div>
-                <div className="w-14 h-7 bg-coral/20 rounded border border-coral/30 flex items-center justify-center">
-                  <span className="font-mono text-[9px] text-coral font-bold">OPTIMAL</span>
+                <span className="font-mono text-[9px] uppercase tracking-wider text-navy/40">
+                  {heroData.stats.liveTerminal}
+                </span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center bg-alabaster/40 border border-navy/4 rounded-xl p-3">
+                  <span className="font-mono text-xs text-navy/85">Automation.pulse</span>
+                  <span className="font-mono text-xs text-coral font-bold">{heroData.stats.automationPulse}</span>
+                </div>
+                <div className="bg-navy rounded-xl p-3 flex justify-between items-center">
+                  <div className="text-left">
+                    <span className="block font-mono text-[8px] text-alabaster/40 uppercase">Neural Speed</span>
+                    <span className="font-mono text-xs text-alabaster font-light">{heroData.stats.neuralSpeed}</span>
+                  </div>
+                  <span className="bg-coral/20 border border-coral/30 rounded px-2 py-0.5 font-mono text-[8px] text-coral font-bold">
+                    OPTIMAL
+                  </span>
                 </div>
               </div>
             </div>
-          </motion.div>
 
-          {/* Layer 2 — Floating Metric Badge (inverse drift) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 0.75, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            style={{ x: cardLayerTwoX, y: cardLayerTwoY }}
-            className="absolute bottom-10 -right-2 w-[185px] bg-alabaster/90 border border-navy/8 rounded-2xl p-4 shadow-lg z-30 flex items-center space-x-3 backdrop-blur-sm"
-          >
-            <div className="w-9 h-9 rounded-lg bg-coral/10 flex items-center justify-center text-coral shrink-0">
-              <Zap className="w-4 h-4" />
+            {/* Mobile Quick Stats Row */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-alabaster/80 border border-navy/6 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-lg bg-coral/10 flex items-center justify-center text-coral shrink-0">
+                  <Zap className="w-4 h-4" />
+                </div>
+                <div className="text-left">
+                  <span className="block font-mono text-[8px] uppercase text-navy/40">Efficiency</span>
+                  <span className="block font-heading text-sm font-bold text-navy">{heroData.stats.efficiency}</span>
+                </div>
+              </div>
+              <div className="bg-navy border border-alabaster/10 rounded-2xl p-4 flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-lg bg-alabaster/10 flex items-center justify-center text-coral shrink-0">
+                  <ShieldCheck className="w-4 h-4" />
+                </div>
+                <div className="text-left">
+                  <span className="block font-mono text-[8px] uppercase text-alabaster/40">Delivery</span>
+                  <span className="block font-heading text-sm font-bold text-alabaster">100% Safe</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <span className="block font-mono text-[10px] uppercase tracking-wider text-navy/40">Efficiency</span>
-              <span className="block font-heading text-lg font-bold text-navy tracking-tight">{heroData.stats.efficiency}</span>
-            </div>
           </motion.div>
-
-          {/* Layer 3 — Tertiary status node (subtle opposite drift) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.95, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            style={{ x: cardLayerThreeX, y: cardLayerThreeY }}
-            className="absolute top-4 -left-4 bg-navy rounded-2xl px-4 py-3 shadow-lg z-30 flex items-center space-x-2"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-coral animate-pulse" />
-            <span className="font-mono text-[9px] text-alabaster/70 uppercase tracking-wider">
-              {heroData.stats.statusNode}
-            </span>
-          </motion.div>
-
         </div>
+
       </div>
 
       {/* ── Value Proposition Cards ─────────────────────────────────── */}
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
+      {/* Positioned at the very bottom with a small, clean margin so they NEVER overlap */}
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 pb-2 relative z-30">
         {heroData.valueProps.map((card, i) => (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.3 + i * 0.1 }}
+            transition={{ delay: 1.45 + i * 0.1 }}
             key={i}
-            className="glass-panel rounded-3xl p-6 md:p-8 bg-alabaster/40 bento-card-hover text-left flex flex-col justify-between"
+            className="glass-panel rounded-2xl p-5 md:p-6 bg-alabaster/40 bento-card-hover text-left flex flex-col justify-between"
           >
-            <h4 className="font-heading text-base font-black text-navy mb-2 flex items-center gap-2">
+            <h4 className="font-heading text-sm md:text-base font-black text-navy mb-2 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-coral shrink-0" />
               {card.title}
             </h4>
-            <p className="font-sans text-xs md:text-sm text-navy/60 leading-relaxed">
+            <p className="font-sans text-[11px] md:text-xs text-navy/60 leading-relaxed">
               {card.desc}
             </p>
           </motion.div>
