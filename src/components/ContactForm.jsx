@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageSquare, Send, CheckCircle2, MessageCircle } from 'lucide-react';
 
-import { contactHeader, contactDetails, contactFormFields, contactSuccessMessage, whatHappensNext, whatsappData } from '../data/contactData';
+import { contactHeader, contactDetails, contactSuccessMessage, whatHappensNext, whatsappData } from '../data/contactData';
 
 const iconMap = { Mail, Phone, MessageSquare };
 
@@ -14,9 +14,6 @@ const ContactForm = () => {
     email: '',
     phone: '',
     company: '',
-    service: contactFormFields.services[0],
-    budget: contactFormFields.budgets[0],
-    timeline: contactFormFields.timelines[0],
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -30,7 +27,7 @@ const ContactForm = () => {
   const whatsappUrl = `https://wa.me/${whatsappData.number}?text=${encodeURIComponent(whatsappData.message)}`;
 
   return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Page Header */}
       <div className="text-center max-w-2xl mx-auto mb-16">
         <motion.div
@@ -188,47 +185,6 @@ const ContactForm = () => {
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="w-full px-5 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none transition-all focus:border-coral focus:bg-alabaster/80 focus:ring-1 focus:ring-coral"
                   />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Service Needed</label>
-                  <select
-                    value={formData.service}
-                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none focus:border-coral cursor-pointer"
-                  >
-                    {contactFormFields.services.map((service) => (
-                      <option key={service} value={service}>{service}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Budget Range</label>
-                  <select
-                    value={formData.budget}
-                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none focus:border-coral cursor-pointer"
-                  >
-                    {contactFormFields.budgets.map((budget) => (
-                      <option key={budget} value={budget}>{budget}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Timeline</label>
-                  <select
-                    value={formData.timeline}
-                    onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none focus:border-coral cursor-pointer"
-                  >
-                    {contactFormFields.timelines.map((timeline) => (
-                      <option key={timeline} value={timeline}>{timeline}</option>
-                    ))}
-                  </select>
                 </div>
               </div>
 
