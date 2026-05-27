@@ -36,27 +36,21 @@ const Navbar = ({ activeView, onViewChange }) => {
           }`}
         >
           {/* Brand Logo Section */}
-          <div 
-            onClick={() => onViewChange('home')}
-            className="flex items-center gap-3 cursor-pointer group"
-          >
-            {/* Interactive 3x3 Dot Grid Logo */}
-            <div className="grid grid-cols-3 gap-1 w-6 h-6 transition-transform duration-500 group-hover:rotate-90">
-              {[...Array(9)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-1.5 h-1.5 rounded-full bg-coral transition-all duration-300 group-hover:scale-125"
-                  style={{
-                    opacity: i % 2 === 0 ? 1 : 0.7,
-                  }}
-                />
-              ))}
-            </div>
+        <div 
+          onClick={() => onViewChange('home')}
+          className="flex items-center gap-2 cursor-pointer group"
+        >
+          {/* Logo Image */}
+          <img
+            src="/logo1.png"   // put your image in /public folder
+            alt="Brand Logo"
+            className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110"
+          />
 
-            <span className="font-heading text-lg font-black tracking-[-0.03em] text-navy">
-              {navbarData.brandName}
-            </span>
-          </div>
+          <span className="font-heading text-lg font-black tracking-[-0.03em] text-navy">
+            {navbarData.brandName}
+          </span>
+         </div>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1.5">
