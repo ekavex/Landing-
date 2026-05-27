@@ -36,7 +36,7 @@ export default function AboutPage() {
                   <hr className={`my-[2vw] border-none border-t ${hrBorderColor}`} />
                   <div className="flex flex-wrap gap-[3vw]">
                     {section.features.slice(0, 3).map((feature, i) => (
-                      <div key={i} className="min-w-[180px] flex-1">
+                      <div key={i} className="min-w-45 flex-1">
                         <p className="mb-2 text-sm font-bold uppercase tracking-wider">{feature.title}</p>
                         <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed opacity-75">{feature.desc}</p>
                       </div>
@@ -47,7 +47,7 @@ export default function AboutPage() {
                       <hr className={`my-[2vw] border-none border-t ${hrBorderColor}`} />
                       <div className="flex flex-wrap gap-[3vw]">
                         {section.features.slice(3, 6).map((feature, i) => (
-                          <div key={i} className="min-w-[180px] flex-1">
+                          <div key={i} className="min-w-45 flex-1">
                             <p className="mb-2 text-sm font-bold uppercase tracking-wider">{feature.title}</p>
                             <p className="text-[clamp(0.85rem,1.3vw,1.05rem)] leading-relaxed opacity-75">{feature.desc}</p>
                           </div>

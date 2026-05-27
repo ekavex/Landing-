@@ -243,15 +243,15 @@ export function CinematicHero({
     const ctx = gsap.context(() => {
       gsap.set(".text-track", { autoAlpha: 0, y: 60, scale: 0.85, filter: "blur(20px)", rotationX: -20 });
       gsap.set(".text-days", { autoAlpha: 1, clipPath: "inset(0 100% 0 0)" });
-      gsap.set(".main-card", { 
-        y: window.innerHeight + 200, 
-        autoAlpha: 1,
-        clipPath: isMobile ? "inset(4% 4% 4% 4% round 32px)" : "inset(7.5% 7.5% 7.5% 7.5% round 40px)"
+      gsap.set(".main-card-bg", {
+        y: window.innerHeight + 200,
+        autoAlpha: 1
       });
+      gsap.set(".main-card-content", { y: window.innerHeight + 200 });
       gsap.set(".cta-wrapper", { autoAlpha: 0 });
-      
+
       // Hardware acceleration hints for scrubbed elements
-      gsap.set([".hero-text-wrapper", ".bg-grid-theme", ".main-card", ".cta-wrapper"], { willChange: "transform, opacity, clip-path" });
+      gsap.set([".hero-text-wrapper", ".bg-grid-theme", ".main-card-bg", ".main-card-content", ".cta-wrapper"], { willChange: "transform, opacity" });
 
       const introTl = gsap.timeline({ delay: 0.3 });
       introTl
@@ -272,26 +272,30 @@ export function CinematicHero({
       scrollTl
         // Removed heavy filter: blur() on scrub. Fade opacity instead for 60FPS.
         .to([".hero-text-wrapper", ".bg-grid-theme"], { scale: 1.1, opacity: 0, ease: "power2.inOut", duration: 2 }, 0)
-        .to(".main-card", { y: 0, ease: "power3.inOut", duration: 2 }, 0)
-        // Hardware accelerated clipPath inset instead of layout thrashing width/height
-        .to(".main-card", { clipPath: "inset(0% 0% 0% 0% round 0px)", ease: "power3.inOut", duration: 1.5 })
-        .fromTo(".cta-wrapper", 
+        .to([".main-card-bg", ".main-card-content"], { y: 0, ease: "power3.inOut", duration: 2 }, 0)
+        // Physical expansion via SCALE and BORDER-RADIUS (GPU accelerated, zero layout thrashing)
+        .to(".main-card-bg", {
+          scale: 1.35,
+          borderRadius: "0px",
+          ease: "power3.inOut",
+          duration: 1.5
+        })
+        .fromTo(".cta-wrapper",
           { y: 60, autoAlpha: 0, scale: 0.95 },
           { y: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: 2 }, "-=0.8"
         )
         .to({}, { duration: 3.0 })
-        .set(".hero-text-wrapper", { autoAlpha: 0 })
         .to(".cta-wrapper", {
           scale: 0.95, y: -40, autoAlpha: 0, ease: "power3.in", duration: 1.2,
         })
-        // Responsive card pullback sizing (GPU accelerated)
-        .to(".main-card", {
-          clipPath: isMobile ? "inset(4% 4% 4% 4% round 32px)" : "inset(7.5% 7.5% 7.5% 7.5% round 40px)",
+        // Responsive card pullback sizing (Restoring original roundness)
+        .to(".main-card-bg", {
+          scale: 1,
+          borderRadius: isMobile ? "32px" : "40px",
           ease: "expo.inOut",
           duration: 1.8
         }, "pullback")
-        .to(".cta-wrapper", { scale: 1, filter: "blur(0px)", ease: "expo.inOut", duration: 1.8 }, "pullback")
-        .to(".main-card", { y: -window.innerHeight - 300, ease: "power3.in", duration: 1.5 });
+        .to([".main-card-bg", ".main-card-content"], { y: -window.innerHeight - 300, ease: "power3.in", duration: 1.5 });
 
     }, containerRef);
 
@@ -301,7 +305,7 @@ export function CinematicHero({
   return (
     <div
       ref={containerRef}
-      className={cn("relative w-[100vw] h-screen overflow-hidden flex items-center justify-center bg-transparent text-foreground font-sans antialiased", className)}
+      className={cn("relative w-full h-screen overflow-hidden flex items-center justify-center bg-transparent text-foreground font-sans antialiased", className)}
       style={{ perspective: "1500px" }}
       {...props}
     >
@@ -310,7 +314,7 @@ export function CinematicHero({
       <div className="bg-grid-theme absolute inset-0 z-0 pointer-events-none opacity-50" aria-hidden="true" />
 
       {/* BACKGROUND LAYER: Hero Texts */}
-      <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-[100vw] px-4 will-change-transform transform-style-3d">
+      <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 will-change-transform transform-style-3d">
         <h1 className="text-track gsap-reveal text-3d-matte text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tight mb-2">
           {tagline1}
         </h1>
@@ -322,44 +326,47 @@ export function CinematicHero({
 
 
       {/* FOREGROUND LAYER: The Physical Deep Blue Card */}
-      <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none" style={{ perspective: "1500px" }}>
+      <div className="absolute inset-0 z-20 pointer-events-none" style={{ perspective: "1500px" }}>
+
+        {/* Isolated scalable background (Prevents layout thrashing) */}
         <div
           ref={mainCardRef}
-          className="main-card premium-depth-card absolute inset-0 overflow-hidden gsap-reveal flex items-center justify-center pointer-events-auto w-full h-full will-change-transform"
+          className="main-card-bg premium-depth-card absolute inset-0 m-auto overflow-hidden gsap-reveal w-[92vw] md:w-[85vw] h-[92vh] md:h-[85vh] rounded-[32px] md:rounded-[40px] will-change-transform"
         >
           <div className="card-sheen" aria-hidden="true" />
+        </div>
 
-          <div className="relative z-10 w-full h-full max-w-7xl mx-auto flex flex-col items-center justify-center text-center px-4 md:px-12 py-16 md:py-24">
-            <div className="cta-wrapper gsap-reveal flex flex-col items-center">
-              {/* Pill Badge */}
-              <div className="inline-flex items-center px-4 py-1.5 mb-8 md:mb-12 rounded-full bg-white/5 border border-white/10 shadow-sm backdrop-blur-sm">
-                <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-white/80 uppercase">Ready To Begin</span>
-              </div>
+        {/* Static content container (Text doesn't reflow) */}
+        <div className="main-card-content absolute inset-0 m-auto z-30 w-[92vw] md:w-[85vw] h-[92vh] md:h-[85vh] flex flex-col items-center justify-center text-center px-4 md:px-12 py-16 md:py-24 pointer-events-auto will-change-transform">
+          <div className="cta-wrapper gsap-reveal flex flex-col items-center">
+            {/* Pill Badge */}
+            <div className="inline-flex items-center px-4 py-1.5 mb-8 md:mb-12 rounded-full bg-white/5 border border-white/10 shadow-sm backdrop-blur-sm">
+              <span className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-white/80 uppercase">Ready To Begin</span>
+            </div>
 
-              {/* Serif Headline */}
-              <h2 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.05] font-serif text-white tracking-tight mb-6 md:mb-8">
-                Let's Build <br className="hidden md:block" />
-                <span className="text-white/95">Something Extraordinary</span>
-              </h2>
+            {/* Serif Headline */}
+            <h2 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] leading-[1.05] font-serif text-white tracking-tight mb-6 md:mb-8">
+              Let's Build <br className="hidden md:block" />
+              <span className="text-white/95">Something Extraordinary</span>
+            </h2>
 
-              {/* Description */}
-              <p className="text-blue-100/70 text-sm sm:text-base md:text-xl leading-relaxed mb-10 md:mb-14 max-w-2xl">
-                Partner with us to transform your vision into an AI-powered reality. Book a discovery call and let's explore what's possible.
-              </p>
+            {/* Description */}
+            <p className="text-blue-100/70 text-sm sm:text-base md:text-xl leading-relaxed mb-10 md:mb-14 max-w-2xl">
+              Partner with us to transform your vision into an AI-powered reality. Book a discovery call and let's explore what's possible.
+            </p>
 
-              {/* Buttons Group */}
-              <div className="flex flex-col sm:flex-row gap-3 md:gap-5 w-full sm:w-auto">
-                <button className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white text-[#09122C] font-bold rounded-xl md:rounded-2xl hover:bg-neutral-100 transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,255,255,0.15)] hover:shadow-[0_8px_25px_0_rgba(255,255,255,0.2)] hover:-translate-y-0.5">
-                  <MessageSquare className="w-4 h-4 md:w-5 md:h-5" />
-                  <span className="text-base md:text-lg">Book a Call</span>
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-1 group-hover:translate-x-1 transition-transform" />
-                </button>
-                
-                <button className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-xl md:rounded-2xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5">
-                  <Mail className="w-4 h-4 md:w-5 md:h-5" />
-                  <span className="text-base md:text-lg">Send a Brief</span>
-                </button>
-              </div>
+            {/* Buttons Group */}
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-5 w-full sm:w-auto">
+              <button className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white text-[#09122C] font-bold rounded-xl md:rounded-2xl hover:bg-neutral-100 transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,255,255,0.15)] hover:shadow-[0_8px_25px_0_rgba(255,255,255,0.2)] hover:-translate-y-0.5">
+                <MessageSquare className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="text-base md:text-lg">Book a Call</span>
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-1 group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              <button className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-xl md:rounded-2xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5">
+                <Mail className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="text-base md:text-lg">Send a Brief</span>
+              </button>
             </div>
           </div>
         </div>

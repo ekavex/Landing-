@@ -64,7 +64,7 @@ const Portfolio = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="glass-panel rounded-[2rem] p-8 bg-alabaster/40 bento-card-hover cursor-pointer group flex flex-col justify-between h-[360px] relative overflow-hidden"
+              className="glass-panel rounded-4xl p-8 bento-card-hover cursor-pointer group flex flex-col justify-between h-90 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-coral/5 rounded-full blur-3xl pointer-events-none transition-opacity group-hover:opacity-100" />
               
