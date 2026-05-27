@@ -109,52 +109,6 @@ export default function Hero({ onNavigate }) {
           </motion.div>
         </motion.div>
 
-        {/* 2. Center-Left Card (Pulse Monitor Terminal) */}
-        <motion.div
-          style={{
-            x: cardLeftX,
-            y: cardLeftY,
-            rotateX: rotateLeftX,
-            rotateY: rotateLeftY,
-            transformStyle: 'preserve-3d',
-          }}
-          className="absolute top-[20%] left-[3%] xl:left-[5%] 2xl:left-[7%] w-[290px] pointer-events-auto"
-        >
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-            className="rounded-2xl bg-alabaster/70 backdrop-blur-xl border border-navy/6 shadow-xl p-5"
-          >
-            {/* Card Window Controls */}
-            <div className="flex justify-between items-center mb-4.5">
-              <div className="flex space-x-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-coral" />
-                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
-                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
-              </div>
-              <span className="font-mono text-[8.5px] uppercase tracking-wider text-navy/40">
-                {heroData.stats.liveTerminal}
-              </span>
-            </div>
-
-            <div className="space-y-3.5">
-              <div className="h-2 w-1/3 bg-navy/8 rounded" />
-              <div className="h-11 w-full bg-alabaster/60 border border-navy/4 rounded-xl p-3 flex items-center justify-between">
-                <span className="font-mono text-[11px] text-navy/80">Automation.pulse</span>
-                <span className="font-mono text-[11px] text-coral font-bold">{heroData.stats.automationPulse}</span>
-              </div>
-              <div className="h-14 w-full bg-navy rounded-xl p-3 flex items-center justify-between">
-                <div className="space-y-0.5 text-left">
-                  <span className="block font-mono text-[8.5px] text-alabaster/40 uppercase tracking-wider">Neural Speed</span>
-                  <span className="block font-mono text-[11px] text-alabaster font-light">{heroData.stats.neuralSpeed}</span>
-                </div>
-                <div className="w-13 h-6 bg-coral/20 rounded border border-coral/30 flex items-center justify-center">
-                  <span className="font-mono text-[8.5px] text-coral font-bold">OPTIMAL</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
 
         {/* 3. Bottom-Left Badge (Efficiency metrics) - Positioned safely above value props */}
         <motion.div
@@ -192,75 +146,12 @@ export default function Hero({ onNavigate }) {
             </span>
           </motion.div>
         </motion.div>
-
-        {/* 5. Center-Right Card (Latency Live Performance Histogram) */}
-        <motion.div
-          style={{
-            x: cardRightX,
-            y: cardRightY,
-            rotateX: rotateRightX,
-            rotateY: rotateRightY,
-            transformStyle: 'preserve-3d',
-          }}
-          className="absolute top-[20%] right-[3%] xl:right-[5%] 2xl:right-[7%] w-[290px] pointer-events-auto"
-        >
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
-            className="rounded-2xl bg-alabaster/70 backdrop-blur-xl border border-navy/6 shadow-xl p-5"
-          >
-            {/* Card Window Controls */}
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex space-x-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-coral" />
-                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
-                <div className="w-2.5 h-2.5 rounded-full bg-navy/15" />
-              </div>
-              <span className="font-mono text-[8.5px] uppercase tracking-wider text-navy/40">
-                Uptime Monitor
-              </span>
-            </div>
-
-            <div className="space-y-3.5">
-              <div className="flex justify-between items-center">
-                <div className="text-left">
-                  <span className="block font-mono text-[8.5px] text-navy/40 uppercase tracking-wider">Ping Latency</span>
-                  <span className="font-heading text-base font-bold text-navy">42ms</span>
-                </div>
-                <div className="bg-coral/10 text-coral rounded-md px-2 py-0.5 font-mono text-[8.5px] font-bold">
-                  STABLE
-                </div>
-              </div>
-
-              {/* Animated Histogram representing live traffic / pipeline sync */}
-              <div className="flex items-end justify-between h-12 px-1 pt-1 gap-1 border-b border-navy/5">
-                {[45, 75, 50, 95, 60, 85, 65, 100, 55, 80, 48, 90].map((val, idx) => (
-                  <motion.div
-                    key={idx}
-                    className="w-full bg-coral/30 rounded-t"
-                    initial={{ height: "30%" }}
-                    animate={{ height: ["30%", `${val}%`, "30%"] }}
-                    transition={{
-                      duration: 1.3 + idx * 0.1,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                ))}
-              </div>
-
-              <div className="flex justify-between items-center font-mono text-[7.5px] text-navy/40">
-                <span>99.98% EFFECTIVE</span>
-                <span>SECURE SSL</span>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
+   
 
         {/* 6. Bottom-Right Badge (Trust Stats) - Positioned safely above value props */}
         <motion.div
           style={{ x: badgeRightBottomX, y: badgeRightBottomY }}
-          className="absolute top-[58%] right-[8%] xl:right-[11%] 2xl:right-[14%] pointer-events-auto"
+          className="absolute top-[55%] right-[8%] xl:right-[11%] 2xl:right-[14%] pointer-events-auto"
         >
           <motion.div
             animate={{ y: [0, -5, 0] }}

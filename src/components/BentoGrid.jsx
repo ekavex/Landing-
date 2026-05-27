@@ -59,7 +59,7 @@ const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
         stiffness: 100,
         damping: 15,
       }}
-      className={`${card.span} glass-panel rounded-4xl p-8 flex flex-col justify-between min-h-75 bento-card-hover group relative overflow-hidden ${card.bg}`}
+      className={`${card.span} glass-panel rounded-[2rem] p-8 flex flex-col justify-between min-h-[300px] bento-card-hover group relative overflow-hidden ${card.bg}`}
     >
       {/* Decorative glow blob */}
       {(card.span === 'md:col-span-2') && (
