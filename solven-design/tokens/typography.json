@@ -1,0 +1,72 @@
+{
+  "families": [
+    "DM Serif Display",
+    "General Sans",
+    "SFMono-Regular"
+  ],
+  "scale": {
+    "heading-1": {
+      "fontFamily": "DM Serif Display",
+      "fontSize": "clamp(2.5rem,5vw,3.8rem)",
+      "fontWeight": "700",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "heading-2": {
+      "fontFamily": "DM Serif Display",
+      "fontSize": "15px",
+      "fontWeight": "700",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "heading-3": {
+      "fontFamily": "DM Serif Display",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "body": {
+      "fontFamily": "General Sans",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "caption": {
+      "fontFamily": "General Sans",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "code": {
+      "fontFamily": "SFMono-Regular",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": null,
+      "source": "css"
+    }
+  },
+  "fontFaces": [
+    {
+      "family": "DM Serif Display",
+      "src": "https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFhOHM81r4j6k0gjAW3mujVU2B2G_Vx1w.ttf",
+      "format": "truetype",
+      "weight": "400"
+    },
+    {
+      "family": "DM Serif Display",
+      "src": "https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2K_c.ttf",
+      "format": "truetype",
+      "weight": "400"
+    }
+  ],
+  "rules": {
+    "maxSizesPerScreen": 4,
+    "headingWeightRange": "600-700",
+    "bodyWeight": 400,
+    "lineHeightBody": 1.5,
+    "lineHeightHeading": 1.2
+  }
+}

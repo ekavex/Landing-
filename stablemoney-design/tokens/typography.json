@@ -1,0 +1,144 @@
+{
+  "families": [
+    "Circular Std",
+    "Roboto",
+    "SFMono-Regular"
+  ],
+  "scale": {
+    "heading-1": {
+      "fontFamily": "Circular Std",
+      "fontSize": "253px",
+      "fontWeight": "700",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "heading-2": {
+      "fontFamily": "Circular Std",
+      "fontSize": "180px",
+      "fontWeight": "700",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "heading-3": {
+      "fontFamily": "Circular Std",
+      "fontSize": "140px",
+      "fontWeight": "700",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "body": {
+      "fontFamily": "Roboto",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "caption": {
+      "fontFamily": "Roboto",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": null,
+      "source": "css"
+    },
+    "code": {
+      "fontFamily": "SFMono-Regular",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": null,
+      "source": "css"
+    }
+  },
+  "fontFaces": [
+    {
+      "family": "CircularStd",
+      "src": "https://assets.stablemoney.in/fonts/CircularStd-Book.woff",
+      "format": "woff",
+      "weight": "400"
+    },
+    {
+      "family": "CircularStd",
+      "src": "https://assets.stablemoney.in/fonts/CircularStd-BookItalic.woff",
+      "format": "woff",
+      "weight": "400"
+    },
+    {
+      "family": "CircularStd",
+      "src": "https://assets.stablemoney.in/fonts/CircularStd-Medium.woff",
+      "format": "woff",
+      "weight": "500"
+    },
+    {
+      "family": "CircularStd",
+      "src": "https://assets.stablemoney.in/fonts/CircularStd-MediumItalic.woff",
+      "format": "woff",
+      "weight": "500"
+    },
+    {
+      "family": "RecklessNeue",
+      "src": "https://assets.stablemoney.in/fonts/RecklessNeue-Book.woff2",
+      "format": "woff2",
+      "weight": "400"
+    },
+    {
+      "family": "RecklessNeue",
+      "src": "https://assets.stablemoney.in/fonts/RecklessNeue-BookItalic.woff2",
+      "format": "woff2",
+      "weight": "400"
+    },
+    {
+      "family": "RecklessNeue",
+      "src": "https://assets.stablemoney.in/fonts/RecklessNeue-Medium.woff2",
+      "format": "woff2",
+      "weight": "500"
+    },
+    {
+      "family": "RecklessNeue",
+      "src": "https://assets.stablemoney.in/fonts/RecklessNeue-MediumItalic.woff2",
+      "format": "woff2",
+      "weight": "500"
+    },
+    {
+      "family": "DentonTest",
+      "src": "https://assets.stablemoney.in/fonts/Denton-Test-Regular-400.otf",
+      "format": "opentype",
+      "weight": "400"
+    },
+    {
+      "family": "Denton",
+      "src": "https://assets.stablemoney.in/fonts/denton_500.otf",
+      "format": "opentype",
+      "weight": "500"
+    },
+    {
+      "family": "Denton",
+      "src": "https://assets.stablemoney.in/fonts/denton_700.otf",
+      "format": "opentype",
+      "weight": "700"
+    },
+    {
+      "family": "Copperplate",
+      "src": "https://assets.stablemoney.in/fonts/Copperplate.woff",
+      "format": "woff2",
+      "weight": "400"
+    },
+    {
+      "family": "RecklessNeue",
+      "src": "https://stablemoney.in/fonts/RecklessNeue-Regular.woff2",
+      "format": "woff2",
+      "weight": "400"
+    },
+    {
+      "family": "RecklessNeue",
+      "src": "https://stablemoney.in/fonts/RecklessNeue-RegularItalic.woff2",
+      "format": "woff2",
+      "weight": "400"
+    }
+  ],
+  "rules": {
+    "maxSizesPerScreen": 4,
+    "headingWeightRange": "600-700",
+    "bodyWeight": 400,
+    "lineHeightBody": 1.5,
+    "lineHeightHeading": 1.2
+  }
+}
