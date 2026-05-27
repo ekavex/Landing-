@@ -138,7 +138,7 @@ export default function Hero({ onNavigate }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3 + i * 0.1 }}
             key={i}
-            className="glass-panel rounded-3xl p-6 md:p-8 bg-alabaster/40 bento-card-hover text-left flex flex-col justify-between"
+            className="glass-panel rounded-3xl p-6 md:p-8 bento-card-hover text-left flex flex-col justify-between"
           >
             <h4 className="font-heading text-base font-black text-navy mb-2 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-coral shrink-0" />
