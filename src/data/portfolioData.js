@@ -1,57 +1,94 @@
 export const portfolioHeader = {
   subtitle: 'Case Studies',
-  title: 'Delivered Digital Systems'
+  title: 'Real Projects, Real Results'
 };
 
-export const portfolioFilters = ['All', 'AI Systems', 'SaaS Platforms', 'Fintech'];
+export const portfolioFilters = ['All', 'Real Estate', 'Education', 'Healthcare', 'Food & Cafeteria', 'AI Systems'];
 
 export const portfolioData = [
   {
-    id: 'sql-bot',
-    title: 'AI SQL Chatbot Assistant',
-    category: 'AI Systems',
+    id: 'real-estate',
+    title: 'Real Estate Property Listing Platform',
+    category: 'Real Estate',
     timeline: '8 Weeks',
-    metric: '70% Query Time Reduction',
-    desc: 'Smart natural language interface that converts conversational queries into secure, optimal SQL in real-time.',
-    challenge: 'Users without database knowledge struggled to fetch analytics, overloading internal engineering cells with simple querying tasks.',
-    strategy: 'Engineered an intelligent semantic router utilizing custom prompt schemas, vector stores, and rigorous SQL injection shields.',
-    results: ['Over 70% faster data query extraction rates', 'Zero security leaks since execution start', 'Reduced data analytics team support tickets by 85%'],
-    tech: ['React', 'Next.js', 'OpenAI API', 'PgVector', 'NodeJS'],
+    metric: 'Simplified Property Discovery',
+    desc: 'A structured property listing platform where users can list, browse, buy, and sell properties with location-based information and a user-friendly marketplace experience.',
+    challenge: 'Property data was scattered, difficult to browse, and hard for buyers and sellers to manage digitally. The business needed a clean platform to handle large volumes of property listings.',
+    strategy: 'Built a full property marketplace with listing management, location-based browsing, buy/sell workflows, and an admin panel to manage large property data efficiently.',
+    results: [
+      'Simplified property discovery for buyers and sellers',
+      'Handles large property data with fast search and filtering',
+      'User-friendly marketplace experience for all skill levels'
+    ],
+    features: ['Property Listing System', 'Buy & Sell Flows', 'Location-Based Browsing', 'Admin Dashboard', 'Large Data Handling'],
+    tech: ['Next.js', 'React', 'PostgreSQL', 'Node.js', 'Tailwind CSS'],
   },
   {
-    id: 'agentic-saas',
-    title: 'Agentic AI SaaS Platform',
-    category: 'SaaS Platforms',
-    timeline: '12 Weeks',
-    metric: '95% Task Automation Rate',
-    desc: 'Next-generation SaaS platform hosting autonomous multi-agent pipelines that coordinate business data tasks.',
-    challenge: 'Manual pipeline management across fragmented APIs led to inconsistent datasets and slow process execution times.',
-    strategy: 'Built an asynchronous task runner, custom visual node canvas, and localized state syncing using Framer Motion and Node hooks.',
-    results: ['Automated 95% of manual operational data pipelines', 'Processed over 1M records within the first month', 'Accelerated execution throughput by 3.5x'],
-    tech: ['React', 'Framer Motion', 'WebSockets', 'n8n Core', 'Redis'],
-  },
-  {
-    id: 'fintech-fund',
-    title: 'Fintech Mutual Fund Suite',
-    category: 'Fintech',
+    id: 'academic-mcq',
+    title: 'Academic MCQ & Test Management Platform',
+    category: 'Education',
     timeline: '10 Weeks',
-    metric: '₹2.4Cr+ Transactions Secured',
-    desc: 'High-security financial investment management suite equipped with banking integrations and portfolio trackers.',
-    challenge: 'Legacy mutual fund portals suffered from slow dashboard rendering speeds and outdated API integration vulnerabilities.',
-    strategy: 'Constructed an ultra-fast dashboard dashboard using lightweight Tailwind grids, bank-grade OAuth, and real-time graphs.',
-    results: ['Bypassed banking latency to load dashboard in under 400ms', 'Successfully processed over ₹2.4Cr worth of portfolio assets', 'Grade-A security compliance rating'],
-    tech: ['React', 'Tailwind CSS', 'OAuth 2.1', 'Recharts', 'Fastify'],
+    metric: 'Fully Digital Exam Management',
+    desc: 'An end-to-end academic platform for MCQ creation, class-wise test management, student access, timed assessments, and image-to-MCQ support.',
+    challenge: 'Institutions needed a faster, digital way to create, manage, and conduct MCQ-based tests online without manual paper-based processes.',
+    strategy: 'Developed a complete test management system with MCQ creation tools, class-wise controls, timed test engine, student portal, and a full admin dashboard.',
+    results: [
+      'Reduced manual exam preparation time significantly',
+      'Institutions can manage all assessments from one dashboard',
+      'Students access tests digitally with automated grading'
+    ],
+    features: ['MCQ Creation & Management', 'Image-to-MCQ Support', 'Class-Wise Controls', 'Timed Test System', 'Student Access Portal'],
+    tech: ['React', 'Node.js', 'PostgreSQL', 'Next.js', 'Cloudinary'],
   },
   {
-    id: 'warehouse-ai',
-    title: 'AI Warehouse Monitoring',
+    id: 'nl-to-sql',
+    title: 'Natural Language to SQL Automation',
     category: 'AI Systems',
-    timeline: '14 Weeks',
-    metric: '99.4% Inventory Precision',
-    desc: 'Real-time WebGL inventory logistics and video monitoring platform integrated with machine learning filters.',
-    challenge: 'Manual inventory counts in massive logistics centers led to regular shortages, stockouts, and shipping lags.',
-    strategy: 'Integrated live web stream decoders, customized custom YOLO object detectors, and responsive grid layouts.',
-    results: ['Boosted inventory verification speed by 900%', 'Maintained inventory count precision rate of 99.4%', 'Completely prevented stockout lags'],
-    tech: ['React', 'YOLO Core', 'WebRTC', 'Three.js', 'Tailwind CSS'],
+    timeline: '6 Weeks',
+    metric: '70% Faster Data Access',
+    desc: 'A system where non-technical users ask questions in plain English and automatically get SQL queries generated to fetch the right data from the database.',
+    challenge: 'Non-technical users could not access database information without writing SQL or depending on developers, creating bottlenecks and delays.',
+    strategy: 'Built a natural language interface powered by OpenAI that converts plain English questions into optimized SQL queries and fetches results directly from the database.',
+    results: [
+      'Non-technical users now access data independently',
+      'Reduced developer dependency for data queries by 70%',
+      'Business teams get faster insights without SQL knowledge'
+    ],
+    features: ['Natural Language Input', 'SQL Query Generation', 'Database Integration', 'Simple UI', 'No SQL Knowledge Needed'],
+    tech: ['Python', 'OpenAI API', 'PostgreSQL', 'React', 'FastAPI'],
   },
+  {
+    id: 'cafeteria-ordering',
+    title: 'Cafeteria QR & WhatsApp Ordering System',
+    category: 'Food & Cafeteria',
+    timeline: '5 Weeks',
+    metric: 'Faster Order Processing',
+    desc: 'A QR-based and WhatsApp-supported ordering system that allows customers to browse a digital menu and place orders faster without manual order taking.',
+    challenge: 'Manual order taking was slow, error-prone, and inefficient during busy hours, leading to customer frustration and staff overload.',
+    strategy: 'Created a QR-triggered digital menu with WhatsApp ordering integration, allowing customers to order from their phone while the kitchen receives orders automatically.',
+    results: [
+      'Improved order accuracy and reduced errors',
+      'Faster customer experience during peak hours',
+      'Reduced staff workload on order taking'
+    ],
+    features: ['QR-Based Ordering', 'WhatsApp Automation', 'Digital Menu', 'Order Management', 'Kitchen Notifications'],
+    tech: ['React', 'Node.js', 'WhatsApp Business API', 'PostgreSQL'],
+  },
+  {
+    id: 'clinic-management',
+    title: 'Clinic Appointment & Management System',
+    category: 'Healthcare',
+    timeline: '9 Weeks',
+    metric: 'Centralized Clinic Operations',
+    desc: 'A complete clinic management system with appointment booking, patient records, CMS, CRM, and admin dashboard — all in one place.',
+    challenge: 'The clinic needed a centralized system to manage appointments, patient records, website content, and customer relationships without relying on manual processes.',
+    strategy: 'Built a clinic website with online appointment booking, patient management, content management, CRM, and a full admin dashboard for clinic staff.',
+    results: [
+      'Reduced manual appointment handling significantly',
+      'Professional digital workflow for clinic staff',
+      'Centralized patient records and CRM in one system'
+    ],
+    features: ['Appointment Booking', 'Patient Management', 'CMS System', 'CRM Dashboard', 'Admin Panel'],
+    tech: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
+  }
 ];

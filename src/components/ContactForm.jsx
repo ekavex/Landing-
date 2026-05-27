@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MessageSquare, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MessageSquare, Send, CheckCircle2, MessageCircle } from 'lucide-react';
 
-import { contactHeader, contactDetails, contactFormFields, contactSuccessMessage } from '../data/contactData';
+import { contactHeader, contactDetails, contactFormFields, contactSuccessMessage, whatHappensNext, whatsappData } from '../data/contactData';
 
 const iconMap = { Mail, Phone, MessageSquare };
 
@@ -12,6 +12,8 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    company: '',
     service: contactFormFields.services[0],
     budget: contactFormFields.budgets[0],
     timeline: contactFormFields.timelines[0],
@@ -25,45 +27,49 @@ const ContactForm = () => {
     setTimeout(() => setSubmitted(false), 5000);
   };
 
+  const whatsappUrl = `https://wa.me/${whatsappData.number}?text=${encodeURIComponent(whatsappData.message)}`;
+
   return (
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+      {/* Page Header */}
+      <div className="text-center max-w-2xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3"
+        >
+          {contactHeader.subtitle}
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="font-heading text-3xl md:text-5xl font-black tracking-tight text-navy leading-[1.1] mb-4"
+        >
+          {contactHeader.title}
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="font-sans text-navy/60 text-base leading-relaxed"
+        >
+          {contactHeader.description}
+        </motion.p>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        {/* Left Side Copy */}
-        <div className="lg:col-span-5 flex flex-col justify-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3"
-          >
-            {contactHeader.subtitle}
-          </motion.div>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-heading text-3xl md:text-5xl font-black tracking-tight text-navy leading-[1.1] mb-6"
-          >
-            {contactHeader.title}
-          </motion.h2>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="font-sans text-navy/70 text-base leading-relaxed mb-8"
-          >
-            {contactHeader.description}
-          </motion.p>
-
-          <div className="space-y-6">
+        {/* Left Side */}
+        <div className="lg:col-span-5 flex flex-col gap-8">
+          {/* Contact Details */}
+          <div className="space-y-4">
             {contactDetails.map((detail) => {
               const Icon = iconMap[detail.iconName];
               return (
-                <motion.div 
+                <motion.div
                   key={detail.id}
                   whileHover={{ x: 5 }}
                   className="flex items-center gap-4 p-4 rounded-2xl glass-panel bg-alabaster/30 max-w-sm"
@@ -86,17 +92,43 @@ const ContactForm = () => {
               );
             })}
           </div>
+
+          {/* WhatsApp CTA */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-heading text-sm font-bold px-6 py-4 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-green-500/20 max-w-sm"
+          >
+            <MessageCircle className="w-5 h-5" />
+            <span>{whatsappData.label}</span>
+          </a>
+
+          {/* What Happens Next */}
+          <div className="glass-panel rounded-3xl p-6 bg-alabaster/40 border border-navy/8 max-w-sm">
+            <h3 className="font-heading text-sm font-black text-navy mb-5">What happens next?</h3>
+            <ul className="space-y-4">
+              {whatHappensNext.map((item) => (
+                <li key={item.step} className="flex items-start gap-3">
+                  <span className="font-mono text-[10px] text-coral font-bold bg-coral/10 px-2 py-1 rounded-full shrink-0">
+                    {item.step}
+                  </span>
+                  <span className="font-sans text-sm text-navy/70 leading-relaxed">{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Right Side Form Card */}
-        <motion.div 
+        {/* Right Side Form */}
+        <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="lg:col-span-7 glass-panel-heavy rounded-[2.5rem] p-8 md:p-10 border-navy/10 shadow-2xl relative"
         >
           {submitted ? (
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               className="flex flex-col items-center justify-center py-20 text-center"
@@ -108,8 +140,8 @@ const ContactForm = () => {
               </p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-1.5">
                   <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Your Name</label>
                   <input
@@ -123,11 +155,11 @@ const ContactForm = () => {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Your Email</label>
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Email Address</label>
                   <input
                     type="email"
                     required
-                    placeholder="Enter your email address"
+                    placeholder="Enter your email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-5 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none transition-all focus:border-coral focus:bg-alabaster/80 focus:ring-1 focus:ring-coral"
@@ -135,9 +167,33 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Required Service</label>
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Phone / WhatsApp</label>
+                  <input
+                    type="tel"
+                    placeholder="+91 98765 43210"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-5 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none transition-all focus:border-coral focus:bg-alabaster/80 focus:ring-1 focus:ring-coral"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Company Name</label>
+                  <input
+                    type="text"
+                    placeholder="Your company (optional)"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                    className="w-full px-5 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none transition-all focus:border-coral focus:bg-alabaster/80 focus:ring-1 focus:ring-coral"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="flex flex-col gap-1.5">
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Service Needed</label>
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
@@ -150,7 +206,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Target Budget</label>
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Budget Range</label>
                   <select
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
@@ -163,7 +219,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Timeline Range</label>
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Timeline</label>
                   <select
                     value={formData.timeline}
                     onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
@@ -177,26 +233,25 @@ const ContactForm = () => {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Project Brief & Details</label>
+                <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Project Brief</label>
                 <textarea
                   required
                   rows={4}
-                  placeholder="Outline your systems goals, integrations, and expectations..."
+                  placeholder="Describe your project, goals, and any specific requirements..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-5 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none transition-all focus:border-coral focus:bg-alabaster/80 focus:ring-1 focus:ring-coral"
+                  className="w-full px-5 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none transition-all focus:border-coral focus:bg-alabaster/80 focus:ring-1 focus:ring-coral resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full group relative overflow-hidden flex items-center justify-center gap-2 bg-navy text-alabaster font-heading text-xs font-bold uppercase tracking-wider py-4 rounded-2xl transition-transform duration-300 hover:scale-[1.02]"
+                className="w-full group relative overflow-hidden flex items-center justify-center gap-2 bg-coral text-alabaster font-heading text-sm font-bold py-4 rounded-2xl transition-all duration-300 hover:bg-coral/90 hover:-translate-y-0.5 shadow-lg shadow-coral/20"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  <span>Send Project Transmission</span>
-                  <Send className="w-3.5 h-3.5 text-coral" />
+                  <span>Send Project Inquiry</span>
+                  <Send className="w-4 h-4" />
                 </span>
-                <div className="absolute inset-0 bg-coral translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
               </button>
             </form>
           )}

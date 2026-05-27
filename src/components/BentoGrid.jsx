@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import {
   Code, Cpu, Brain, Layers, Smartphone, Shield,
-  ArrowUpRight, Award, Activity
+  ArrowUpRight, Award, Activity, TrendingUp
 } from 'lucide-react';
 
 // ── SplitReveal for section headings ────────────────────────────────
@@ -38,7 +38,7 @@ const SplitReveal = ({ children, className = '', delay = 0 }) => {
 
 import { bentoGridData, bentoGridHeader } from '../data/homeData';
 
-const iconMap = { Code, Cpu, Brain, Layers, Smartphone, Shield, Award };
+const iconMap = { Code, Cpu, Brain, Layers, Smartphone, Shield, Award, TrendingUp };
 
 // ── Individual parallax-floating card wrapper ────────────────────────
 const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
@@ -79,10 +79,10 @@ const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
           <div className="my-6">
             <div className="font-heading text-5xl font-black text-coral leading-none mb-2">25+</div>
             <div className="font-heading text-lg font-bold tracking-tight text-alabaster">
-              SaaS & AI Systems Delivered
+              Projects Delivered
             </div>
             <p className="font-sans text-xs text-alabaster/60 mt-2 leading-relaxed">
-              Successful product handovers, 100% client transparency, weekly staging rollouts, and stellar agile engineering quality.
+              Websites, AI automations, CRM platforms, and digital systems built for businesses across multiple industries.
             </p>
           </div>
 

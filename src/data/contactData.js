@@ -1,38 +1,47 @@
 export const contactHeader = {
-  subtitle: 'Initiate Conversation',
-  title: "Let's Engineer Something Remarkable",
-  description: 'Whether you want to automate complex business pipelines with custom AI agents, scale your SaaS codebase, or launch a gorgeous digital presence, our developers are ready.'
+  subtitle: 'Get In Touch',
+  title: 'Tell Us About Your Project',
+  description: 'Share your idea, workflow, or business challenge. Ekavex will help you plan the right website, automation, AI system, CRM, or digital growth solution.'
 };
 
 export const contactDetails = [
   {
     id: 'email',
-    label: 'Electronic Mail',
-    value: 'hello@Ekavex.com',
+    label: 'Email',
+    value: 'hello@ekavex.com',
     iconName: 'Mail'
   },
   {
     id: 'phone',
-    label: 'Voice Line',
+    label: 'Phone',
     value: '+91 98765 43210',
     iconName: 'Phone'
   },
   {
     id: 'availability',
-    label: 'Availability',
+    label: 'Status',
     value: 'Currently Accepting Projects',
     iconName: 'MessageSquare',
     pulse: true
   }
 ];
 
+export const whatsappData = {
+  number: '+919876543210',
+  message: 'Hi Ekavex, I want to discuss a project.',
+  label: 'Chat on WhatsApp'
+};
+
 export const contactFormFields = {
   services: [
-    'Web Development',
+    'Website Development',
+    'Web App / SaaS',
     'AI Automation',
-    'UI/UX Design',
-    'Mobile Applications',
-    'Cybersecurity'
+    'CMS / CRM System',
+    'AI/ML Solution',
+    'Digital Marketing',
+    'Mobile App',
+    'Not Sure Yet'
   ],
   budgets: [
     '₹25,000 - ₹50,000',
@@ -47,7 +56,14 @@ export const contactFormFields = {
   ]
 };
 
+export const whatHappensNext = [
+  { step: '01', text: 'We review your project brief.' },
+  { step: '02', text: 'We understand your business workflow.' },
+  { step: '03', text: 'We suggest the right technical roadmap.' },
+  { step: '04', text: 'We share a clear proposal and timeline.' }
+];
+
 export const contactSuccessMessage = {
-  title: 'Transmission Received',
-  description: 'Thank you. Your project brief has bypassed filters and reached our core engineering cell. We will follow up in 24 hours.'
+  title: 'Inquiry Received',
+  description: 'Thank you. We have received your project brief and will follow up within 24 hours to discuss next steps.'
 };

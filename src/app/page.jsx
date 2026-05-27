@@ -6,8 +6,11 @@ import { useRouter } from 'next/navigation';
 import { CinematicHero } from '../components/ui/cinematic-landing-hero';
 import Hero from '../components/Hero';
 import BentoGrid from '../components/BentoGrid';
+import IndustriesSection from '../components/IndustriesSection';
+import BeforeAfterSection from '../components/BeforeAfterSection';
 import Timeline from '../components/Timeline';
 import FAQ from '../components/FAQ';
+import CTASection from '../components/CTASection';
 
 export default function HomePage() {
   const router = useRouter();
@@ -39,14 +42,12 @@ export default function HomePage() {
         <CinematicHero />
       </div>
 
-      {/* Core Services Bento Grid (scroll-pinned parallax) */}
       <BentoGrid onNavigate={handleNavigate} />
-
-      {/* Operational Stepper Timeline */}
+      <IndustriesSection />
+      <BeforeAfterSection />
       <Timeline />
-
-      {/* FAQ */}
       <FAQ />
+      <CTASection />
     </motion.div>
   );
 }

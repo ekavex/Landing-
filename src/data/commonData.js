@@ -1,11 +1,11 @@
 export const footerData = {
   brandName: "EKAVEX",
   marqueeItems: [
-    "Premium Web Development",
-    "AI Automation Systems",
-    "Editorial UI/UX Design",
-    "Enterprise Cybersecurity",
-    "Mobile Application Suite"
+    "Custom Website Development",
+    "AI Automation Workflows",
+    "CMS & CRM Systems",
+    "Mobile App Development",
+    "Digital Marketing & Ads"
   ],
   heading: "Let's Build Together",
   primaryLinks: [
@@ -32,7 +32,7 @@ export const navbarData = {
     { id: 'blog', label: 'Blog' },
     { id: 'contact', label: 'Contact' },
   ],
-  ctaButton: "Start a Project"
+  ctaButton: "Book a Free Call"
 };
 
 export const legacyFooterData = {
