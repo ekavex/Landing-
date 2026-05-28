@@ -41,7 +41,7 @@ const Blog = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass-panel rounded-[2.5rem] p-8 md:p-12 mb-16 bento-card-hover grid grid-cols-1 lg:grid-cols-12 gap-8 items-center cursor-pointer group"
+          className="glass-panel bg-white/70 rounded-[2.5rem] p-8 md:p-12 mb-16 bento-card-hover grid grid-cols-1 lg:grid-cols-12 gap-8 items-center cursor-pointer group"
         >
           <div className="lg:col-span-7 flex flex-col justify-center">
             <div className="flex items-center gap-4 mb-4">
@@ -62,11 +62,11 @@ const Blog = () => {
             <div className="flex flex-wrap items-center gap-6 font-mono text-[10px] text-navy/50 border-t border-navy/5 pt-6">
               <div className="flex items-center gap-1.5">
                 <User className="w-3.5 h-3.5" />
-                <span>By {featured.author}</span>
+                <span className="font-bold text-navy">By {featured.author}</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Calendar className="w-3.5 h-3.5" />
-                <span>{featured.date}</span>
+                <span className="font-bold text-navy">{featured.date}</span>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ const Blog = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             key={post.id}
-            className="glass-panel rounded-4xl p-8 bento-card-hover flex flex-col justify-between min-h-85 cursor-pointer group"
+            className="glass-panel bg-[#fffdf6] rounded-4xl p-8 bento-card-hover flex flex-col justify-between min-h-85 cursor-pointer group"
           >
             <div>
               <div className="flex items-center justify-between gap-4 mb-6">
@@ -112,8 +112,8 @@ const Blog = () => {
             </div>
 
             <div className="flex items-center justify-between border-t border-navy/5 pt-6 mt-6">
-              <span className="font-mono text-[10px] text-navy/40">By {post.author}</span>
-              <ArrowRight className="w-4 h-4 text-navy/40 group-hover:text-coral group-hover:translate-x-1 transition-all" />
+              <span className="font-mono text-[10px] font-bold text-navy">By {post.author}</span>
+              <ArrowRight className="w-4 h-4 text-navy group-hover:text-coral group-hover:translate-x-1 transition-all" />
             </div>
           </motion.div>
         ))}
@@ -124,7 +124,7 @@ const Blog = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="glass-panel-heavy rounded-[2.5rem] p-8 md:p-12 text-center max-w-3xl mx-auto border-navy/10 relative overflow-hidden bg-alabaster shadow-2xl"
+        className="glass-panel-heavy rounded-[2.5rem] p-8 md:p-12 text-center max-w-3xl mx-auto border-navy/20 relative overflow-hidden bg-alabaster shadow-2xl"
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-coral/5 rounded-full blur-3xl pointer-events-none" />
         

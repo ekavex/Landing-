@@ -81,12 +81,12 @@ export default function Hero({ onNavigate }) {
   return (
     <section
       onMouseMove={handleMouseMove}
-      className="relative lg:min-h-[calc(100vh-12.5rem)] lg:h-auto min-h-[100vh] w-full overflow-x-hidden px-6 md:px-16 pt-3 pb-12 flex flex-col justify-between items-center select-none z-20"
+      className="relative lg:min-h-[calc(100vh-12.5rem)] lg:h-auto min-h-screen w-full overflow-x-hidden px-6 md:px-16 pt-3 pb-12 flex flex-col justify-between items-center select-none z-20"
       style={{ perspective: '1200px' }}
     >
       {/* Decorative ambient spots of light */}
       <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-coral/5 rounded-full blur-[110px] pointer-events-none z-10" />
-      <div className="absolute bottom-1/3 right-1/10 w-[450px] h-[450px] bg-coral/5 rounded-full blur-[140px] pointer-events-none z-10" />
+      <div className="absolute bottom-1/3 right-1/10 w-112.5 h-112.5 bg-coral/5 rounded-full blur-[140px] pointer-events-none z-10" />
 
       {/* ── 3D PARALLAX ENVIRONMENT: FLOATING ELEMENTS (Desktop Only) ── */}
       {/* Positioned strictly in the upper & middle regions to prevent overlaps with value props at the bottom */}
@@ -184,14 +184,14 @@ export default function Hero({ onNavigate }) {
             transition={{ delay: 0.2 }}
             className="inline-flex items-center justify-center space-x-2 bg-coral/5 border border-coral/15 px-4.5 py-1.5 rounded-full w-fit mx-auto"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-coral animate-pulse" />
+            {/* <span className="w-1.5 h-1.5 rounded-full bg-coral animate-pulse" /> */}
             <span className="font-mono text-[9px] text-coral uppercase tracking-[0.18em] font-bold">
               {heroData.status}
             </span>
           </motion.div>
 
           {/* Headline — 3D character-split reveal, compact size on desktop to fit screen height */}
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[4.0rem] xl:text-[4.4rem] font-black text-navy leading-[1.0] lg:leading-[0.93] tracking-[-0.04em] max-w-4xl">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[4.0rem] xl:text-[4.4rem] font-black text-navy leading-none lg:leading-[0.93] tracking-[-0.04em] max-w-4xl">
             <SplitReveal delay={0.3} className={heroData.headline[0].highlight ? "text-coral" : ""}>
               {heroData.headline[0].text}
             </SplitReveal>
@@ -233,7 +233,7 @@ export default function Hero({ onNavigate }) {
 
             <button
               onClick={() => onNavigate('services')}
-              className="bg-transparent border border-navy/10 hover:border-coral/30 hover:bg-alabaster/60 text-navy px-8 py-3.5 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300 w-full sm:w-auto cursor-pointer"
+              className="bg-white/80 border border-navy/20 hover:border-coral/80 hover:bg-white/60 text-navy px-8 py-3.5 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300 w-full sm:w-auto cursor-pointer"
             >
               {heroData.secondaryCta}
             </button>
@@ -312,7 +312,7 @@ export default function Hero({ onNavigate }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.45 + i * 0.1 }}
             key={i}
-            className="glass-panel rounded-2xl p-5 md:p-6 bg-alabaster/40 bento-card-hover text-left flex flex-col justify-between"
+            className="glass-panel rounded-2xl p-5 md:p-6 bg-white/80 bento-card-hover text-left flex flex-col justify-between"
           >
             <h4 className="font-heading text-sm md:text-base font-black text-navy mb-2 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-coral shrink-0" />

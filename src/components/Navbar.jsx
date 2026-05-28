@@ -31,7 +31,7 @@ const Navbar = ({ activeView, onViewChange }) => {
         <div 
           className={`mx-auto max-w-7xl rounded-full transition-all duration-500 flex items-center justify-between px-6 py-2.5 md:py-3 ${
             scrolled 
-              ? 'glass-panel-heavy shadow-[0_8px_30px_rgb(9,18,44,0.03)] border-navy/10' 
+              ? 'glass-panel-heavy shadow-[0_8px_30px_rgb(9,18,44,0.03)] border-navy/10 bg-alabaster/80 backdrop-blur-sm' 
               : 'bg-transparent border-transparent'
           }`}
         >
