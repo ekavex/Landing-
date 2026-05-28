@@ -262,7 +262,7 @@ export function CinematicHero({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=5000",
+          end: "+=2200",
           pin: true,
           scrub: 1,
           anticipatePin: 1,
@@ -284,18 +284,7 @@ export function CinematicHero({
           { y: 60, autoAlpha: 0, scale: 0.95 },
           { y: 0, autoAlpha: 1, scale: 1, ease: "expo.out", duration: 2 }, "-=0.8"
         )
-        .to({}, { duration: 3.0 })
-        .to(".cta-wrapper", {
-          scale: 0.95, y: -40, autoAlpha: 0, ease: "power3.in", duration: 1.2,
-        })
-        // Responsive card pullback sizing (Restoring original roundness)
-        .to(".main-card-bg", {
-          scale: 1,
-          borderRadius: isMobile ? "32px" : "40px",
-          ease: "expo.inOut",
-          duration: 1.8
-        }, "pullback")
-        .to([".main-card-bg", ".main-card-content"], { y: -window.innerHeight - 300, ease: "power3.in", duration: 1.5 });
+        .to({}, { duration: 1.0 });
 
     }, containerRef);
 

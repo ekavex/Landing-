@@ -94,7 +94,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* visual box side - Styled as a premium dark card */}
-                <div className={`lg:col-span-5 flex ${
+                <div className={`lg:col-span-5 flex lg:self-center w-full ${
                   isEven ? 'order-2' : 'order-2 lg:order-1'
                 }`}>
                   <div className="w-full bg-navy border border-white/10 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between overflow-hidden relative shadow-xl hover:shadow-2xl hover:border-coral/30 hover:scale-[1.01] active:scale-[0.99] transition-all duration-500 group min-h-[20rem]">
