@@ -58,7 +58,7 @@ export default function ServicesPage() {
                 className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch"
               >
                 {/* Text side - Styled as a premium off-white glass card */}
-                <div className={`lg:col-span-7 flex flex-col justify-between bg-navy/3 border border-navy/5 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 overflow-hidden relative glass-panel-heavy hover:border-coral/20 hover:scale-[1.01] active:scale-[0.99] transition-all duration-500 ${
+                <div className={`lg:col-span-7 flex flex-col justify-between bg-navy/3 border border-navy/5 rounded-4xl sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 overflow-hidden relative glass-panel-heavy hover:border-coral/20 hover:scale-[1.01] active:scale-[0.99] transition-all duration-500 ${
                   isEven ? 'order-1' : 'order-1 lg:order-2'
                 }`}>
                   {/* Warm beige coral gradient overlay */}
@@ -97,9 +97,9 @@ export default function ServicesPage() {
                 <div className={`lg:col-span-5 flex ${
                   isEven ? 'order-2' : 'order-2 lg:order-1'
                 }`}>
-                  <div className="w-full bg-navy border border-white/10 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between overflow-hidden relative shadow-xl hover:shadow-2xl hover:border-coral/30 hover:scale-[1.01] active:scale-[0.99] transition-all duration-500 group min-h-[20rem]">
+                  <div className="w-full bg-navy border border-white/10 rounded-4xl sm:rounded-[2.5rem] p-6 sm:p-8 flex flex-col justify-between overflow-hidden relative shadow-xl hover:shadow-2xl hover:border-coral/30 hover:scale-[1.01] active:scale-[0.99] transition-all duration-500 group min-h-80">
                     {/* Deep-tech ambient lighting */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-coral/10 via-transparent to-white/5 pointer-events-none" />
+                    <div className="absolute inset-0 bg-linear-to-tr from-coral/10 via-transparent to-white/5 pointer-events-none" />
                     <div className="absolute -right-16 -top-16 w-36 h-36 bg-coral/5 rounded-full blur-3xl group-hover:bg-coral/10 transition-colors duration-500" />
                     
                     <div className="relative z-10 flex items-center justify-between">

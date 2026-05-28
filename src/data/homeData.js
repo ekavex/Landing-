@@ -47,7 +47,7 @@ export const bentoGridData = [
     desc: 'Fast, responsive, SEO-optimized websites and web apps built with modern technology. From landing pages to full business platforms.',
     tags: ['Next.js', 'React.js', 'Node.js', 'PostgreSQL'],
     cta: 'Learn More',
-    bg: 'bg-alabaster/40',
+    bg: 'bg-alabaster',
     speed: 0.2,
   },
   {
@@ -59,7 +59,7 @@ export const bentoGridData = [
     desc: 'Automate repetitive tasks, connect your business tools, and save hours of manual work with custom AI-powered workflows.',
     tags: ['n8n', 'Make.com', 'Zapier'],
     cta: 'Learn More',
-    bg: 'bg-alabaster/40',
+    bg: 'bg-alabaster',
     speed: -0.1,
   },
   {
@@ -71,7 +71,7 @@ export const bentoGridData = [
     desc: 'Prediction models, NLP tools, AI dashboards, and intelligent data systems that help your business make smarter decisions.',
     tags: [],
     cta: 'Learn More',
-    bg: 'bg-alabaster/40',
+    bg: 'bg-alabaster',
     speed: 0.4,
   },
   {
@@ -95,7 +95,7 @@ export const bentoGridData = [
     desc: 'Manage leads, users, appointments, content, and internal workflows with a centralized custom-built system.',
     tags: [],
     cta: 'Learn More',
-    bg: 'bg-alabaster/40',
+    bg: 'bg-alabaster',
     speed: 0.25,
   },
   {
@@ -107,7 +107,7 @@ export const bentoGridData = [
     desc: 'High-performance iOS and Android mobile apps built with React Native and Expo for real business use cases.',
     tags: [],
     cta: 'Learn More',
-    bg: 'bg-alabaster/40',
+    bg: 'bg-alabaster',
     speed: -0.2,
   },
   {
@@ -119,7 +119,7 @@ export const bentoGridData = [
     desc: 'Google Ads, Meta Ads, Instagram campaigns, SEO, and growth strategy to bring more customers to your business and improve conversions.',
     tags: ['Google Ads', 'Meta Ads', 'SEO', 'Lead Generation'],
     cta: 'Learn More',
-    bg: 'bg-alabaster/40',
+    bg: 'bg-alabaster',
     speed: 0.3,
   },
 ];
@@ -250,22 +250,22 @@ export const faqHeader = {
 };
 
 export const faqData = [
-  {
-    q: "How long does a project take?",
-    a: "Project timelines vary based on features and complexity. Most websites take 2–4 weeks, web apps 4–8 weeks, and automation or AI systems 4–12 weeks."
-  },
-  {
-    q: "Do you provide support after launch?",
-    a: "Yes. Every project includes one month of dedicated post-launch support including bug fixes, server tuning, and optimization."
-  },
+  // {
+  //   q: "How long does a project take?",
+  //   a: "Project timelines vary based on features and complexity. Most websites take 2-4 weeks, web apps 4-8 weeks, and automation or AI systems 4-12 weeks."
+  // },
+  // {
+  //   q: "Do you provide support after launch?",
+  //   a: "Yes. Every project includes one month of dedicated post-launch support including bug fixes, server tuning, and optimization."
+  // },
   {
     q: "Can AI integrate into existing systems?",
     a: "Absolutely. We can integrate AI automations and workflows into your existing websites, CRMs, databases, and applications."
   },
-  {
-    q: "What technologies do you use?",
-    a: "We use React, Next.js, Node.js, Python, OpenAI APIs, n8n, Make.com, React Native, and modern cloud and database technologies."
-  },
+  // {
+  //   q: "What technologies do you use?",
+  //   a: "We use React, Next.js, Node.js, Python, OpenAI APIs, n8n, Make.com, React Native, and modern cloud and database technologies."
+  // },
   {
     q: "Do you build CRM or CMS systems?",
     a: "Yes. We build custom CRM and CMS platforms tailored to your specific workflows, whether it is managing leads, appointments, content, or customer records."
@@ -278,8 +278,8 @@ export const faqData = [
     q: "Can you redesign an existing website?",
     a: "Yes. We modernize outdated websites with improved design, better performance, mobile responsiveness, and SEO optimization."
   },
-  {
-    q: "Do you build SaaS platforms?",
-    a: "Yes. We specialize in building SaaS platforms, admin dashboards, user portals, and scalable business applications."
-  }
+  // {
+  //   q: "Do you build SaaS platforms?",
+  //   a: "Yes. We specialize in building SaaS platforms, admin dashboards, user portals, and scalable business applications."
+  // }
 ];

@@ -27,7 +27,7 @@ const FAQ = () => {
           return (
             <div 
               key={idx} 
-              className={`rounded-3xl border transition-all duration-300 ${
+              className={`glass-panel rounded-3xl border transition-all duration-300 ${
                 isOpen 
                   ? 'border-coral/25 bg-alabaster/60 shadow-lg shadow-navy/2' 
                   : 'border-navy/5 bg-alabaster/20 hover:border-navy/15'
