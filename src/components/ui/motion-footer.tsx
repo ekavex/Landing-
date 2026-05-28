@@ -109,14 +109,22 @@ const STYLES = `
 /* Giant Background Text Masking */
 .footer-giant-bg-text {
   font-size: 26vw;
-  line-height: 0.75;
+  line-height: 0.9;
   font-weight: 900;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
   color: transparent;
   -webkit-text-stroke: 1px color-mix(in oklch, var(--foreground) 5%, transparent);
   background: linear-gradient(180deg, color-mix(in oklch, var(--foreground) 10%, transparent) 0%, transparent 60%);
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+@media (min-width: 1024px) {
+  .footer-giant-bg-text {
+    font-size: 26vw;
+    line-height: 0.75;
+    letter-spacing: -0.05em;
+  }
 }
 
 /* Metallic Text Glow */
@@ -125,11 +133,8 @@ const STYLES = `
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding:2vw;
   filter: drop-shadow(0px 0px 20px color-mix(in oklch, var(--foreground) 15%, transparent));
-}
-
-.curtain-wrapper {
-  clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
 }
 `;
 
@@ -248,11 +253,9 @@ export function CinematicFooter() {
     if (typeof window === "undefined") return;
     if (!wrapperRef.current) return;
 
-    // React strict mode compatible responsive media query context
-    const mm = gsap.matchMedia(wrapperRef);
-
-    // Desktop: Parallax Scrub animations
-    mm.add("(min-width: 1024px)", () => {
+    // React strict mode compatible GSAP context cleanup
+    const ctx = gsap.context(() => {
+      // Background Parallax
       gsap.fromTo(
         giantTextRef.current,
         { y: "10vh", scale: 0.8, opacity: 0 },
@@ -270,6 +273,7 @@ export function CinematicFooter() {
         }
       );
 
+      // Staggered Content Reveal
       gsap.fromTo(
         [headingRef.current, linksRef.current],
         { y: 50, opacity: 0 },
@@ -286,46 +290,9 @@ export function CinematicFooter() {
           },
         }
       );
-    });
+    }, wrapperRef);
 
-    // Mobile: Viewport-triggered clean animation triggers (No scrubbing needed)
-    mm.add("(max-width: 1023px)", () => {
-      gsap.fromTo(
-        giantTextRef.current,
-        { y: 40, scale: 0.9, opacity: 0 },
-        {
-          y: 0,
-          scale: 1,
-          opacity: 1,
-          ease: "power2.out",
-          duration: 1.2,
-          scrollTrigger: {
-            trigger: wrapperRef.current,
-            start: "top 90%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        [headingRef.current, linksRef.current],
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-          duration: 1,
-          scrollTrigger: {
-            trigger: wrapperRef.current,
-            start: "top 85%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-
-    return () => mm.revert();
+    return () => ctx.revert();
   }, []);
 
   const scrollToTop = () => {
@@ -335,19 +302,20 @@ export function CinematicFooter() {
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: STYLES }} />
-      
+
       {/* 
         The "Curtain Reveal" Wrapper:
-        It sits in standard flow. Because it has clip-path (applied via curtain-wrapper on lg), 
-        its contents are ONLY visible within its bounding box.
+        It sits in standard flow. Because it has clip-path, its contents
+        are ONLY visible within its bounding box. 
       */}
       <div
         ref={wrapperRef}
-        className="relative min-h-[100dvh] w-full curtain-wrapper overflow-x-hidden"
+        className="relative h-screen w-full"
+        style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
-        {/* The actual footer stays fixed underneath on all viewports */}
-        <footer className="fixed bottom-0 left-0 flex h-[100dvh] w-full flex-col justify-between overflow-x-hidden bg-background text-foreground cinematic-footer-wrapper py-8 lg:py-0 z-10">
-          
+        {/* The actual footer stays fixed to the viewport underneath everything */}
+        <footer className="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden bg-background text-foreground cinematic-footer-wrapper">
+
           {/* Ambient Light & Grid Background */}
           <div className="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] pointer-events-none z-0" />
           <div className="footer-bg-grid absolute inset-0 z-0 pointer-events-none" />
@@ -361,7 +329,7 @@ export function CinematicFooter() {
           </div>
 
           {/* 1. Diagonal Sleek Marquee (Top of footer) */}
-          <div className="absolute top-24 lg:top-16 left-0 w-full overflow-hidden border-y border-border/50 bg-background/60 backdrop-blur-md py-5 lg:py-4 z-10 -rotate-2 scale-110 shadow-2xl">
+          <div className="absolute top-12 left-0 w-full overflow-hidden border-y border-border/50 bg-background/60 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl">
             <div className="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase">
               <MarqueeItem />
               <MarqueeItem />
@@ -369,27 +337,27 @@ export function CinematicFooter() {
           </div>
 
           {/* 2. Main Center Content */}
-          <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pt-40 pb-12 lg:py-0 w-full max-w-5xl mx-auto">
+          <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 mt-24 sm:mt-20 pt-6 sm:pt-0 w-full max-w-5xl mx-auto">
             <h2
               ref={headingRef}
-              className="text-4xl sm:text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-6 sm:mb-12 text-center"
+              className="text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-6 sm:mb-12 text-center"
             >
               {footerData.heading}
             </h2>
 
             {/* Interactive Magnetic Pills Layout */}
-            <div ref={linksRef} className="flex flex-col items-center gap-6 w-full">
+            <div ref={linksRef} className="flex flex-col items-center gap-4 md:gap-6 w-full">
               {/* Primary CTA Links */}
-              <div className="flex flex-wrap justify-center gap-4 w-full">
-                <MagneticButton as="a" href={footerData.primaryLinks[0].href} className="footer-glass-pill px-6 py-4 sm:px-10 sm:py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group whitespace-nowrap cursor-pointer">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-muted-foreground group-hover:text-foreground transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <div className="flex flex-wrap justify-center gap-2.5 sm:gap-4 w-full">
+                <MagneticButton as="a" href={footerData.primaryLinks[0].href} className="footer-glass-pill px-6 py-3.5 sm:px-10 sm:py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group">
+                  <svg className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
                   {footerData.primaryLinks[0].label}
                 </MagneticButton>
-                
-                <MagneticButton as="a" href={footerData.primaryLinks[1].href} className="footer-glass-pill px-6 py-4 sm:px-10 sm:py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group whitespace-nowrap cursor-pointer">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-muted-foreground group-hover:text-foreground transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+
+                <MagneticButton as="a" href={footerData.primaryLinks[1].href} className="footer-glass-pill px-6 py-3.5 sm:px-10 sm:py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group">
+                  <svg className="w-6 h-6 text-muted-foreground group-hover:text-foreground transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="16 18 22 12 16 6" />
                     <polyline points="8 6 2 12 8 18" />
                   </svg>
@@ -398,9 +366,9 @@ export function CinematicFooter() {
               </div>
 
               {/* Secondary Text Links */}
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 w-full mt-2">
+              <div className="flex flex-wrap justify-center gap-2 md:gap-4 w-full mt-1 sm:mt-2">
                 {footerData.secondaryLinks.map((link, idx) => (
-                  <MagneticButton key={idx} as="a" href={link.href} className="footer-glass-pill px-4 py-2.5 sm:px-6 sm:py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground whitespace-nowrap cursor-pointer">
+                  <MagneticButton key={idx} as="a" href={link.href} className="footer-glass-pill px-4.5 py-2 sm:px-6 sm:py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
                     {link.label}
                   </MagneticButton>
                 ))}
@@ -409,15 +377,15 @@ export function CinematicFooter() {
           </div>
 
           {/* 3. Bottom Bar / Credits */}
-          <div className="relative z-20 w-full pb-16 lg:pb-8 px-6 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 mt-auto">
-            
+          <div className="relative z-20 w-full pb-4 sm:pb-8 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-6">
+
             {/* Copyright */}
-            <div className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 lg:order-1 text-center lg:text-left">
+            <div className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1">
               {footerData.copyright}
             </div>
 
             {/* "Made with Love" Badge */}
-            <div className="footer-glass-pill px-4 py-2 sm:px-6 sm:py-3 rounded-full flex items-center gap-2 order-1 lg:order-2 cursor-default border-border/50 whitespace-nowrap">
+            <div className="footer-glass-pill px-4 py-2 sm:px-6 sm:py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-border/50">
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">{footerData.craftedWith}</span>
               <span className="animate-footer-heartbeat text-sm md:text-base text-destructive">❤</span>
               <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">{footerData.by}</span>
@@ -428,7 +396,7 @@ export function CinematicFooter() {
             <MagneticButton
               as="button"
               onClick={scrollToTop}
-              className="w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center text-muted-foreground hover:text-foreground group order-3 cursor-pointer"
+              className="w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center text-muted-foreground hover:text-foreground group order-3"
             >
               <svg className="w-5 h-5 transform group-hover:-translate-y-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
