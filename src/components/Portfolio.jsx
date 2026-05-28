@@ -16,36 +16,58 @@ const Portfolio = () => {
 
   return (
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-        <div>
-          <div className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3">
-            {portfolioHeader.subtitle}
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+        <div className="w-full lg:w-auto">
+          <div className="flex items-center justify-between gap-4">
+            <div className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3">
+              {portfolioHeader.subtitle}
+            </div>
+            {/* Elegant Swipe indicator for mobile */}
+            <div className="lg:hidden flex items-center gap-1 font-mono text-[9px] uppercase tracking-widest text-navy/40 mb-3 select-none">
+              <span>Swipe to filter</span>
+              <motion.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+                className="inline-block font-bold text-coral"
+              >
+                →
+              </motion.span>
+            </div>
           </div>
-          <h2 className="font-heading text-3xl md:text-5xl font-black tracking-tight text-navy leading-[1.1]">
+          <h2 className="font-heading text-3xl md:text-5xl font-black tracking-tight text-navy leading-[1.1] text-balance">
             {portfolioHeader.title}
           </h2>
         </div>
 
-        {/* Categories Tab Controller */}
-        <div className="flex flex-wrap gap-1.5 bg-navy/5 p-1 rounded-full border border-navy/5 max-w-max self-start md:self-end">
-          {portfolioFilters.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`relative px-4 py-2 rounded-full font-heading text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 ${
-                activeFilter === filter ? 'text-navy' : 'text-navy/50 hover:text-navy'
-              }`}
-            >
-              {activeFilter === filter && (
-                <motion.div
-                  layoutId="portfolioActiveTab"
-                  className="absolute inset-0 bg-alabaster rounded-full shadow-sm border border-navy/5 -z-10"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                />
-              )}
-              {filter}
-            </button>
-          ))}
+        <div className="relative w-full lg:w-auto -mx-6 px-6 lg:mx-0 lg:px-0">
+          {/* Left fading edge for visual scroll cues on mobile */}
+          <div className="absolute left-6 top-0 bottom-0 w-8 bg-gradient-to-r from-[#FFFDF6] to-transparent z-10 pointer-events-none lg:hidden" />
+          {/* Right fading edge for visual scroll cues on mobile */}
+          <div className="absolute right-6 top-0 bottom-0 w-8 bg-gradient-to-l from-[#FFFDF6] to-transparent z-10 pointer-events-none lg:hidden" />
+
+          <div className="w-full overflow-x-auto scrollbar-none">
+            {/* Categories Tab Controller */}
+            <div className="flex gap-1.5 bg-navy/5 p-1 rounded-full border border-navy/5 min-w-max">
+              {portfolioFilters.map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`relative px-4 py-2 rounded-full font-heading text-[10px] font-bold uppercase tracking-wider whitespace-nowrap cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 ${
+                    activeFilter === filter ? 'text-navy font-black' : 'text-navy/50 hover:text-navy'
+                  }`}
+                >
+                  {activeFilter === filter && (
+                    <motion.div
+                      layoutId="portfolioActiveTab"
+                      className="absolute inset-0 bg-alabaster rounded-full shadow-sm border border-navy/5 -z-10"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  {filter}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -64,37 +86,64 @@ const Portfolio = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="glass-panel rounded-4xl p-8 bento-card-hover cursor-pointer group flex flex-col justify-between h-90 relative overflow-hidden"
+              className="rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 bento-card-hover cursor-pointer group flex flex-col justify-between min-h-[26rem] sm:h-96 relative overflow-hidden shadow-md border border-navy/10 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-coral/5 rounded-full blur-3xl pointer-events-none transition-opacity group-hover:opacity-100" />
-              
-              <div>
+              {/* Background Image with Overlay styles */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src={project.imageUrl} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/45 transition-colors duration-500" />
+                {/* Visual Depth Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20 pointer-events-none" />
+              </div>
+
+              {/* Foreground Content */}
+              <div className="relative z-10">
                 <div className="flex items-center justify-between gap-4 mb-6">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold bg-coral/10 px-3 py-1 rounded-full">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold bg-coral/20 border border-coral/30 px-3 py-1 rounded-full">
                     {project.category}
                   </span>
-                  <div className="flex items-center gap-1 text-navy/40 font-mono text-[10px]">
+                  <div className="flex items-center gap-1 text-alabaster/60 font-mono text-[10px]">
                     <Calendar className="w-3.5 h-3.5" />
                     <span>{project.timeline}</span>
                   </div>
                 </div>
 
-                <h3 className="font-heading text-2xl font-black text-navy group-hover:text-coral transition-colors mb-3 leading-tight">
+                <h3 className="font-heading text-2xl md:text-3xl font-black text-alabaster group-hover:text-coral transition-colors mb-3 leading-tight text-balance">
                   {project.title}
                 </h3>
-                <p className="font-sans text-sm text-navy/60 leading-relaxed line-clamp-3">
+                <p className="font-sans text-sm md:text-base text-alabaster/80 leading-relaxed line-clamp-3">
                   {project.desc}
                 </p>
               </div>
 
-              <div className="flex items-center justify-between border-t border-navy/5 pt-6 mt-6">
-                <div className="flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-emerald-500" />
-                  <span className="font-heading text-xs font-black uppercase text-navy">{project.metric}</span>
+              <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between border-t border-alabaster/10 pt-6 mt-6 gap-4">
+                <div className="flex items-center gap-2 shrink-0">
+                  <TrendingUp className="w-4 h-4 text-emerald-400" />
+                  <span className="font-heading text-xs font-black uppercase text-alabaster tracking-wider">{project.metric}</span>
                 </div>
-                <div className="flex items-center gap-1.5 font-heading text-xs font-black uppercase text-navy group-hover:text-coral transition-colors">
-                  <span>Deconstruct Case</span>
-                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                
+                <div className="flex items-center justify-between sm:justify-end gap-4 w-full sm:w-auto shrink-0">
+                  {/* View Project direct link button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(project.projectUrl, '_blank', 'noopener,noreferrer');
+                    }}
+                    className="bg-coral hover:bg-coral/95 text-alabaster font-heading text-[10px] font-black uppercase tracking-wider px-4 py-2.5 rounded-full transition-all duration-300 flex items-center gap-1 border border-coral/30 shadow-lg shadow-coral/10 hover:scale-[1.03] active:scale-95 shrink-0 cursor-pointer"
+                  >
+                    <span>View Project</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+
+                  {/* Deconstruct detail modal button */}
+                  <div className="flex items-center gap-1 font-heading text-[10px] font-black uppercase text-alabaster/85 group-hover:text-coral transition-all duration-300 group-hover:scale-105 active:scale-95 shrink-0 cursor-pointer">
+                    <span>Deconstruct</span>
+                    <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -109,7 +158,7 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-navy/80 backdrop-blur-md p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-navy/80 backdrop-blur-md p-4 sm:p-6"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -117,7 +166,7 @@ const Portfolio = () => {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 30 }}
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-              className="w-full max-w-4xl bg-alabaster rounded-[2.5rem] border border-navy/10 shadow-2xl p-8 md:p-12 overflow-y-auto max-h-[85vh]"
+              className="w-full max-w-4xl bg-alabaster rounded-[2rem] sm:rounded-[2.5rem] border border-navy/10 shadow-2xl p-6 sm:p-8 md:p-12 overflow-y-auto max-h-[85vh]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
@@ -126,7 +175,7 @@ const Portfolio = () => {
                   <span className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold bg-coral/10 px-3 py-1 rounded-full">
                     {selectedProject.category}
                   </span>
-                  <h3 className="font-heading text-3xl md:text-4xl font-black text-navy mt-4">
+                  <h3 className="font-heading text-3xl md:text-4xl font-black text-navy mt-4 text-balance">
                     {selectedProject.title}
                   </h3>
                   <div className="flex gap-4 mt-3">
@@ -137,7 +186,7 @@ const Portfolio = () => {
 
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="p-3 rounded-full border border-navy/10 bg-alabaster hover:bg-navy/5 transition-colors"
+                  className="p-3 rounded-full border border-navy/10 bg-alabaster hover:bg-navy/5 active:scale-90 transition-all duration-200 cursor-pointer"
                 >
                   <X className="w-4 h-4 text-navy" />
                 </button>
@@ -149,11 +198,11 @@ const Portfolio = () => {
                 <div className="md:col-span-7 space-y-6">
                   <div>
                     <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/40 mb-2">The Business Challenge</h4>
-                    <p className="font-sans text-sm text-navy/80 leading-relaxed">{selectedProject.challenge}</p>
+                    <p className="font-sans text-sm text-navy/80 leading-relaxed text-pretty">{selectedProject.challenge}</p>
                   </div>
                   <div>
                     <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/40 mb-2">Our Strategy & Engineering</h4>
-                    <p className="font-sans text-sm text-navy/80 leading-relaxed">{selectedProject.strategy}</p>
+                    <p className="font-sans text-sm text-navy/80 leading-relaxed text-pretty">{selectedProject.strategy}</p>
                   </div>
                 </div>
 

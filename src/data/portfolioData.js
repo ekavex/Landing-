@@ -3,13 +3,13 @@ export const portfolioHeader = {
   title: 'Real Projects, Real Results'
 };
 
-export const portfolioFilters = ['All', 'Real Estate', 'Education', 'Healthcare', 'Food & Cafeteria', 'AI Systems'];
+export const portfolioFilters = ['All', 'Web Service', 'Automation Service', 'App Services'];
 
 export const portfolioData = [
   {
     id: 'real-estate',
     title: 'Real Estate Property Listing Platform',
-    category: 'Real Estate',
+    category: 'Web Service',
     timeline: '8 Weeks',
     metric: 'Simplified Property Discovery',
     desc: 'A structured property listing platform where users can list, browse, buy, and sell properties with location-based information and a user-friendly marketplace experience.',
@@ -22,11 +22,13 @@ export const portfolioData = [
     ],
     features: ['Property Listing System', 'Buy & Sell Flows', 'Location-Based Browsing', 'Admin Dashboard', 'Large Data Handling'],
     tech: ['Next.js', 'React', 'PostgreSQL', 'Node.js', 'Tailwind CSS'],
+    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80',
+    projectUrl: 'https://realestate.ekavex.com'
   },
   {
     id: 'academic-mcq',
     title: 'Academic MCQ & Test Management Platform',
-    category: 'Education',
+    category: 'App Services',
     timeline: '10 Weeks',
     metric: 'Fully Digital Exam Management',
     desc: 'An end-to-end academic platform for MCQ creation, class-wise test management, student access, timed assessments, and image-to-MCQ support.',
@@ -39,11 +41,13 @@ export const portfolioData = [
     ],
     features: ['MCQ Creation & Management', 'Image-to-MCQ Support', 'Class-Wise Controls', 'Timed Test System', 'Student Access Portal'],
     tech: ['React', 'Node.js', 'PostgreSQL', 'Next.js', 'Cloudinary'],
+    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=80',
+    projectUrl: 'https://mcq.ekavex.com'
   },
   {
     id: 'nl-to-sql',
     title: 'Natural Language to SQL Automation',
-    category: 'AI Systems',
+    category: 'Automation Service',
     timeline: '6 Weeks',
     metric: '70% Faster Data Access',
     desc: 'A system where non-technical users ask questions in plain English and automatically get SQL queries generated to fetch the right data from the database.',
@@ -56,11 +60,13 @@ export const portfolioData = [
     ],
     features: ['Natural Language Input', 'SQL Query Generation', 'Database Integration', 'Simple UI', 'No SQL Knowledge Needed'],
     tech: ['Python', 'OpenAI API', 'PostgreSQL', 'React', 'FastAPI'],
+    imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80',
+    projectUrl: 'https://sql.ekavex.com'
   },
   {
     id: 'cafeteria-ordering',
     title: 'Cafeteria QR & WhatsApp Ordering System',
-    category: 'Food & Cafeteria',
+    category: 'Automation Service',
     timeline: '5 Weeks',
     metric: 'Faster Order Processing',
     desc: 'A QR-based and WhatsApp-supported ordering system that allows customers to browse a digital menu and place orders faster without manual order taking.',
@@ -73,14 +79,16 @@ export const portfolioData = [
     ],
     features: ['QR-Based Ordering', 'WhatsApp Automation', 'Digital Menu', 'Order Management', 'Kitchen Notifications'],
     tech: ['React', 'Node.js', 'WhatsApp Business API', 'PostgreSQL'],
+    imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80',
+    projectUrl: 'https://ordering.ekavex.com'
   },
   {
     id: 'clinic-management',
     title: 'Clinic Appointment & Management System',
-    category: 'Healthcare',
+    category: 'Web Service',
     timeline: '9 Weeks',
     metric: 'Centralized Clinic Operations',
-    desc: 'A complete clinic management system with appointment booking, patient records, CMS, CRM, and admin dashboard — all in one place.',
+    desc: 'A complete clinic management system with appointment booking, patient records, CMS, CRM, and admin dashboard, all in one place.',
     challenge: 'The clinic needed a centralized system to manage appointments, patient records, website content, and customer relationships without relying on manual processes.',
     strategy: 'Built a clinic website with online appointment booking, patient management, content management, CRM, and a full admin dashboard for clinic staff.',
     results: [
@@ -90,5 +98,7 @@ export const portfolioData = [
     ],
     features: ['Appointment Booking', 'Patient Management', 'CMS System', 'CRM Dashboard', 'Admin Panel'],
     tech: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
+    imageUrl: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80',
+    projectUrl: 'https://clinic.ekavex.com'
   }
 ];
