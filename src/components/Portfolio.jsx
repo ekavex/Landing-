@@ -15,7 +15,7 @@ const Portfolio = () => {
     : portfolioData.filter(p => p.category === activeFilter);
 
   return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
         <div className="w-full lg:w-auto">
           <div className="flex items-center justify-between gap-4">

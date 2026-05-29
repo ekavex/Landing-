@@ -21,7 +21,7 @@ const Blog = () => {
   const gridPosts = blogPosts.filter(p => !p.isFeatured);
 
   return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Editorial Header */}
       <div className="border-b border-navy/10 pb-8 mb-16">
         <div className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3">
