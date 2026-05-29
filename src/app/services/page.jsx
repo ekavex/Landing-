@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import {
   ChevronRight, CheckCircle2,
   Code, Cpu, Brain, Layers,
@@ -117,13 +118,21 @@ export default function ServicesPage() {
                       ))}
                     </div>
 
-                    <button 
-                      onClick={() => handleNavigate('contact')}
-                      className="relative z-10 flex items-center gap-1.5 font-heading text-sm font-black uppercase tracking-wider text-coral hover:text-coral/80 hover:scale-105 active:scale-95 transition-all duration-300 group/btn self-start cursor-pointer"
-                    >
-                      <span>Request Deep Brief</span>
-                      <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                    </button>
+                    <div className="relative z-10 flex items-center gap-4 flex-wrap">
+                      <Link
+                        href={`/services/${svc.slug}`}
+                        className="flex items-center gap-1.5 font-heading text-sm font-black uppercase tracking-wider text-coral hover:text-coral/80 hover:scale-105 active:scale-95 transition-all duration-300 group/btn"
+                      >
+                        <span>Learn More</span>
+                        <ChevronRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                      </Link>
+                      <button
+                        onClick={() => handleNavigate('contact')}
+                        className="flex items-center gap-1.5 font-heading text-[11px] font-bold uppercase tracking-wider text-alabaster/50 hover:text-alabaster transition-colors duration-300 cursor-pointer"
+                      >
+                        Get a Quote
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
