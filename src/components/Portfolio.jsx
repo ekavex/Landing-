@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Calendar, TrendingUp, X, ArrowRight, ShieldCheck, ChevronRight } from 'lucide-react';
 
@@ -29,6 +29,18 @@ const Portfolio = () => {
       behavior: 'smooth',
     });
   };
+
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
 
   return (
     <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto">
@@ -194,7 +206,7 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-navy/80 backdrop-blur-md p-4 sm:p-6"
+            className="fixed inset-0 z-[100] overflow-hidden flex items-center justify-center bg-navy/80 backdrop-blur-md p-4 sm:p-6"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -202,11 +214,12 @@ const Portfolio = () => {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 30 }}
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-              className="w-full max-w-4xl bg-alabaster rounded-4xl sm:rounded-[2.5rem] border border-navy/10 shadow-2xl p-6 sm:p-8 md:p-12 overflow-y-auto max-h-[85vh]"
+              className="w-full max-w-4xl bg-alabaster rounded-4xl sm:rounded-[2.5rem] border border-navy/10 shadow-2xl p-6 sm:p-10 md:pt-10 overflow-y-auto md:overflow-hidden max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-4.5rem)]"
+              style={{ WebkitOverflowScrolling: 'touch' }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="flex justify-between items-start gap-6 border-b border-navy/10 pb-6 mb-8">
+              <div className="flex justify-between items-start gap-6 border-b border-navy/10 pb-6 pt-4 mb-5">
                 <div>
                   <span className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold bg-coral/10 px-3 py-1 rounded-full">
                     {selectedProject.category}
@@ -231,7 +244,7 @@ const Portfolio = () => {
               {/* Grid content */}
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
                 {/* Left panel */}
-                <div className="md:col-span-7 space-y-6">
+                <div className="md:col-span-7 space-y-4">
                   <div>
                     <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/90 mb-2">The Business Challenge</h4>
                     <p className="font-sans text-sm text-navy/80 leading-relaxed text-pretty">{selectedProject.challenge}</p>
@@ -243,7 +256,7 @@ const Portfolio = () => {
                 </div>
 
                 {/* Right panel */}
-                <div className="md:col-span-5 space-y-6 bg-navy/3 p-6 rounded-3xl border border-navy/5">
+                <div className="md:col-span-5 space-y-3 bg-navy/3 p-4 rounded-3xl border border-navy/5">
                   <div>
                     <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/90 mb-3">Key Metric Results</h4>
                     <ul className="space-y-3">

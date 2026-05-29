@@ -8,7 +8,7 @@ import { beforeAfterData } from '../data/homeData';
 
 const BeforeAfterSection = () => {
   return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-navy/5">
+    <section className="py-16 px-6 md:px-12 max-w-7xl mx-auto border-t border-navy/5">
       <motion.div
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}

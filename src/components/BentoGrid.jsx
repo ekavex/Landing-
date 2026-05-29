@@ -119,7 +119,7 @@ const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
 
           {card.cta && (
             <button
-              onClick={() => onNavigate('services')}
+              onClick={() => onNavigate(card.slug ? `/services/${card.slug}` : 'services')}
               className={`flex items-center gap-2 font-heading text-xs font-black uppercase tracking-wider mt-6 ${isLight ? 'text-navy group-hover:text-coral' : 'text-coral'} transition-colors`}
             >
               <span>{card.cta}</span>
@@ -141,7 +141,7 @@ const BentoGrid = ({ onNavigate }) => {
   });
 
   return (
-    <section ref={sectionRef} className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <section ref={sectionRef} className="py-16 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Section heading with 3D character split reveal */}
       <div className="text-center max-w-3xl mx-auto mb-16">
         <motion.div

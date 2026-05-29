@@ -10,7 +10,7 @@ const iconMap = { Building2, Heart, GraduationCap, UtensilsCrossed, Rocket, Brie
 
 const IndustriesSection = () => {
   return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-navy/5">
+    <section className="py-16 px-6 md:px-12 max-w-7xl mx-auto border-t border-navy/5">
       <div className="text-center max-w-2xl mx-auto mb-16">
         <motion.div
           initial={{ opacity: 0, y: 10 }}

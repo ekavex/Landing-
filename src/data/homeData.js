@@ -40,6 +40,7 @@ export const bentoGridHeader = {
 export const bentoGridData = [
   {
     id: 'web',
+    slug: 'custom-website-development',
     span: 'md:col-span-2',
     iconName: 'Code',
     label: '01 / Web Development',
@@ -52,6 +53,7 @@ export const bentoGridData = [
   },
   {
     id: 'automation',
+    slug: 'business-automation',
     span: '',
     iconName: 'Cpu',
     label: '02 / Automation',
@@ -64,6 +66,7 @@ export const bentoGridData = [
   },
   {
     id: 'ai',
+    slug: 'ai-ml-solutions',
     span: '',
     iconName: 'Brain',
     label: '03 / AI & ML',
@@ -88,6 +91,7 @@ export const bentoGridData = [
   },
   {
     id: 'crm',
+    slug: 'cms-crm-solutions',
     span: '',
     iconName: 'Layers',
     label: '05 / CMS & CRM',
@@ -100,6 +104,7 @@ export const bentoGridData = [
   },
   {
     id: 'mobile',
+    slug: 'mobile-app-development',
     span: '',
     iconName: 'Smartphone',
     label: '06 / Mobile',
@@ -112,6 +117,7 @@ export const bentoGridData = [
   },
   {
     id: 'marketing',
+    slug: 'digital-marketing-ads',
     span: 'md:col-span-2',
     iconName: 'TrendingUp',
     label: '07 / Digital Marketing',

@@ -20,7 +20,7 @@ const ClientsReviewSection = () => {
     featured: review.featured || false,
   }));
   return (
-    <section className="py-24 px-6 md:px-12 bg-navy text-alabaster">
+    <section className="py-16 px-6 md:px-12 bg-navy text-alabaster">
 
       {/* Section Header */}
       <div className="max-w-5xl mx-auto text-center mb-20">
@@ -36,66 +36,92 @@ const ClientsReviewSection = () => {
       </div>
 
       {/* Cards Grid — extra top padding so avatars have room to float above */}
-      <div className="grid gap-8 lg:grid-cols-3 max-w-5xl mx-auto items-start pt-12">
-        {reviews.map((review, idx) => (
-          <motion.article
-            key={review.name}
-            initial={{ opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.14, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className={`relative flex flex-col items-center text-center rounded-3xl pt-14 pb-8 px-6 ${
-              review.featured
-                ? 'bg-coral text-white shadow-2xl shadow-coral/20'
-                : 'bg-white/5 border border-alabaster/10 backdrop-blur-md'
+     <div className="grid gap-8 lg:grid-cols-3 max-w-5xl mx-auto items-start pt-12">
+      {reviews.map((review, idx) => (
+        <motion.article
+          key={review.name}
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{
+            y: -10,
+            scale: 1.02,
+          }}
+          viewport={{ once: true }}
+          transition={{
+            delay: idx * 0.14,
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1],
+            hover: { duration: 0.25 },
+          }}
+          className={`group relative flex flex-col items-center text-center rounded-3xl pt-14 pb-8 px-6 cursor-pointer transition-all duration-300 ${
+            review.featured
+              ? "bg-coral text-white shadow-2xl shadow-coral/20"
+              : "bg-white/5 border border-alabaster/10 backdrop-blur-md"
+          }`}
+        >
+          {/* Glow background on hover */}
+          <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-white/10 via-transparent to-coral/10 pointer-events-none" />
+
+          {/* Floating Avatar */}
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2">
+            <div
+              className={`w-20 h-20 rounded-full flex items-center justify-center text-xl font-bold border-4 transition-transform duration-300 group-hover:scale-110 ${
+                review.featured ? "border-coral" : "border-navy"
+              }`}
+              style={{
+                background: review.featured
+                  ? "rgba(255,255,255,0.18)"
+                  : "rgba(255,255,255,0.07)",
+              }}
+            >
+              <span className="font-heading text-alabaster">
+                {review.initials}
+              </span>
+            </div>
+          </div>
+
+          {/* Stars */}
+          <div className="flex items-center justify-center gap-1 mb-3 relative z-10">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star
+                key={i}
+                className={`w-4 h-4 transition-transform duration-300 group-hover:scale-110 ${
+                  review.featured ? "text-white" : "text-coral"
+                }`}
+                fill="currentColor"
+              />
+            ))}
+          </div>
+
+          {/* Name */}
+          <p
+            className={`font-heading text-lg font-black mb-0.5 relative z-10 ${
+              review.featured ? "text-white" : "text-alabaster"
             }`}
           >
-            {/* Floating Avatar */}
-            <div className="absolute -top-10 left-1/2 -translate-x-1/2">
-              <div
-                className={`w-20 h-20 rounded-full flex items-center justify-center text-xl font-bold border-4 ${
-                  review.featured
-                    ? 'border-coral'
-                    : 'border-navy'
-                }`}
-                style={{
-                  background: review.featured
-                    ? 'rgba(255,255,255,0.18)'
-                    : 'rgba(255,255,255,0.07)',
-                }}
-              >
-                <span className="font-heading text-alabaster">{review.initials}</span>
-              </div>
-            </div>
+            {review.name}
+          </p>
 
-            {/* Stars */}
-            <div className="flex items-center justify-center gap-1 mb-3">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  className={`w-4 h-4 ${review.featured ? 'text-white' : 'text-coral'}`}
-                  fill="currentColor"
-                />
-              ))}
-            </div>
+          {/* Title */}
+          <p
+            className={`font-sans text-xs mb-5 relative z-10 ${
+              review.featured ? "text-white/70" : "text-alabaster/50"
+            }`}
+          >
+            {review.title}, {review.company}
+          </p>
 
-            {/* Name */}
-            <p className={`font-heading text-lg font-black mb-0.5 ${review.featured ? 'text-white' : 'text-alabaster'}`}>
-              {review.name}
-            </p>
-
-            {/* Title */}
-            <p className={`font-sans text-xs mb-5 ${review.featured ? 'text-white/70' : 'text-alabaster/50'}`}>
-              {review.title}, {review.company}
-            </p>
-
-            {/* Quote */}
-            <p className={`font-sans text-sm leading-relaxed ${review.featured ? 'text-white/85' : 'text-alabaster/70'}`}>
-              “{review.quote}”
-            </p>
-          </motion.article>
-        ))}
-      </div>
+          {/* Quote */}
+          <p
+            className={`font-sans text-sm leading-relaxed relative z-10 ${
+              review.featured ? "text-white/85" : "text-alabaster/70"
+            }`}
+          >
+            “{review.quote}”
+          </p>
+        </motion.article>
+      ))}
+    </div>
 
     </section>
   );

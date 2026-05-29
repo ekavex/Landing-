@@ -11,7 +11,7 @@ const CTASection = () => {
   const router = useRouter();
 
   return (
-    <section className="py-24 px-6 md:px-12">
+    <section className="py-16 px-6 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

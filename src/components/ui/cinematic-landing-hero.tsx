@@ -6,6 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 import { MessageSquare, ArrowRight, Mail } from "lucide-react";
 
+import { useRouter } from 'next/navigation';
+import { whatsappData } from '@/data/contactData';
+
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -199,6 +202,9 @@ export function CinematicHero({
   const mainCardRef = useRef<HTMLDivElement>(null);
   const mockupRef = useRef<HTMLDivElement>(null);
   const requestRef = useRef<number>(0);
+  const router = useRouter();
+  const whatsappUrl = `https://wa.me/${whatsappData.number}?text=${encodeURIComponent(whatsappData.message)}`;
+  
 
   // 1. High-Performance Mouse Interaction Logic (Using requestAnimationFrame)
   useEffect(() => {
@@ -346,16 +352,18 @@ export function CinematicHero({
 
             {/* Buttons Group */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-5 w-full sm:w-auto">
-              <button className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white text-[#09122C] font-bold rounded-xl md:rounded-2xl hover:bg-neutral-100 transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,255,255,0.15)] hover:shadow-[0_8px_25px_0_rgba(255,255,255,0.2)] hover:-translate-y-0.5">
+              <button onClick={() => router.push('/contact')}
+              className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white text-[#09122C] font-bold rounded-xl md:rounded-2xl hover:bg-neutral-100 transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,255,255,0.15)] hover:shadow-[0_8px_25px_0_rgba(255,255,255,0.2)] hover:-translate-y-0.5">
                 <MessageSquare className="w-4 h-4 md:w-5 md:h-5" />
                 <span className="text-base md:text-lg">Book a Call</span>
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-1 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <button className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-xl md:rounded-2xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5">
+              <a href={whatsappUrl}
+              className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-xl md:rounded-2xl hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5">
                 <Mail className="w-4 h-4 md:w-5 md:h-5" />
                 <span className="text-base md:text-lg">Send a Brief</span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

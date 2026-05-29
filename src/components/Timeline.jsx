@@ -11,7 +11,7 @@ const iconMap = { Compass, Target, PenTool, Terminal, RefreshCw, Rocket, Heart }
 const Timeline = () => {
 
   return (
-    <section className="py-24 w-full border-t border-navy/5 bg-alabaster/30">
+    <section className="py-16 w-full border-t border-navy/5 bg-alabaster/30">
       <div className="text-center max-w-3xl mx-auto mb-16 px-6 md:px-12">
         <div className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3">
           {timelineHeader.subtitle}
@@ -24,12 +24,12 @@ const Timeline = () => {
         </p>
       </div>
 
-      <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 xl:px-32 py-8 lg:py-[220px] xl:py-[280px]">
+      <div className="relative max-w-350 mx-auto px-6 md:px-12 lg:px-24 xl:px-32 py-8 lg:py-15 xl:py-50">
         {/* Horizontal Line - Desktop Only */}
-        <div className="hidden lg:block absolute left-12 right-12 lg:left-24 lg:right-24 xl:left-32 xl:right-32 top-1/2 h-[1px] bg-navy/10 -translate-y-1/2 z-0" />
+        <div className="hidden lg:block absolute left-12 right-12 lg:left-24 lg:right-24 xl:left-32 xl:right-32 top-1/2 h-px bg-navy/10 -translate-y-1/2 z-0" />
         
         {/* Vertical Line - Mobile Only */}
-        <div className="block lg:hidden absolute left-1/2 top-8 bottom-8 w-[1px] bg-navy/10 -translate-x-1/2 z-0" />
+        <div className="block lg:hidden absolute left-1/2 top-8 bottom-8 w-px bg-navy/10 -translate-x-1/2 z-0" />
 
         <div className="flex flex-col lg:flex-row justify-between items-center relative z-10 w-full gap-12 lg:gap-4">
           
@@ -43,16 +43,37 @@ const Timeline = () => {
                 className="relative z-10 flex flex-col items-center w-full lg:w-auto"
               >
                 {/* Visual Step Circle Indicator */}
-                <motion.div 
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1, duration: 0.5 }}
-                  className="relative w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] rounded-full border border-navy/10 bg-alabaster flex flex-col items-center justify-center shadow-lg shadow-navy/5 z-20 mx-auto"
-                >
-                  <IconComponent className="w-5 h-5 text-coral mb-0.5" />
-                  <span className="font-mono text-[10px] text-navy/50 font-bold">{step.num}</span>
-                </motion.div>
+                
+               <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                whileHover={{
+                  scale: 1.08,
+                  y: -6,
+                  boxShadow: "0px 15px 35px rgba(0,0,0,0.12)",
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: idx * 0.1,
+                  duration: 0.5,
+                  hover: {
+                    duration: 0.25,
+                    ease: "easeOut",
+                  },
+                }}
+                className="group relative w-17.5 h-17.5 lg:w-20 lg:h-20 rounded-full border border-navy/10 bg-alabaster flex flex-col items-center justify-center shadow-lg shadow-navy/5 z-20 mx-auto cursor-pointer overflow-hidden"
+              >
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-coral/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-md" />
+
+                {/* Icon */}
+                <IconComponent className="w-5 h-5 text-coral mb-0.5 group-hover:scale-110 transition-transform duration-300" />
+
+                {/* Number */}
+                <span className="font-mono text-[10px] text-navy/50 font-bold group-hover:text-coral transition-colors duration-300">
+                  {step.num}
+                </span>
+              </motion.div>
 
                 {/* Text Content Card */}
                 <motion.div
@@ -61,8 +82,8 @@ const Timeline = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 + 0.2, duration: 0.6, ease: "easeOut" }}
                   className={`
-                    glass-panel rounded-[2rem] p-5 xl:p-6 bg-alabaster/50 hover:border-coral/25 transition-colors shadow-sm text-center
-                    mt-6 lg:mt-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:w-[210px] xl:w-[260px] 2xl:w-[280px]
+                    glass-panel rounded-4xl p-5 xl:p-6 bg-alabaster/50 hover:border-coral/25 transition-colors shadow-sm text-center
+                    mt-6 lg:mt-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:w-52.5 xl:w-65 2xl:w-70
                     ${isTop ? 'lg:bottom-[calc(100%+24px)] xl:bottom-[calc(100%+32px)]' : 'lg:top-[calc(100%+24px)] xl:top-[calc(100%+32px)]'}
                   `}
                 >

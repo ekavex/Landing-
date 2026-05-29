@@ -17,7 +17,14 @@ export default function HomePage() {
   const router = useRouter();
 
   const handleNavigate = (view) => {
-    const targetPath = view === 'home' ? '/' : `/${view}`;
+    const targetPath = typeof view === 'string'
+      ? view.startsWith('/')
+        ? view
+        : view === 'home'
+          ? '/'
+          : `/${view}`
+      : '/';
+
     router.push(targetPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

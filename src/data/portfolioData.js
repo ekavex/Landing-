@@ -22,7 +22,7 @@ export const portfolioData = [
     ],
     features: ['Property Listing System', 'Buy & Sell Flows', 'Location-Based Browsing', 'Admin Dashboard', 'Large Data Handling'],
     tech: ['Next.js', 'React', 'PostgreSQL', 'Node.js', 'Tailwind CSS'],
-    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80',
+    imageUrl: '/portfolio/real-estate.jpg',
     projectUrl: 'https://realestate.ekavex.com'
   },
   {
@@ -40,8 +40,8 @@ export const portfolioData = [
       'Students access tests digitally with automated grading'
     ],
     features: ['MCQ Creation & Management', 'Image-to-MCQ Support', 'Class-Wise Controls', 'Timed Test System', 'Student Access Portal'],
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Next.js', 'Cloudinary'],
-    imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=80',
+    tech: ['Node.js', 'PostgreSQL', 'Next.js', 'Cloudinary'],
+    imageUrl: '/portfolio/academic-mcq.jpg',
     projectUrl: 'https://mcq.ekavex.com'
   },
   {
@@ -60,7 +60,7 @@ export const portfolioData = [
     ],
     features: ['Natural Language Input', 'SQL Query Generation', 'Database Integration', 'Simple UI', 'No SQL Knowledge Needed'],
     tech: ['Python', 'OpenAI API', 'PostgreSQL', 'React', 'FastAPI'],
-    imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80',
+    imageUrl: '/portfolio/nl-to-sql.jpg',
     projectUrl: 'https://sql.ekavex.com'
   },
   {
@@ -79,7 +79,7 @@ export const portfolioData = [
     ],
     features: ['QR-Based Ordering', 'WhatsApp Automation', 'Digital Menu', 'Order Management', 'Kitchen Notifications'],
     tech: ['React', 'Node.js', 'WhatsApp Business API', 'PostgreSQL'],
-    imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80',
+    imageUrl: '/portfolio/cafeteria-ordering.jpg',
     projectUrl: 'https://ordering.ekavex.com'
   },
   {
@@ -98,7 +98,7 @@ export const portfolioData = [
     ],
     features: ['Appointment Booking', 'Patient Management', 'CMS System', 'CRM Dashboard', 'Admin Panel'],
     tech: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
-    imageUrl: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80',
+    imageUrl: '/portfolio/clinic-management.jpg',
     projectUrl: 'https://clinic.ekavex.com'
   }
 ];

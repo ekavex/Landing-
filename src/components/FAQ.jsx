@@ -10,7 +10,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto border-t border-navy/5">
+    <section className="py-16 px-6 md:px-12 max-w-4xl mx-auto border-t border-navy/5">
       <div className="text-center mb-16">
         <div className="font-mono text-xs uppercase tracking-[0.2em] text-coral font-bold mb-3">
           {faqHeader.subtitle}
