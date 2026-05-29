@@ -169,7 +169,7 @@ const ContactForm = () => {
                   <label className="font-mono text-[10px] uppercase tracking-wider text-navy/90">Phone / WhatsApp</label>
                   <input
                     type="tel"
-                    placeholder="+91 98765 43210"
+                    placeholder="+91 91720 08630"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-5 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none transition-all focus:border-coral focus:bg-alabaster/80 focus:ring-1 focus:ring-coral"
@@ -209,6 +209,13 @@ const ContactForm = () => {
                   <Send className="w-4 h-4" />
                 </span>
               </button>
+
+              <p className="font-mono text-[9px] text-navy/40 text-center leading-relaxed">
+                We respond within 24 hours &mdash; no spam, ever.{' '}
+                <a href="/privacy-policy" className="underline underline-offset-2 hover:text-coral transition-colors">
+                  Privacy Policy
+                </a>
+              </p>
             </form>
           )}
         </motion.div>

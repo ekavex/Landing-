@@ -189,7 +189,7 @@ export const beforeAfterData = {
 export const ctaSectionData = {
   heading: "Have an idea? Let's turn it into a smart digital system.",
   subheading: "Whether you need a website, automation workflow, AI dashboard, CRM, or full digital platform, Ekavex can help you plan, build, and launch it.",
-  primaryCta: "Start Your Project",
+  primaryCta: "Book a Free Strategy Call",
   secondaryCta: "View Services"
 };
 

@@ -42,8 +42,8 @@ const Navbar = ({ activeView, onViewChange }) => {
         >
           {/* Logo Image */}
           <img
-            src="/logo1.png"   // put your image in /public folder
-            alt="Brand Logo"
+            src="/logo1.png"
+            alt="Ekavex Digital logo"
             className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110"
           />
 

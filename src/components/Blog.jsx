@@ -3,10 +3,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, User, Clock, ArrowRight, Mail } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 import { blogPosts, blogHeader, blogNewsletter } from '../data/blogData';
 
 const Blog = () => {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
@@ -42,6 +44,7 @@ const Blog = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="glass-panel bg-white/70 rounded-[2.5rem] p-8 md:p-12 mb-16 bento-card-hover grid grid-cols-1 lg:grid-cols-12 gap-8 items-center cursor-pointer group"
+          onClick={() => router.push(`/blog/${featured.slug}`)}
         >
           <div className="lg:col-span-7 flex flex-col justify-center">
             <div className="flex items-center gap-4 mb-4">
@@ -93,6 +96,7 @@ const Blog = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             key={post.id}
+            onClick={() => router.push(`/blog/${post.slug}`)}
             className="glass-panel bg-[#fffdf6] rounded-4xl p-8 bento-card-hover flex flex-col justify-between min-h-85 cursor-pointer group"
           >
             <div>

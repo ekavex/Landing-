@@ -5,6 +5,7 @@ import NavbarWrapper from './NavbarWrapper';
 import PreloaderWrapper from './PreloaderWrapper';
 import SmoothScroll from './SmoothScroll';
 import { CinematicFooter } from './ui/motion-footer';
+import StickyContact from './StickyContact';
 
 export default function RootClientShell({ children }) {
   return (
@@ -22,6 +23,8 @@ export default function RootClientShell({ children }) {
       <div className="relative z-5">
         <CinematicFooter />
       </div>
+
+      <StickyContact />
     </>
   );
 }

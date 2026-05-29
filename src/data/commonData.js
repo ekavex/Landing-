@@ -15,7 +15,7 @@ export const footerData = {
   secondaryLinks: [
     { label: "Case Studies", href: "/portfolio" },
     { label: "Blog & Insights", href: "/blog" },
-    { label: "Privacy Policy", href: "#" }
+    { label: "Privacy Policy", href: "/privacy-policy" }
   ],
   copyright: "© 2026 Ekavex Digital. All rights reserved.",
   craftedWith: "Crafted with",
@@ -44,7 +44,8 @@ export const legacyFooterData = {
     { id: 'services', label: 'Services' },
     { id: 'portfolio', label: 'Case Studies' },
     { id: 'blog', label: 'Blog' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'contact', label: 'Contact' },
+    { id: 'privacy-policy', label: 'Privacy Policy' }
   ],
   socials: [
     { label: 'LinkedIn', iconName: 'Linkedin' },
