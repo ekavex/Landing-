@@ -9,6 +9,7 @@ import BentoGrid from '../components/BentoGrid';
 import IndustriesSection from '../components/IndustriesSection';
 import BeforeAfterSection from '../components/BeforeAfterSection';
 import Timeline from '../components/Timeline';
+import ClientsReviewSection from '../components/ClientsReviewSection';
 import FAQ from '../components/FAQ';
 import CTASection from '../components/CTASection';
 
@@ -46,6 +47,7 @@ export default function HomePage() {
       <IndustriesSection />
       <BeforeAfterSection />
       <Timeline />
+      <ClientsReviewSection />
       <FAQ />
       <CTASection />
     </motion.div>

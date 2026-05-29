@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Calendar, TrendingUp, X, ArrowRight, ShieldCheck, ChevronRight } from 'lucide-react';
 
@@ -10,9 +10,25 @@ const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filteredProjects = activeFilter === 'All' 
-    ? portfolioData 
+  const filteredProjects = activeFilter === 'All'
+    ? portfolioData
     : portfolioData.filter(p => p.category === activeFilter);
+
+  const scrollRef = useRef(null);
+
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({
+      left: -200,
+      behavior: 'smooth',
+    });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({
+      left: 200,
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto">
@@ -39,30 +55,50 @@ const Portfolio = () => {
           </h2>
         </div>
 
-        <div className="relative w-full lg:w-auto -mx-6 px-6 lg:mx-0 lg:px-0">
-          {/* Left fading edge for visual scroll cues on mobile */}
-          <div className="absolute left-6 top-0 bottom-0 w-8 bg-gradient-to-r from-[#FFFDF6] to-transparent z-10 pointer-events-none lg:hidden" />
-          {/* Right fading edge for visual scroll cues on mobile */}
-          <div className="absolute right-6 top-0 bottom-0 w-8 bg-gradient-to-l from-[#FFFDF6] to-transparent z-10 pointer-events-none lg:hidden" />
+        <div className="relative w-full">
+          {/* Left Arrow */}
+          <button
+            onClick={scrollLeft}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-alabaster border border-navy/10 shadow-sm flex items-center justify-center hover:bg-navy/5 transition-all duration-200 sm:hidden"
+          >
+            <ChevronRight className="w-4 h-4 rotate-180 text-navy" />
+          </button>
 
-          <div className="w-full overflow-x-auto scrollbar-none">
-            {/* Categories Tab Controller */}
-            <div className="flex gap-1.5 bg-navy/5 p-1 rounded-full border border-navy/5 min-w-max">
+          {/* Right Arrow */}
+          <button
+            onClick={scrollRight}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-alabaster border border-navy/10 shadow-sm flex items-center justify-center hover:bg-navy/5 transition-all duration-200 sm:hidden"
+          >
+            <ChevronRight className="w-4 h-4 text-navy" />
+          </button>
+
+          {/* Scroll Area */}
+          <div
+            ref={scrollRef}
+            className="overflow-x-auto scrollbar-none px-10 sm:px-0"
+          >
+            <div className="inline-flex gap-1.5 bg-navy/5 p-1 rounded-full border border-navy/5 min-w-max">
               {portfolioFilters.map((filter) => (
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`relative px-4 py-2 rounded-full font-heading text-[10px] font-bold uppercase tracking-wider whitespace-nowrap cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 ${
-                    activeFilter === filter ? 'text-navy font-black' : 'text-navy/90 hover:text-navy'
-                  }`}
+                  className={`relative shrink-0 px-4 py-2 rounded-full font-heading text-[10px] font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 hover:scale-105 active:scale-95 ${activeFilter === filter
+                      ? 'text-navy font-black'
+                      : 'text-navy/90 hover:text-navy'
+                    }`}
                 >
                   {activeFilter === filter && (
                     <motion.div
                       layoutId="portfolioActiveTab"
                       className="absolute inset-0 bg-alabaster rounded-full shadow-sm border border-navy/5 -z-10"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                     />
                   )}
+
                   {filter}
                 </button>
               ))}
@@ -72,7 +108,7 @@ const Portfolio = () => {
       </div>
 
       {/* Grid List */}
-      <motion.div 
+      <motion.div
         layout
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
@@ -86,18 +122,18 @@ const Portfolio = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 bento-card-hover cursor-pointer group flex flex-col justify-between min-h-[26rem] sm:h-96 relative overflow-hidden shadow-md border border-navy/10 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300"
+              className="rounded-4xl sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 bento-card-hover cursor-pointer group flex flex-col justify-between min-h-104 sm:h-96 relative overflow-hidden shadow-md border border-navy/10 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300"
             >
               {/* Background Image with Overlay styles */}
               <div className="absolute inset-0 z-0">
-                <img 
-                  src={project.imageUrl} 
+                <img
+                  src={project.imageUrl}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/45 transition-colors duration-500" />
                 {/* Visual Depth Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20 pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-black/20 pointer-events-none" />
               </div>
 
               {/* Foreground Content */}
@@ -125,7 +161,7 @@ const Portfolio = () => {
                   <TrendingUp className="w-4 h-4 text-emerald-400" />
                   <span className="font-heading text-xs font-black uppercase text-alabaster tracking-wider">{project.metric}</span>
                 </div>
-                
+
                 <div className="flex items-center justify-between sm:justify-end gap-4 w-full sm:w-auto shrink-0">
                   {/* View Project direct link button */}
                   <button
@@ -166,7 +202,7 @@ const Portfolio = () => {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 30 }}
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-              className="w-full max-w-4xl bg-alabaster rounded-[2rem] sm:rounded-[2.5rem] border border-navy/10 shadow-2xl p-6 sm:p-8 md:p-12 overflow-y-auto max-h-[85vh]"
+              className="w-full max-w-4xl bg-alabaster rounded-4xl sm:rounded-[2.5rem] border border-navy/10 shadow-2xl p-6 sm:p-8 md:p-12 overflow-y-auto max-h-[85vh]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
