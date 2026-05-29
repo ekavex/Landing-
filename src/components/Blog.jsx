@@ -30,7 +30,7 @@ const Blog = () => {
         <h2 className="font-heading text-4xl md:text-6xl font-black tracking-tight text-navy leading-[1.05]">
           {blogHeader.title}
         </h2>
-        <p className="font-sans text-navy/60 text-base md:text-lg mt-4 max-w-2xl">
+        <p className="font-sans text-navy/90 text-base md:text-lg mt-4 max-w-2xl">
           {blogHeader.description}
         </p>
       </div>
@@ -48,7 +48,7 @@ const Blog = () => {
               <span className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold bg-coral/10 px-3 py-1 rounded-full">
                 Spotlight / {featured.category}
               </span>
-              <span className="font-mono text-[10px] text-navy/40">{featured.readTime}</span>
+              <span className="font-mono text-[10px] text-navy/90">{featured.readTime}</span>
             </div>
 
             <h3 className="font-heading text-2xl md:text-4xl font-black text-navy group-hover:text-coral transition-colors leading-tight mb-4">
@@ -59,7 +59,7 @@ const Blog = () => {
               {featured.summary}
             </p>
 
-            <div className="flex flex-wrap items-center gap-6 font-mono text-[10px] text-navy/50 border-t border-navy/5 pt-6">
+            <div className="flex flex-wrap items-center gap-6 font-mono text-[10px] text-navy/90 border-t border-navy/5 pt-6">
               <div className="flex items-center gap-1.5">
                 <User className="w-3.5 h-3.5" />
                 <span className="font-bold text-navy">By {featured.author}</span>
@@ -97,16 +97,16 @@ const Blog = () => {
           >
             <div>
               <div className="flex items-center justify-between gap-4 mb-6">
-                <span className="font-mono text-[9px] uppercase tracking-widest text-navy/40 font-bold bg-navy/5 px-2.5 py-0.5 rounded-full">
+                <span className="font-mono text-[9px] uppercase tracking-widest text-navy/90 font-bold bg-navy/5 px-2.5 py-0.5 rounded-full">
                   {post.category}
                 </span>
-                <span className="font-mono text-[10px] text-navy/40">{post.readTime}</span>
+                <span className="font-mono text-[10px] text-navy/90">{post.readTime}</span>
               </div>
 
               <h4 className="font-heading text-lg font-black text-navy group-hover:text-coral transition-colors mb-3 leading-snug">
                 {post.title}
               </h4>
-              <p className="font-sans text-xs text-navy/60 leading-relaxed line-clamp-3">
+              <p className="font-sans text-xs text-navy/90 leading-relaxed line-clamp-3">
                 {post.summary}
               </p>
             </div>
@@ -131,7 +131,7 @@ const Blog = () => {
         <h3 className="font-heading text-2xl md:text-3xl font-black text-navy mb-3">
           {blogNewsletter.title}
         </h3>
-        <p className="font-sans text-sm text-navy/60 max-w-md mx-auto mb-8 leading-relaxed">
+        <p className="font-sans text-sm text-navy/90 max-w-md mx-auto mb-8 leading-relaxed">
           {blogNewsletter.description}
         </p>
 

@@ -98,7 +98,7 @@ const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
             <div className={`p-4 rounded-2xl ${isLight ? 'bg-navy/5 text-navy group-hover:bg-coral group-hover:text-alabaster' : 'bg-alabaster/10 text-coral'} transition-colors duration-300`}>
               <IconComponent className="w-6 h-6" />
             </div>
-            <span className={`font-mono text-[10px] tracking-widest uppercase ${isLight ? 'text-navy/40' : 'text-alabaster/40'}`}>{card.label}</span>
+            <span className={`font-mono text-[10px] tracking-widest uppercase ${isLight ? 'text-navy/90' : 'text-alabaster/40'}`}>{card.label}</span>
           </div>
 
           <div className="mt-8">
@@ -111,7 +111,7 @@ const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
             {card.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-4">
                 {card.tags.map((t) => (
-                  <span key={t} className="font-mono text-[10px] bg-navy/5 text-navy/60 px-3 py-1 rounded-full">{t}</span>
+                  <span key={t} className="font-mono text-[10px] bg-navy/5 text-navy/90 px-3 py-1 rounded-full">{t}</span>
                 ))}
               </div>
             )}

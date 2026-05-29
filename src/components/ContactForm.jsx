@@ -52,7 +52,7 @@ const ContactForm = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="font-sans text-navy/60 text-base leading-relaxed"
+          className="font-sans text-navy/90 text-base leading-relaxed"
         >
           {contactHeader.description}
         </motion.p>
@@ -75,7 +75,7 @@ const ContactForm = () => {
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-mono text-[9px] text-navy/40 uppercase tracking-widest">{detail.label}</div>
+                    <div className="font-mono text-[9px] text-navy/90 uppercase tracking-widest">{detail.label}</div>
                     {detail.pulse ? (
                       <span className="inline-flex items-center gap-1.5 font-heading text-xs font-bold text-coral">
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -132,7 +132,7 @@ const ContactForm = () => {
             >
               <CheckCircle2 className="w-16 h-16 text-coral mb-6" />
               <h3 className="font-heading text-2xl font-black text-navy mb-2">{contactSuccessMessage.title}</h3>
-              <p className="font-sans text-sm text-navy/60 max-w-sm leading-relaxed">
+              <p className="font-sans text-sm text-navy/90 max-w-sm leading-relaxed">
                 {contactSuccessMessage.description}
               </p>
             </motion.div>
@@ -140,7 +140,7 @@ const ContactForm = () => {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Your Name</label>
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/90">Your Name</label>
                   <input
                     type="text"
                     required
@@ -152,7 +152,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Email Address</label>
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/90">Email Address</label>
                   <input
                     type="email"
                     required
@@ -166,7 +166,7 @@ const ContactForm = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Phone / WhatsApp</label>
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/90">Phone / WhatsApp</label>
                   <input
                     type="tel"
                     placeholder="+91 98765 43210"
@@ -177,7 +177,7 @@ const ContactForm = () => {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Company Name</label>
+                  <label className="font-mono text-[10px] uppercase tracking-wider text-navy/90">Company Name</label>
                   <input
                     type="text"
                     placeholder="Your company (optional)"
@@ -189,7 +189,7 @@ const ContactForm = () => {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[10px] uppercase tracking-wider text-navy/50">Project Brief</label>
+                <label className="font-mono text-[10px] uppercase tracking-wider text-navy/90">Project Brief</label>
                 <textarea
                   required
                   rows={4}

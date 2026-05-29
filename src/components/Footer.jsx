@@ -55,10 +55,10 @@ export default function Footer() {
               {legacyFooterData.brandName}
             </span>
           </div>
-          <p className="font-sans text-xs md:text-sm text-navy/60 leading-relaxed max-w-sm">
+          <p className="font-sans text-xs md:text-sm text-navy/90 leading-relaxed max-w-sm">
             {legacyFooterData.description}
           </p>
-          <div className="font-mono text-[9px] text-navy/40 uppercase tracking-widest">
+          <div className="font-mono text-[9px] text-navy/90 uppercase tracking-widest">
             {legacyFooterData.copyright}
           </div>
         </div>
@@ -67,13 +67,13 @@ export default function Footer() {
         <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
           {/* Pages */}
           <div className="space-y-4">
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-navy/40">Navigation</h4>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-navy/90">Navigation</h4>
             <ul className="space-y-2.5">
               {legacyFooterData.navigation.map((nav) => (
                 <li key={nav.id}>
                   <button
                     onClick={() => handleNavigate(nav.id)}
-                    className="font-heading text-xs font-semibold capitalize text-navy/60 hover:text-coral transition-colors"
+                    className="font-heading text-xs font-semibold capitalize text-navy/90 hover:text-coral transition-colors"
                   >
                     {nav.label}
                   </button>
@@ -84,7 +84,7 @@ export default function Footer() {
 
           {/* Socials */}
           <div className="space-y-4">
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-navy/40">Connect</h4>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-navy/90">Connect</h4>
             <ul className="space-y-2.5">
               {legacyFooterData.socials.map((soc) => {
                 const IconComponent = soc.iconName === 'Linkedin' ? Linkedin : 
@@ -93,7 +93,7 @@ export default function Footer() {
                   <li key={soc.label}>
                     <a
                       href="#"
-                      className="flex items-center gap-2 font-heading text-xs font-semibold text-navy/60 hover:text-coral transition-colors"
+                      className="flex items-center gap-2 font-heading text-xs font-semibold text-navy/90 hover:text-coral transition-colors"
                     >
                       <IconComponent className="w-3.5 h-3.5" />
                       <span>{soc.label}</span>
@@ -106,10 +106,10 @@ export default function Footer() {
 
           {/* Secure footprint details */}
           <div className="space-y-4 col-span-2 md:col-span-1">
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-navy/40">Capabilities</h4>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-navy/90">Capabilities</h4>
             <ul className="space-y-1.5">
               {legacyFooterData.capabilities.map((t) => (
-                <li key={t} className="font-mono text-[9px] text-navy/50">{t}</li>
+                <li key={t} className="font-mono text-[9px] text-navy/90">{t}</li>
               ))}
             </ul>
           </div>

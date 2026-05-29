@@ -29,16 +29,16 @@ const BeforeAfterSection = () => {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="glass-panel rounded-3xl p-8 bg-alabaster/40 border border-navy/8"
         >
-          <div className="font-mono text-[10px] uppercase tracking-widest text-navy/40 font-bold mb-6">
+          <div className="font-mono text-[10px] uppercase tracking-widest text-navy/90 font-bold mb-6">
             {beforeAfterData.before.label}
           </div>
           <ul className="space-y-4">
             {beforeAfterData.before.points.map((point, i) => (
               <li key={i} className="flex items-start gap-3">
                 <div className="w-5 h-5 rounded-full bg-navy/8 flex items-center justify-center shrink-0 mt-0.5">
-                  <X className="w-3 h-3 text-navy/40" />
+                  <X className="w-3 h-3 text-navy/90" />
                 </div>
-                <span className="font-sans text-sm text-navy/60 leading-relaxed">{point}</span>
+                <span className="font-sans text-sm text-navy/90 leading-relaxed">{point}</span>
               </li>
             ))}
           </ul>

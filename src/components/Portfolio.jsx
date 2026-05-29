@@ -23,7 +23,7 @@ const Portfolio = () => {
               {portfolioHeader.subtitle}
             </div>
             {/* Elegant Swipe indicator for mobile */}
-            <div className="lg:hidden flex items-center gap-1 font-mono text-[9px] uppercase tracking-widest text-navy/40 mb-3 select-none">
+            <div className="lg:hidden flex items-center gap-1 font-mono text-[9px] uppercase tracking-widest text-navy/90 mb-3 select-none">
               <span>Swipe to filter</span>
               <motion.span
                 animate={{ x: [0, 4, 0] }}
@@ -53,7 +53,7 @@ const Portfolio = () => {
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={`relative px-4 py-2 rounded-full font-heading text-[10px] font-bold uppercase tracking-wider whitespace-nowrap cursor-pointer hover:scale-105 active:scale-95 transition-all duration-200 ${
-                    activeFilter === filter ? 'text-navy font-black' : 'text-navy/50 hover:text-navy'
+                    activeFilter === filter ? 'text-navy font-black' : 'text-navy/90 hover:text-navy'
                   }`}
                 >
                   {activeFilter === filter && (
@@ -179,7 +179,7 @@ const Portfolio = () => {
                     {selectedProject.title}
                   </h3>
                   <div className="flex gap-4 mt-3">
-                    <span className="font-mono text-[10px] text-navy/40 uppercase">Timeline: {selectedProject.timeline}</span>
+                    <span className="font-mono text-[10px] text-navy/90 uppercase">Timeline: {selectedProject.timeline}</span>
                     <span className="font-mono text-[10px] text-coral font-bold uppercase">Outcome: {selectedProject.metric}</span>
                   </div>
                 </div>
@@ -197,11 +197,11 @@ const Portfolio = () => {
                 {/* Left panel */}
                 <div className="md:col-span-7 space-y-6">
                   <div>
-                    <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/40 mb-2">The Business Challenge</h4>
+                    <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/90 mb-2">The Business Challenge</h4>
                     <p className="font-sans text-sm text-navy/80 leading-relaxed text-pretty">{selectedProject.challenge}</p>
                   </div>
                   <div>
-                    <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/40 mb-2">Our Strategy & Engineering</h4>
+                    <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/90 mb-2">Our Strategy & Engineering</h4>
                     <p className="font-sans text-sm text-navy/80 leading-relaxed text-pretty">{selectedProject.strategy}</p>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ const Portfolio = () => {
                 {/* Right panel */}
                 <div className="md:col-span-5 space-y-6 bg-navy/3 p-6 rounded-3xl border border-navy/5">
                   <div>
-                    <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/40 mb-3">Key Metric Results</h4>
+                    <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/90 mb-3">Key Metric Results</h4>
                     <ul className="space-y-3">
                       {selectedProject.results.map((r, i) => (
                         <li key={i} className="flex items-start gap-3">
@@ -221,7 +221,7 @@ const Portfolio = () => {
                   </div>
 
                   <div>
-                    <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/40 mb-3">System Stack</h4>
+                    <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/90 mb-3">System Stack</h4>
                     <div className="flex flex-wrap gap-1.5">
                       {selectedProject.tech.map((t) => (
                         <span key={t} className="font-mono text-[9px] bg-navy text-alabaster px-3 py-1 rounded-full">{t}</span>

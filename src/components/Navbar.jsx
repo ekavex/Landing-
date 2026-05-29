@@ -61,7 +61,7 @@ const Navbar = ({ activeView, onViewChange }) => {
                   key={item.id}
                   onClick={() => onViewChange(item.id)}
                   className={`relative px-4 py-2 font-heading text-xs font-semibold uppercase tracking-wider transition-colors duration-300 ${
-                    isActive ? 'text-navy' : 'text-navy/60 hover:text-navy'
+                    isActive ? 'text-navy' : 'text-navy/90 hover:text-navy'
                   }`}
                 >
                   {/* Sliding Indicator Background */}

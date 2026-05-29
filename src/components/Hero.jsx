@@ -124,7 +124,7 @@ export default function Hero({ onNavigate }) {
               <Zap className="w-3.5 h-3.5" />
             </div>
             <div className="text-left">
-              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-navy/40">Efficiency</span>
+              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-navy/90">Efficiency</span>
               <span className="block font-heading text-sm font-bold text-navy tracking-tight">{heroData.stats.efficiency}</span>
             </div>
           </motion.div>
@@ -256,7 +256,7 @@ export default function Hero({ onNavigate }) {
                   <div className="w-2 h-2 rounded-full bg-navy/10" />
                   <div className="w-2 h-2 rounded-full bg-navy/10" />
                 </div>
-                <span className="font-mono text-[9px] uppercase tracking-wider text-navy/40">
+                <span className="font-mono text-[9px] uppercase tracking-wider text-navy/90">
                   {heroData.stats.liveTerminal}
                 </span>
               </div>
@@ -284,7 +284,7 @@ export default function Hero({ onNavigate }) {
                   <Zap className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <span className="block font-mono text-[8px] uppercase text-navy/40">Efficiency</span>
+                  <span className="block font-mono text-[8px] uppercase text-navy/90">Efficiency</span>
                   <span className="block font-heading text-sm font-bold text-navy">{heroData.stats.efficiency}</span>
                 </div>
               </div>
@@ -318,7 +318,7 @@ export default function Hero({ onNavigate }) {
               <span className="w-1.5 h-1.5 rounded-full bg-coral shrink-0" />
               {card.title}
             </h4>
-            <p className="font-sans text-[11px] md:text-xs text-navy/60 leading-relaxed">
+            <p className="font-sans text-[11px] md:text-xs text-navy/90 leading-relaxed">
               {card.desc}
             </p>
           </motion.div>

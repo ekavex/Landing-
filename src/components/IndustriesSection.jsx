@@ -50,7 +50,7 @@ const IndustriesSection = () => {
                 <h3 className="font-heading text-base font-black text-navy mb-2 group-hover:text-coral transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="font-sans text-sm text-navy/60 leading-relaxed">
+                <p className="font-sans text-sm text-navy/90 leading-relaxed">
                   {item.desc}
                 </p>
               </div>

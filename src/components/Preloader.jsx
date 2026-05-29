@@ -109,14 +109,14 @@ const Preloader = ({ onComplete }) => {
                 setIsExiting(true);
                 setTimeout(onComplete, 800);
               }}
-              className="mt-8 px-4 py-2 text-[10px] font-mono tracking-widest uppercase text-navy/40 hover:text-coral transition-colors duration-300"
+              className="mt-8 px-4 py-2 text-[10px] font-mono tracking-widest uppercase text-navy/90 hover:text-coral transition-colors duration-300"
             >
               {preloaderData.skipText}
             </button>
           </div>
 
           {/* Fixed Footer text relative to the screen, NOT the content block, to avoid overlaps */}
-          <div className="absolute bottom-10 left-0 right-0 text-center font-mono text-[9px] text-navy/40 tracking-[0.2em] pointer-events-none uppercase">
+          <div className="absolute bottom-10 left-0 right-0 text-center font-mono text-[9px] text-navy/90 tracking-[0.2em] pointer-events-none uppercase">
             {preloaderData.footerText}
           </div>
         </motion.div>

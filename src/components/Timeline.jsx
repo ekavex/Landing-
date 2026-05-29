@@ -51,7 +51,7 @@ const Timeline = () => {
                   className="relative w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] rounded-full border border-navy/10 bg-alabaster flex flex-col items-center justify-center shadow-lg shadow-navy/5 z-20 mx-auto"
                 >
                   <IconComponent className="w-5 h-5 text-coral mb-0.5" />
-                  <span className="font-mono text-[10px] text-navy/50 font-bold">{step.num}</span>
+                  <span className="font-mono text-[10px] text-navy/90 font-bold">{step.num}</span>
                 </motion.div>
 
                 {/* Text Content Card */}
