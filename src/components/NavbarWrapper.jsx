@@ -11,11 +11,11 @@ export default function NavbarWrapper() {
   // Map pathnames to IDs
   const pathToId = (path) => {
     if (path === '/') return 'home';
-    if (path === '/about') return 'about';
-    if (path === '/portfolio') return 'portfolio';
-    if (path === '/services') return 'services';
-    if (path === '/blog') return 'blog';
-    if (path === '/contact') return 'contact';
+    if (path.startsWith('/about')) return 'about';
+    if (path.startsWith('/portfolio')) return 'portfolio';
+    if (path.startsWith('/services')) return 'services';
+    if (path.startsWith('/blog')) return 'blog';
+    if (path.startsWith('/contact')) return 'contact';
     return 'home';
   };
 

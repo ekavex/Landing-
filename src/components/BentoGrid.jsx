@@ -15,7 +15,7 @@ const SplitReveal = ({ children, className = '', delay = 0 }) => {
   const chars = String(children).split('');
 
   return (
-    <span ref={ref} className={`inline-flex flex-wrap ${className}`} style={{ perspective: '600px' }}>
+    <span ref={ref} className={`inline-flex flex-wrap justify-center ${className}`} style={{ perspective: '600px' }}>
       {chars.map((char, i) => (
         <motion.span
           key={i}

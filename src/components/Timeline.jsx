@@ -24,9 +24,9 @@ const Timeline = () => {
         </p>
       </div>
 
-      <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 py-8 lg:py-[280px]">
+      <div className="relative max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 xl:px-32 py-8 lg:py-[220px] xl:py-[280px]">
         {/* Horizontal Line - Desktop Only */}
-        <div className="hidden lg:block absolute left-12 right-12 top-1/2 h-[1px] bg-navy/10 -translate-y-1/2 z-0" />
+        <div className="hidden lg:block absolute left-12 right-12 lg:left-24 lg:right-24 xl:left-32 xl:right-32 top-1/2 h-[1px] bg-navy/10 -translate-y-1/2 z-0" />
         
         {/* Vertical Line - Mobile Only */}
         <div className="block lg:hidden absolute left-1/2 top-8 bottom-8 w-[1px] bg-navy/10 -translate-x-1/2 z-0" />
@@ -51,7 +51,7 @@ const Timeline = () => {
                   className="relative w-[70px] h-[70px] lg:w-[80px] lg:h-[80px] rounded-full border border-navy/10 bg-alabaster flex flex-col items-center justify-center shadow-lg shadow-navy/5 z-20 mx-auto"
                 >
                   <IconComponent className="w-5 h-5 text-coral mb-0.5" />
-                  <span className="font-mono text-[10px] text-navy/90 font-bold">{step.num}</span>
+                  <span className="font-mono text-[10px] text-navy/50 font-bold">{step.num}</span>
                 </motion.div>
 
                 {/* Text Content Card */}
@@ -61,9 +61,9 @@ const Timeline = () => {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 + 0.2, duration: 0.6, ease: "easeOut" }}
                   className={`
-                    glass-panel rounded-[2rem] p-6 bg-alabaster/50 hover:border-coral/25 transition-colors shadow-sm text-center
-                    mt-6 lg:mt-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:w-[240px] xl:w-[280px]
-                    ${isTop ? 'lg:bottom-[calc(100%+32px)]' : 'lg:top-[calc(100%+32px)]'}
+                    glass-panel rounded-[2rem] p-5 xl:p-6 bg-alabaster/50 hover:border-coral/25 transition-colors shadow-sm text-center
+                    mt-6 lg:mt-0 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:w-[210px] xl:w-[260px] 2xl:w-[280px]
+                    ${isTop ? 'lg:bottom-[calc(100%+24px)] xl:bottom-[calc(100%+32px)]' : 'lg:top-[calc(100%+24px)] xl:top-[calc(100%+32px)]'}
                   `}
                 >
                   <h3 className="font-heading text-base xl:text-lg font-black text-navy mb-2 lg:mb-3">

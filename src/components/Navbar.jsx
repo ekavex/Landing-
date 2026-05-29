@@ -29,7 +29,7 @@ const Navbar = ({ activeView, onViewChange }) => {
         }`}
       >
         <div 
-          className={`mx-auto max-w-7xl rounded-full transition-all duration-500 flex items-center justify-between px-6 py-2.5 md:py-3 ${
+          className={`mx-auto max-w-7xl rounded-full transition-all duration-500 flex items-center justify-between px-6 py-2.5 md:py-3 relative ${
             scrolled 
               ? 'glass-panel-heavy shadow-[0_8px_30px_rgb(9,18,44,0.03)] border-navy/10 bg-alabaster/80 backdrop-blur-sm' 
               : 'bg-transparent border-transparent'
@@ -99,59 +99,59 @@ const Navbar = ({ activeView, onViewChange }) => {
               {mobileMenuOpen ? <X className="w-4 h-4 text-navy" /> : <Menu className="w-4 h-4 text-navy" />}
             </button>
           </div>
-        </div>
-      </motion.header>
 
-      {/* Mobile Glassmorphic Bottom Drawer Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 15 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-x-6 bottom-6 z-40 md:hidden"
-          >
-            <div className="glass-panel-heavy rounded-3xl p-6 border-navy/10 shadow-2xl shadow-navy/20">
-              <div className="flex flex-col gap-3">
-                {navbarData.navItems.map((item) => {
-                  const isActive = activeView === item.id;
-                  return (
+          {/* Mobile Glassmorphic Dropdown Menu */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0, y: -10 }}
+                animate={{ opacity: 1, height: 'auto', y: 0 }}
+                exit={{ opacity: 0, height: 0, y: -10 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute top-full left-0 right-0 mt-3 md:hidden z-50 overflow-hidden"
+              >
+                <div className="glass-panel-heavy rounded-[2rem] p-5 border border-navy/10 bg-alabaster/95 backdrop-blur-lg shadow-2xl shadow-navy/20">
+                  <div className="flex flex-col gap-2">
+                    {navbarData.navItems.map((item) => {
+                      const isActive = activeView === item.id;
+                      return (
+                        <button
+                          key={item.id}
+                          onClick={() => {
+                            onViewChange(item.id);
+                            setMobileMenuOpen(false);
+                          }}
+                          className={`flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-300 ${
+                            isActive 
+                              ? 'bg-coral text-alabaster font-bold shadow-lg shadow-coral/15' 
+                              : 'bg-navy/3 text-navy font-semibold hover:bg-navy/6'
+                          }`}
+                        >
+                          <span className="font-heading text-xs uppercase tracking-wider">
+                            {item.label}
+                          </span>
+                          {isActive && <Sparkles className="w-3.5 h-3.5 text-alabaster" />}
+                        </button>
+                      );
+                    })}
+
                     <button
-                      key={item.id}
                       onClick={() => {
-                        onViewChange(item.id);
+                        onViewChange('contact');
                         setMobileMenuOpen(false);
                       }}
-                      className={`flex items-center justify-between px-5 py-3.5 rounded-2xl transition-all duration-300 ${
-                        isActive 
-                          ? 'bg-coral text-alabaster font-bold shadow-lg shadow-coral/10' 
-                          : 'bg-navy/3 text-navy font-semibold hover:bg-navy/5'
-                      }`}
+                      className="flex items-center justify-center gap-2 bg-navy text-alabaster px-5 py-4 rounded-2xl font-heading text-xs font-bold uppercase tracking-wider shadow-lg shadow-navy/10 mt-1"
                     >
-                      <span className="font-heading text-[13px] uppercase tracking-wider">
-                        {item.label}
-                      </span>
-                      {isActive && <Sparkles className="w-4 h-4 text-alabaster" />}
+                      <span>{navbarData.ctaButton}</span>
+                      <Calendar className="w-4 h-4 text-coral" />
                     </button>
-                  );
-                })}
-
-                <button
-                  onClick={() => {
-                    onViewChange('contact');
-                    setMobileMenuOpen(false);
-                  }}
-                  className="flex items-center justify-center gap-2 bg-navy text-alabaster px-5 py-4 rounded-2xl font-heading text-xs font-bold uppercase tracking-wider shadow-lg shadow-navy/10 mt-2"
-                >
-                  <span>{navbarData.ctaButton}</span>
-                  <Calendar className="w-4 h-4 text-coral" />
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </motion.header>
     </>
   );
 };
