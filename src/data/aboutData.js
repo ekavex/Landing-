@@ -60,9 +60,9 @@ export const aboutData = [
     bgColor: "#FFFDF6",
     color: "#09122C",
     heading: ["The", "Team"],
-    description: "Ekavex was founded by Vishal Jangid with a mission to make enterprise-grade technology accessible to Indian startups and SMEs. Based in Pune, our team combines deep technical expertise with a practical understanding of how Indian businesses operate.",
+    description: "Ekavex was founded by Prem Jangid with a mission to make enterprise-grade technology accessible to Indian startups and SMEs. Based in Pune, our team combines deep technical expertise with a practical understanding of how Indian businesses operate.",
     features: [
-      { title: "Vishal Jangid", desc: "Founder & Lead Engineer — Full-stack developer and AI automation specialist building custom digital systems for businesses across India." }
+      { title: "Prem Jangid", desc: "Founder & Lead Engineer — Full-stack developer and AI automation specialist building custom digital systems for businesses across India." }
     ]
   },
   {
