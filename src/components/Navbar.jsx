@@ -3,10 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Calendar, Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 import { navbarData } from '../data/commonData';
 
-const Navbar = ({ activeView, onViewChange }) => {
+const Navbar = ({ activeView }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -18,6 +19,8 @@ const Navbar = ({ activeView, onViewChange }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navHref = (id) => (id === 'home' ? '/' : `/${id}`);
+
   return (
     <>
       <motion.header
@@ -28,43 +31,37 @@ const Navbar = ({ activeView, onViewChange }) => {
           scrolled ? 'top-2 md:top-4' : 'top-0'
         }`}
       >
-        <div 
+        <div
           className={`mx-auto max-w-7xl rounded-full transition-all duration-500 flex items-center justify-between px-6 py-2.5 md:py-3 relative ${
-            scrolled 
-              ? 'glass-panel-heavy shadow-[0_8px_30px_rgb(9,18,44,0.03)] border-navy/10 bg-alabaster/80 backdrop-blur-sm' 
+            scrolled
+              ? 'glass-panel-heavy shadow-[0_8px_30px_rgb(9,18,44,0.03)] border-navy/10 bg-alabaster/80 backdrop-blur-sm'
               : 'bg-transparent border-transparent'
           }`}
         >
-          {/* Brand Logo Section */}
-        <div 
-          onClick={() => onViewChange('home')}
-          className="flex items-center gap-2 cursor-pointer group"
-        >
-          {/* Logo Image */}
-          <img
-            src="/logo1.png"
-            alt="Ekavex Digital logo"
-            className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110"
-          />
-
-          <span className="font-heading text-lg font-black tracking-[-0.03em] text-navy">
-            {navbarData.brandName}
-          </span>
-         </div>
+          {/* Brand Logo */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <img
+              src="/logo1.png"
+              alt="Ekavex Digital logo"
+              className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110"
+            />
+            <span className="font-heading text-lg font-black tracking-[-0.03em] text-navy">
+              {navbarData.brandName}
+            </span>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1.5">
             {navbarData.navItems.map((item) => {
               const isActive = activeView === item.id;
               return (
-                <button
+                <Link
                   key={item.id}
-                  onClick={() => onViewChange(item.id)}
+                  href={navHref(item.id)}
                   className={`relative px-4 py-2 font-heading text-xs font-semibold uppercase tracking-wider transition-colors duration-300 ${
                     isActive ? 'text-navy' : 'text-navy/90 hover:text-navy'
                   }`}
                 >
-                  {/* Sliding Indicator Background */}
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
@@ -73,24 +70,24 @@ const Navbar = ({ activeView, onViewChange }) => {
                     />
                   )}
                   {item.label}
-                </button>
+                </Link>
               );
             })}
           </nav>
 
-          {/* Call to Action Button */}
+          {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <button
-              onClick={() => onViewChange('contact')}
+            <Link
+              href="/contact"
               className="group relative overflow-hidden flex items-center gap-2 bg-navy text-alabaster font-heading text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-full transition-transform duration-300 hover:scale-105"
             >
               <span className="relative z-10">{navbarData.ctaButton}</span>
               <Sparkles className="w-3.5 h-3.5 text-coral relative z-10 transition-transform duration-500 group-hover:rotate-12" />
               <div className="absolute inset-0 bg-coral translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
-            </button>
+            </Link>
           </div>
 
-          {/* Mobile Menu Buttons */}
+          {/* Mobile Hamburger */}
           <div className="flex md:hidden items-center gap-3">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -100,7 +97,7 @@ const Navbar = ({ activeView, onViewChange }) => {
             </button>
           </div>
 
-          {/* Mobile Glassmorphic Dropdown Menu */}
+          {/* Mobile Dropdown */}
           <AnimatePresence>
             {mobileMenuOpen && (
               <motion.div
@@ -115,15 +112,13 @@ const Navbar = ({ activeView, onViewChange }) => {
                     {navbarData.navItems.map((item) => {
                       const isActive = activeView === item.id;
                       return (
-                        <button
+                        <Link
                           key={item.id}
-                          onClick={() => {
-                            onViewChange(item.id);
-                            setMobileMenuOpen(false);
-                          }}
+                          href={navHref(item.id)}
+                          onClick={() => setMobileMenuOpen(false)}
                           className={`flex items-center justify-between px-5 py-3 rounded-2xl transition-all duration-300 ${
-                            isActive 
-                              ? 'bg-coral text-alabaster font-bold shadow-lg shadow-coral/15' 
+                            isActive
+                              ? 'bg-coral text-alabaster font-bold shadow-lg shadow-coral/15'
                               : 'bg-navy/3 text-navy font-semibold hover:bg-navy/6'
                           }`}
                         >
@@ -131,20 +126,18 @@ const Navbar = ({ activeView, onViewChange }) => {
                             {item.label}
                           </span>
                           {isActive && <Sparkles className="w-3.5 h-3.5 text-alabaster" />}
-                        </button>
+                        </Link>
                       );
                     })}
 
-                    <button
-                      onClick={() => {
-                        onViewChange('contact');
-                        setMobileMenuOpen(false);
-                      }}
+                    <Link
+                      href="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
                       className="flex items-center justify-center gap-2 bg-navy text-alabaster px-5 py-4 rounded-2xl font-heading text-xs font-bold uppercase tracking-wider shadow-lg shadow-navy/10 mt-1"
                     >
                       <span>{navbarData.ctaButton}</span>
                       <Calendar className="w-4 h-4 text-coral" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

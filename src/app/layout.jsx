@@ -24,6 +24,9 @@ export const metadata = {
     template: '%s | Ekavex Digital',
   },
   description: 'Ekavex builds custom websites, AI automation workflows, CRM systems, and mobile apps for startups and businesses in India. Book a free strategy call today.',
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({ children }) {

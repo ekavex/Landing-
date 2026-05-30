@@ -18,8 +18,31 @@ export default async function ServicePage({ params }) {
 
   if (!svc) notFound();
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: svc.title,
+    description: svc.benefit,
+    provider: {
+      '@type': 'Organization',
+      name: 'Ekavex Digital',
+      url: 'https://ekavex-demo.vercel.app',
+    },
+    serviceType: svc.title,
+    url: `https://ekavex-demo.vercel.app/services/${svc.slug}`,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: `https://ekavex-demo.vercel.app/contact`,
+    },
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <ServiceHero svc={svc} />
 
       <div className="border-t border-navy/6 mx-6 md:mx-12" />

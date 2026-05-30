@@ -35,8 +35,33 @@ export default async function BlogPostPage({ params }) {
     notFound();
   }
 
+  const blogPostingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.summary,
+    author: {
+      '@type': 'Person',
+      name: author?.name ?? post.author,
+    },
+    datePublished: post.date,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Ekavex Digital',
+      url: 'https://ekavex-demo.vercel.app',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://ekavex-demo.vercel.app/blog/${slug}`,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
       <ReadingProgress />
       <PostHero post={post} author={author} />
 

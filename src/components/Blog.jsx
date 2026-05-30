@@ -116,7 +116,10 @@ const Blog = () => {
             </div>
 
             <div className="flex items-center justify-between border-t border-navy/5 pt-6 mt-6">
-              <span className="font-mono text-[10px] font-bold text-navy">By {post.author}</span>
+              <div className="flex flex-col gap-0.5">
+                <span className="font-mono text-[10px] font-bold text-navy">By {post.author}</span>
+                <span className="font-mono text-[9px] text-navy/40">{post.date}</span>
+              </div>
               <ArrowRight className="w-4 h-4 text-navy group-hover:text-coral group-hover:translate-x-1 transition-all" />
             </div>
           </motion.div>
