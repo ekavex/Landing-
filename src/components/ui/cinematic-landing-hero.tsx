@@ -326,7 +326,7 @@ export function CinematicHero({
         {/* Isolated scalable background (Prevents layout thrashing) */}
         <div
           ref={mainCardRef}
-          className="main-card-bg premium-depth-card absolute inset-0 m-auto overflow-hidden gsap-reveal w-[92vw] md:w-[85vw] h-[92vh] md:h-[85vh] rounded-[32px] md:rounded-[40px] will-change-transform"
+          className="main-card-bg premium-depth-card absolute inset-0 m-auto overflow-hidden gsap-reveal w-[92vw] md:w-[85vw] h-[92vh] md:h-[85vh] rounded-4xl md:rounded-[40px] will-change-transform"
         >
           <div className="card-sheen" aria-hidden="true" />
         </div>
@@ -353,7 +353,7 @@ export function CinematicHero({
             {/* Buttons Group */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-5 w-full sm:w-auto">
               <button onClick={() => router.push('/contact')}
-              className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white text-[#09122C] font-bold rounded-xl md:rounded-2xl hover:bg-neutral-100 transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,255,255,0.15)] hover:shadow-[0_8px_25px_0_rgba(255,255,255,0.2)] hover:-translate-y-0.5">
+              className="group flex items-center justify-center gap-2 w-full sm:w-auto px-6 md:px-8 py-4 md:py-4 bg-white text-navy font-bold rounded-xl md:rounded-2xl hover:bg-neutral-100 transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,255,255,0.15)] hover:shadow-[0_8px_25px_0_rgba(255,255,255,0.2)] hover:-translate-y-0.5">
                 <MessageSquare className="w-4 h-4 md:w-5 md:h-5" />
                 <span className="text-base md:text-lg">Book a Call</span>
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-1 group-hover:translate-x-1 transition-transform" />

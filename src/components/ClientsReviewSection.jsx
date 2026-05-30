@@ -60,7 +60,7 @@ const ClientsReviewSection = () => {
           }`}
         >
           {/* Glow background on hover */}
-          <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-white/10 via-transparent to-coral/10 pointer-events-none" />
+          <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-br from-white/10 via-transparent to-coral/10 pointer-events-none" />
 
           {/* Floating Avatar */}
           <div className="absolute -top-10 left-1/2 -translate-x-1/2">

@@ -110,7 +110,7 @@ const Navbar = ({ activeView, onViewChange }) => {
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute top-full left-0 right-0 mt-3 md:hidden z-50 overflow-hidden"
               >
-                <div className="glass-panel-heavy rounded-[2rem] p-5 border border-navy/10 bg-alabaster/95 backdrop-blur-lg shadow-2xl shadow-navy/20">
+                <div className="glass-panel-heavy rounded-4xl p-5 border border-navy/10 bg-alabaster/95 backdrop-blur-lg shadow-2xl shadow-navy/20">
                   <div className="flex flex-col gap-2">
                     {navbarData.navItems.map((item) => {
                       const isActive = activeView === item.id;
