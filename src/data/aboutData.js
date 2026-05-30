@@ -31,8 +31,8 @@ export const aboutData = [
     heading: ["Plan.", "Build.", "Ship."],
     description: "Seven phases. Full transparency. Your project is deployed flawlessly from discovery to post-launch support.",
     features: [
-      { title: "01 — Discovery", desc: "Collaborate to map workflow bottlenecks, specify technology limits, and structure feature benchmarks." },
-      { title: "02 — Strategy", desc: "Formulate detailed engineering specifications, database mapping templates, and component roadmaps." },
+      { title: "01 — Discovery", desc: "We understand your business goals, workflows, and the problems you need solved — then map the right technical path forward." },
+      { title: "02 — Strategy", desc: "We research your industry and create a clear technical roadmap, timeline, and feature plan for your approval." },
       { title: "03 — Design", desc: "Design clean, intuitive interfaces with interactive prototypes and custom responsive mockups for your review." },
       { title: "04 — Development", desc: "Execute clean, modular frontends and robust backends powered by React, Next.js, and LLM integrations." },
       { title: "05 — Feedback", desc: "Staging deployments, sandbox runtimes, and active UI refinements to lock specs." },
@@ -49,13 +49,25 @@ export const aboutData = [
     features: [
       { title: "10+", desc: "Projects delivered across India — websites, AI automations, CRM platforms, and mobile apps." },
       { title: "70%", desc: "Average query time reduction across our AI-powered data platforms." },
-      { title: "95%", desc: "Task automation rate on enterprise workflow systems we engineer." }
+      { title: "95%", desc: "Task automation rate on enterprise workflow systems we engineer." },
+      { title: "30 Days", desc: "Free post-launch support on every project — bug fixes, server tuning, and performance optimization." }
     ],
     footerDesc: "Weekly client updates, live staging rollouts, and one month of free post-launch technical support on every project."
   },
   {
+    id: "section-team",
+    label: "05 — The team",
+    bgColor: "#FFFDF6",
+    color: "#09122C",
+    heading: ["The", "Team"],
+    description: "Ekavex was founded by Vishal Jangid with a mission to make enterprise-grade technology accessible to Indian startups and SMEs. Based in Pune, our team combines deep technical expertise with a practical understanding of how Indian businesses operate.",
+    features: [
+      { title: "Vishal Jangid", desc: "Founder & Lead Engineer — Full-stack developer and AI automation specialist building custom digital systems for businesses across India." }
+    ]
+  },
+  {
     id: "section-5",
-    label: "05 — Let's begin",
+    label: "06 — Let's begin",
     bgColor: "#09122C",
     color: "#fff",
     heading: ["Ready", "To", "Build?"],

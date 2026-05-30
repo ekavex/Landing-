@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MessageSquare, Send, CheckCircle2, MessageCircle } from 'lucide-react';
 
-import { contactHeader, contactDetails, contactSuccessMessage, whatHappensNext, whatsappData } from '../data/contactData';
+import { contactHeader, contactDetails, contactSuccessMessage, whatHappensNext, whatsappData, contactFormFields } from '../data/contactData';
 
 const iconMap = { Mail, Phone, MessageSquare };
 
@@ -14,6 +14,8 @@ const ContactForm = () => {
     email: '',
     phone: '',
     company: '',
+    service: '',
+    budget: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -88,6 +90,18 @@ const ContactForm = () => {
                 </motion.div>
               );
             })}
+          </div>
+
+          {/* Location */}
+          <div className="flex items-center gap-4 p-4 rounded-2xl glass-panel bg-alabaster/30 max-w-sm">
+            <div className="p-3 rounded-xl bg-coral/10 text-coral">
+              <MessageSquare className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="font-mono text-[9px] text-navy/90 uppercase tracking-widest">Location</div>
+              <div className="font-heading text-sm font-bold text-navy">Ekavex Digital</div>
+              <div className="font-heading text-xs font-medium text-navy/70">Pune, Maharashtra, India</div>
+            </div>
           </div>
 
           {/* WhatsApp CTA */}
@@ -189,6 +203,34 @@ const ContactForm = () => {
               </div>
 
               <div className="flex flex-col gap-1.5">
+                <label className="font-mono text-[10px] uppercase tracking-wider text-navy/90">What do you need? (Optional)</label>
+                <select
+                  value={formData.service}
+                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  className="w-full px-5 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none transition-all focus:border-coral focus:bg-alabaster/80 focus:ring-1 focus:ring-coral appearance-none"
+                >
+                  <option value="">Select a service (optional)</option>
+                  {contactFormFields.services.map((s) => (
+                    <option key={s} value={s}>{s}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label className="font-mono text-[10px] uppercase tracking-wider text-navy/90">Approximate Budget (Optional)</label>
+                <select
+                  value={formData.budget}
+                  onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                  className="w-full px-5 py-3.5 rounded-2xl border border-navy/8 bg-alabaster/40 text-navy font-sans text-sm outline-none transition-all focus:border-coral focus:bg-alabaster/80 focus:ring-1 focus:ring-coral appearance-none"
+                >
+                  <option value="">Select a budget range (optional)</option>
+                  {contactFormFields.budgets.map((b) => (
+                    <option key={b} value={b}>{b}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="flex flex-col gap-1.5">
                 <label className="font-mono text-[10px] uppercase tracking-wider text-navy/90">Project Brief</label>
                 <textarea
                   required
@@ -209,6 +251,10 @@ const ContactForm = () => {
                   <Send className="w-4 h-4" />
                 </span>
               </button>
+
+              <p className="font-sans text-xs text-navy/60 text-center leading-relaxed">
+                We typically respond within 4–8 business hours. For urgent queries, WhatsApp us directly.
+              </p>
 
               <p className="font-mono text-[9px] text-navy/40 text-center leading-relaxed">
                 We respond within 24 hours &mdash; no spam, ever.{' '}

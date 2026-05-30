@@ -76,12 +76,12 @@ const Blog = () => {
 
           <div className="lg:col-span-5 h-70 bg-navy rounded-3xl overflow-hidden flex flex-col justify-between p-8 text-alabaster shadow-xl relative group-hover:scale-[1.01] transition-transform duration-500">
             <div className="absolute inset-0 bg-linear-to-tr from-coral/10 to-transparent pointer-events-none" />
-            <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold">SYSTEM ACTIVE</div>
+            <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold">Featured Article</div>
             <div className="font-heading text-lg font-bold leading-normal text-alabaster/90">
-              "We synthesize AI frameworks to elevate core operational throughput."
+              {featured.summary}
             </div>
             <div className="flex items-center gap-2 text-coral font-mono text-[10px] font-bold tracking-widest">
-              <span>DECONSTRUCT INSIGHT</span>
+              <span>Read Article</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>
