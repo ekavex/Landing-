@@ -18,8 +18,8 @@ export const footerData = {
     { label: "Privacy Policy", href: "/privacy-policy" }
   ],
   copyright: "© 2026 Ekavex Digital. All rights reserved.",
-  craftedWith: "Crafted with",
-  by: "by"
+  craftedWith: "Built by Ekavex Digital,",
+  by: "Pune"
 };
 
 export const navbarData = {
@@ -37,8 +37,9 @@ export const navbarData = {
 
 export const legacyFooterData = {
   brandName: "Ekavex",
-  description: "A high-end editorial digital agency specializing in premium web development, custom AI agent systems, and top-tier UI/UX designs.",
+  description: "Custom websites, AI automation, CRM systems, and mobile apps for startups and businesses across India. Based in Pune, Maharashtra.",
   copyright: "© 2026 EKAVEX DIGITAL. ALL RIGHTS SECURED.",
+  location: "Pune, Maharashtra, India",
   navigation: [
     { id: 'home', label: 'Home' },
     { id: 'services', label: 'Services' },

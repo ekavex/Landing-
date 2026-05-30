@@ -1,32 +1,32 @@
 export const heroData = {
   status: "Web Development • AI Automation • Digital Growth",
   headline: [
-    { text: "We Build Intelligent", highlight: false },
-    { text: "Websites, AI Automations", highlight: true },
-    { text: "& Digital Systems.", highlight: false }
+    { text: "Custom Websites, AI Automation", highlight: false },
+    { text: "& Digital Systems", highlight: true },
+    { text: "— Built for Indian Businesses.", highlight: false }
   ],
-  subHeadline: "Ekavex helps startups and businesses build custom websites, AI-powered automations, CRM systems, dashboards, and digital platforms that reduce manual work and improve growth.",
+  subHeadline: "We help startups and SMEs across Pune and India build faster, automate smarter, and grow digitally — with custom web development, AI workflows, CRM systems, and mobile apps.",
   primaryCta: "Book a Free Strategy Call",
-  secondaryCta: "Explore Our Services",
+  secondaryCta: "See Our Case Studies",
   stats: {
-    liveTerminal: "System Synced",
+    liveTerminal: "Ekavex Digital",
     automationPulse: "Active",
-    neuralSpeed: "Fast Delivery",
-    efficiency: "340%",
-    statusNode: "AI Workflow Online"
+    neuralSpeed: "On-Time",
+    efficiency: "10+",
+    statusNode: "Based in Pune, India"
   },
   valueProps: [
     {
-      title: '100% Transparent Process',
-      desc: 'Weekly updates, staging previews, and clear task tracking so you always know what is being built.'
+      title: '10+ Projects Delivered',
+      desc: 'Real estate platforms, clinic systems, AI automations, and more — built for businesses across India.'
     },
     {
-      title: 'AI-Enhanced Delivery',
-      desc: 'Faster development using automation, reusable systems, and smart workflows that cut build time.'
+      title: '6 Industries Served',
+      desc: 'Real estate, healthcare, education, food, startups, and service businesses.'
     },
     {
-      title: '1-Month Post-Launch Support',
-      desc: 'Launch support, server tuning, bug fixes, and optimization included with every project.'
+      title: '30-Day Post-Launch Support',
+      desc: 'Bug fixes, server tuning, and performance optimization included with every project.'
     }
   ]
 };
@@ -169,7 +169,7 @@ export const industriesData = [
 ];
 
 export const beforeAfterData = {
-  heading: "From Manual Workflows to Intelligent Systems",
+  heading: "Here's What Changes When You Work With Ekavex",
   before: {
     label: "Before Ekavex",
     points: [
@@ -256,22 +256,10 @@ export const faqHeader = {
 };
 
 export const faqData = [
-  // {
-  //   q: "How long does a project take?",
-  //   a: "Project timelines vary based on features and complexity. Most websites take 2-4 weeks, web apps 4-8 weeks, and automation or AI systems 4-12 weeks."
-  // },
-  // {
-  //   q: "Do you provide support after launch?",
-  //   a: "Yes. Every project includes one month of dedicated post-launch support including bug fixes, server tuning, and optimization."
-  // },
   {
     q: "Can AI integrate into existing systems?",
     a: "Absolutely. We can integrate AI automations and workflows into your existing websites, CRMs, databases, and applications."
   },
-  // {
-  //   q: "What technologies do you use?",
-  //   a: "We use React, Next.js, Node.js, Python, OpenAI APIs, n8n, Make.com, React Native, and modern cloud and database technologies."
-  // },
   {
     q: "Do you build CRM or CMS systems?",
     a: "Yes. We build custom CRM and CMS platforms tailored to your specific workflows, whether it is managing leads, appointments, content, or customer records."
@@ -284,8 +272,24 @@ export const faqData = [
     q: "Can you redesign an existing website?",
     a: "Yes. We modernize outdated websites with improved design, better performance, mobile responsiveness, and SEO optimization."
   },
-  // {
-  //   q: "Do you build SaaS platforms?",
-  //   a: "Yes. We specialize in building SaaS platforms, admin dashboards, user portals, and scalable business applications."
-  // }
+  {
+    q: "Where is Ekavex based?",
+    a: "We are based in Pune, Maharashtra, India. We work with clients across India and internationally via remote collaboration."
+  },
+  {
+    q: "How much does a custom website cost?",
+    a: "Website projects typically start from ₹35,000 depending on complexity, design requirements, and features needed. We provide a detailed quote after a free discovery call."
+  },
+  {
+    q: "How long does a project take?",
+    a: "Most websites are delivered in 4–8 weeks. Automation systems and CRM platforms typically take 6–12 weeks depending on scope."
+  },
+  {
+    q: "Do you work with clients outside Pune?",
+    a: "Yes — we work with clients across India (Mumbai, Bengaluru, Delhi, Hyderabad, and more) and internationally."
+  },
+  {
+    q: "What happens after the project launches?",
+    a: "Every project includes 30 days of free post-launch support covering bug fixes, server tuning, and performance optimization."
+  }
 ];

@@ -77,7 +77,7 @@ const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
           </div>
 
           <div className="my-6">
-            <div className="font-heading text-5xl font-black text-coral leading-none mb-2">25+</div>
+            <div className="font-heading text-5xl font-black text-coral leading-none mb-2">10+</div>
             <div className="font-heading text-lg font-bold tracking-tight text-alabaster">
               Projects Delivered
             </div>

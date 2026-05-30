@@ -124,7 +124,7 @@ export default function Hero({ onNavigate }) {
               <Zap className="w-3.5 h-3.5" />
             </div>
             <div className="text-left">
-              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-navy/90">Efficiency</span>
+              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-navy/90">Projects</span>
               <span className="block font-heading text-sm font-bold text-navy tracking-tight">{heroData.stats.efficiency}</span>
             </div>
           </motion.div>
@@ -142,7 +142,7 @@ export default function Hero({ onNavigate }) {
           >
             <Activity className="w-3 h-3 text-coral animate-pulse" />
             <span className="font-mono text-[9px] text-navy/70 uppercase tracking-widest font-semibold">
-              PIPELINE RECON
+              10+ Projects Delivered
             </span>
           </motion.div>
         </motion.div>
@@ -162,8 +162,8 @@ export default function Hero({ onNavigate }) {
               <ShieldCheck className="w-3.5 h-3.5" />
             </div>
             <div className="text-left">
-              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-alabaster/40">Scale Delivery</span>
-              <span className="block font-heading text-sm font-bold text-alabaster tracking-tight">100% Secure</span>
+              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-alabaster/40">Delivery</span>
+              <span className="block font-heading text-sm font-bold text-alabaster tracking-tight">On-Time</span>
             </div>
           </motion.div>
         </motion.div>
@@ -232,7 +232,7 @@ export default function Hero({ onNavigate }) {
             </button>
 
             <button
-              onClick={() => onNavigate('services')}
+              onClick={() => onNavigate('portfolio')}
               className="bg-white/80 border border-navy/20 hover:border-coral/80 hover:bg-white/60 text-navy px-8 py-3.5 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300 w-full sm:w-auto cursor-pointer"
             >
               {heroData.secondaryCta}
@@ -262,16 +262,16 @@ export default function Hero({ onNavigate }) {
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between items-center bg-alabaster/40 border border-navy/4 rounded-xl p-3">
-                  <span className="font-mono text-xs text-navy/85">Automation.pulse</span>
+                  <span className="font-mono text-xs text-navy/85">Projects.status</span>
                   <span className="font-mono text-xs text-coral font-bold">{heroData.stats.automationPulse}</span>
                 </div>
                 <div className="bg-navy rounded-xl p-3 flex justify-between items-center">
                   <div className="text-left">
-                    <span className="block font-mono text-[8px] text-alabaster/40 uppercase">Neural Speed</span>
+                    <span className="block font-mono text-[8px] text-alabaster/40 uppercase">Delivery</span>
                     <span className="font-mono text-xs text-alabaster font-light">{heroData.stats.neuralSpeed}</span>
                   </div>
                   <span className="bg-coral/20 border border-coral/30 rounded px-2 py-0.5 font-mono text-[8px] text-coral font-bold">
-                    OPTIMAL
+                    ON TIME
                   </span>
                 </div>
               </div>
@@ -284,7 +284,7 @@ export default function Hero({ onNavigate }) {
                   <Zap className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <span className="block font-mono text-[8px] uppercase text-navy/90">Efficiency</span>
+                  <span className="block font-mono text-[8px] uppercase text-navy/90">Projects</span>
                   <span className="block font-heading text-sm font-bold text-navy">{heroData.stats.efficiency}</span>
                 </div>
               </div>
@@ -294,7 +294,7 @@ export default function Hero({ onNavigate }) {
                 </div>
                 <div className="text-left">
                   <span className="block font-mono text-[8px] uppercase text-alabaster/40">Delivery</span>
-                  <span className="block font-heading text-sm font-bold text-alabaster">100% Safe</span>
+                  <span className="block font-heading text-sm font-bold text-alabaster">On-Time</span>
                 </div>
               </div>
             </div>

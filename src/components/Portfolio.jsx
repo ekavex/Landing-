@@ -189,7 +189,7 @@ const Portfolio = () => {
 
                   {/* Deconstruct detail modal button */}
                   <div className="flex items-center gap-1 font-heading text-[10px] font-black uppercase text-alabaster/85 group-hover:text-coral transition-all duration-300 group-hover:scale-105 active:scale-95 shrink-0 cursor-pointer">
-                    <span>Deconstruct</span>
+                    <span>View Case Study</span>
                     <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 export const portfolioHeader = {
   subtitle: 'Case Studies',
-  title: 'Real Projects, Real Results'
+  title: 'Real Projects. Real Results. — Case Studies by Ekavex'
 };
 
 export const portfolioFilters = ['All', 'Web Service', 'Automation Service', 'App Services'];
@@ -11,7 +11,7 @@ export const portfolioData = [
     title: 'Real Estate Property Listing Platform',
     category: 'Web Service',
     timeline: '8 Weeks',
-    metric: 'Simplified Property Discovery',
+    metric: '3x Faster Property Discovery',
     desc: 'A structured property listing platform where users can list, browse, buy, and sell properties with location-based information and a user-friendly marketplace experience.',
     challenge: 'Property data was scattered, difficult to browse, and hard for buyers and sellers to manage digitally. The business needed a clean platform to handle large volumes of property listings.',
     strategy: 'Built a full property marketplace with listing management, location-based browsing, buy/sell workflows, and an admin panel to manage large property data efficiently.',
@@ -30,7 +30,7 @@ export const portfolioData = [
     title: 'Academic MCQ & Test Management Platform',
     category: 'App Services',
     timeline: '10 Weeks',
-    metric: 'Fully Digital Exam Management',
+    metric: '500+ Students, Zero Paper',
     desc: 'An end-to-end academic platform for MCQ creation, class-wise test management, student access, timed assessments, and image-to-MCQ support.',
     challenge: 'Institutions needed a faster, digital way to create, manage, and conduct MCQ-based tests online without manual paper-based processes.',
     strategy: 'Developed a complete test management system with MCQ creation tools, class-wise controls, timed test engine, student portal, and a full admin dashboard.',
@@ -68,7 +68,7 @@ export const portfolioData = [
     title: 'Cafeteria QR & WhatsApp Ordering System',
     category: 'Automation Service',
     timeline: '5 Weeks',
-    metric: 'Faster Order Processing',
+    metric: 'Orders Processed 3x Faster',
     desc: 'A QR-based and WhatsApp-supported ordering system that allows customers to browse a digital menu and place orders faster without manual order taking.',
     challenge: 'Manual order taking was slow, error-prone, and inefficient during busy hours, leading to customer frustration and staff overload.',
     strategy: 'Created a QR-triggered digital menu with WhatsApp ordering integration, allowing customers to order from their phone while the kitchen receives orders automatically.',
@@ -87,7 +87,7 @@ export const portfolioData = [
     title: 'Clinic Appointment & Management System',
     category: 'Web Service',
     timeline: '9 Weeks',
-    metric: 'Centralized Clinic Operations',
+    metric: '80% Reduction in Manual Admin',
     desc: 'A complete clinic management system with appointment booking, patient records, CMS, CRM, and admin dashboard, all in one place.',
     challenge: 'The clinic needed a centralized system to manage appointments, patient records, website content, and customer relationships without relying on manual processes.',
     strategy: 'Built a clinic website with online appointment booking, patient management, content management, CRM, and a full admin dashboard for clinic staff.',

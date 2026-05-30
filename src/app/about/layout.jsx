@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'About Ekavex - Our Story, Team & Mission',
-  description: 'Learn about Ekavex Digital - the team, founding story, and mission behind India\'s AI-first web development agency. We build systems that actually get used.',
+  title: 'About Ekavex — Custom Web & AI Development Agency in Pune, India',
+  description: 'Ekavex is a Pune-based digital agency building custom websites, AI automations, CRM systems, and mobile apps for startups and businesses across India.',
 };
 
 export default function AboutLayout({ children }) {

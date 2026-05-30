@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import FlowArt, { FlowSection } from '../../components/ui/story-scroll';
 
 import { aboutData } from '../../data/aboutData';
@@ -68,6 +69,27 @@ export default function AboutPage() {
                     <p className="max-w-[50ch] text-[clamp(1rem,2.5vw,2rem)] font-normal leading-relaxed">
                       {section.footerDesc}
                     </p>
+                  </>
+                )}
+
+                {section.ctaLinks && section.ctaLinks.length > 0 && (
+                  <>
+                    <hr className={`my-[2vw] border-none border-t ${hrBorderColor}`} />
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      {section.ctaLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className={`inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-heading font-semibold text-sm tracking-tight transition-all duration-300 ${
+                            link.primary
+                              ? 'bg-coral text-white hover:bg-coral/90'
+                              : 'bg-white/10 border border-white/20 text-white hover:bg-white/20'
+                          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
                   </>
                 )}
               </div>

@@ -61,6 +61,9 @@ export default function Footer() {
           <div className="font-mono text-[9px] text-navy/90 uppercase tracking-widest">
             {legacyFooterData.copyright}
           </div>
+          <div className="font-mono text-[9px] text-navy/60 uppercase tracking-widest">
+            {legacyFooterData.location}
+          </div>
         </div>
 
         {/* Columns */}

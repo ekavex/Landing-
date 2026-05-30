@@ -9,10 +9,13 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: svc.title,
+    title: `${svc.title} for Businesses in India | Ekavex Digital`,
     description: svc.benefit,
+    alternates: {
+      canonical: `https://ekavex-demo.vercel.app/services/${svc.slug}`,
+    },
     openGraph: {
-      title: `${svc.title} | Ekavex Digital`,
+      title: `${svc.title} for Businesses in India | Ekavex Digital`,
       description: svc.heroSubtext,
     },
   };

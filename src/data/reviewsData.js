@@ -1,26 +1,26 @@
 export const clientsReviewHeader = {
   subtitle: 'Client Feedback',
-  title: 'What our clients say after launch',
-  description: 'These reviews are from recent partners who wanted a confident digital presence, efficient systems, and a polished launch experience.'
+  title: 'What Founders & Business Owners Say',
+  description: 'Feedback from businesses we\'ve worked with across India.'
 };
 
 export const clientReviews = [
   {
-    quote: 'The site launched beautifully, the team remained transparent, and the final product feels premium without the usual agency friction.',
-    name: 'Amina Farouk',
+    quote: 'The platform launched on time, the team was always transparent about progress, and the final product is exactly what we envisioned. Our agents now manage leads in half the time.',
+    name: 'Rahul S.',
     title: 'Founder',
-    company: 'Luma Labs'
+    company: 'Real Estate Startup, Pune'
   },
   {
-    quote: 'They transformed our roadmap into a clear product with no guesswork - every milestone arrived on time and with thoughtful detail.',
-    name: 'Noah Park',
-    title: 'VP Product',
-    company: 'Vektor AI'
+    quote: 'Our appointment booking used to be completely manual. Ekavex built us a system that handles everything — bookings, reminders, patient records. It\'s transformed how we operate.',
+    name: 'Dr. Priya M.',
+    title: 'Clinic Owner',
+    company: 'Nashik'
   },
   {
-    quote: 'The final experience is fast, modern, and entirely aligned with our brand. We also gained a smarter automation layer that reduced manual work instantly.',
-    name: 'Mira Jensen',
-    title: 'COO',
-    company: 'Wavebridge'
+    quote: 'The MCQ platform they built handles our entire exam workflow — from creation to student access. Delivered in 10 weeks and works flawlessly.',
+    name: 'Akash T.',
+    title: 'Operations Head',
+    company: 'Education Platform, Mumbai'
   }
 ];
