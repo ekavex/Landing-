@@ -49,15 +49,17 @@ export default function HowItWorks({ processSteps }) {
 
               <div className="space-y-4">
                 {/* What we do */}
-                <div className="glass-panel rounded-2xl p-4 border border-navy/6">
-                  <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold mb-1.5">
+                <div className="bg-navy rounded-2xl p-4 border border-white/10 shadow-lg relative overflow-hidden">
+                  {/* Subtle coral glow overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-coral/5 to-transparent pointer-events-none" />
+                  <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold mb-1.5 relative z-10">
                     What we do
                   </div>
-                  <p className="font-sans text-xs text-navy/70 leading-relaxed">{step.you}</p>
+                  <p className="font-sans text-xs text-alabaster/85 leading-relaxed relative z-10">{step.you}</p>
                 </div>
 
                 {/* What you do */}
-                <div className="bg-navy/3 rounded-2xl p-4 border border-navy/6">
+                <div className="bg-navy/3 rounded-2xl p-4 border border-navy/6 glass-panel">
                   <div className="font-mono text-[9px] uppercase tracking-widest text-navy/40 font-bold mb-1.5">
                     What you do
                   </div>

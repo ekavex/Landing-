@@ -8,7 +8,7 @@ export const contactDetails = [
   {
     id: 'email',
     label: 'Email',
-    value: 'hello@ekavex.com',
+    value: ' contact@ekavex.in',
     iconName: 'Mail'
   },
   {
