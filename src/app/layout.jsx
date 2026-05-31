@@ -1,7 +1,7 @@
 import './globals.css';
 import RootClientShell from '../components/RootClientShell';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -60,7 +60,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/'),
   title: {
     default: 'Ekavex | Custom Web Development, AI Automation & Digital Systems',
     template: '%s | Ekavex Digital',
@@ -69,6 +69,15 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({ children }) {

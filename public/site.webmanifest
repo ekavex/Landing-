@@ -1,0 +1,39 @@
+{
+  "name": "Ekavex Digital",
+  "short_name": "Ekavex",
+  "description": "Custom web development, AI automation & digital systems for businesses in India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFDF6",
+  "theme_color": "#09122C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "technology"],
+  "lang": "en",
+  "dir": "ltr"
+}

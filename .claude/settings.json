@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\visha\\\\OneDrive\\\\Desktop\\\\Ekavex_demo\" -Filter \"next.config.*\" -Force)",
-      "Bash(xargs grep -l \"^import.*Hero\\\\|^const.*Hero\")"
+      "Bash(xargs grep -l \"^import.*Hero\\\\|^const.*Hero\")",
+      "Bash(Select-String -Pattern \"favicon|icon|apple\")"
     ]
   }
 }

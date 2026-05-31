@@ -48,11 +48,11 @@ export default async function BlogPostPage({ params }) {
     publisher: {
       '@type': 'Organization',
       name: 'Ekavex Digital',
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app',
+      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app'}/blog/${slug}`,
+      '@id': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/'}/blog/${slug}`,
     },
   };
 

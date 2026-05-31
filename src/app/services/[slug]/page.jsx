@@ -26,14 +26,14 @@ export default async function ServicePage({ params }) {
     provider: {
       '@type': 'Organization',
       name: 'Ekavex Digital',
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app',
+      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/',
     },
     serviceType: svc.title,
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app'}/services/${svc.slug}`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/'}/services/${svc.slug}`,
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
-      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app'}/contact`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/'}/contact`,
     },
   };
 
