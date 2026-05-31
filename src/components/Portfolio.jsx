@@ -9,6 +9,15 @@ import { portfolioData, portfolioFilters, portfolioHeader } from '../data/portfo
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [toasts, setToasts] = useState([]);
+
+  const triggerToast = () => {
+    const id = Date.now();
+    setToasts((prev) => [...prev, { id }]);
+    setTimeout(() => {
+      setToasts((prev) => prev.filter((t) => t.id !== id));
+    }, 3000);
+  };
 
   const filteredProjects = activeFilter === 'All'
     ? portfolioData
@@ -179,7 +188,7 @@ const Portfolio = () => {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      window.open(project.projectUrl, '_blank', 'noopener,noreferrer');
+                      triggerToast();
                     }}
                     className="bg-coral hover:bg-coral/95 text-alabaster font-heading text-[10px] font-black uppercase tracking-wider px-4 py-2.5 rounded-full transition-all duration-300 flex items-center gap-1 border border-coral/30 shadow-lg shadow-coral/10 hover:scale-[1.03] active:scale-95 shrink-0 cursor-pointer"
                   >
@@ -283,6 +292,48 @@ const Portfolio = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Toast Notification Container */}
+      <div className="fixed top-32 right-6 z-150 flex flex-col gap-3 pointer-events-none w-80 max-w-[calc(100vw-3rem)]">
+        <AnimatePresence>
+          {toasts.map((t) => (
+            <motion.div
+              key={t.id}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.85, transition: { duration: 0.2 } }}
+              transition={{ type: 'spring', damping: 20, stiffness: 300 }}
+              className="relative bg-navy/95 border border-coral/30 backdrop-blur-md p-4 rounded-2xl shadow-[0_10px_30px_rgba(242,100,25,0.15)] flex items-center justify-between gap-4 overflow-hidden pointer-events-auto"
+            >
+              <div className="flex items-center gap-3">
+                <div className="p-2 bg-coral/10 border border-coral/20 rounded-xl text-coral shrink-0 animate-pulse">
+                  <Sparkles className="w-4 h-4" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-heading text-xs font-black uppercase tracking-wider text-alabaster">Coming Soon</span>
+                  <span className="font-sans text-[11px] text-alabaster/80 leading-normal mt-0.5">
+                    We're preparing the live demo for this project!
+                  </span>
+                </div>
+              </div>
+              <button
+                onClick={() => setToasts((prev) => prev.filter((item) => item.id !== t.id))}
+                className="text-alabaster/40 hover:text-alabaster transition-colors p-1 cursor-pointer"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+              {/* Progress bar */}
+              <motion.div
+                initial={{ scaleX: 1 }}
+                animate={{ scaleX: 0 }}
+                transition={{ duration: 3, ease: "linear" }}
+                style={{ originX: 0 }}
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-coral"
+              />
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
     </section>
   );
 };

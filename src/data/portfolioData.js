@@ -22,8 +22,7 @@ export const portfolioData = [
     ],
     features: ['Property Listing System', 'Buy & Sell Flows', 'Location-Based Browsing', 'Admin Dashboard', 'Large Data Handling'],
     tech: ['Next.js', 'React', 'PostgreSQL', 'Node.js', 'Tailwind CSS'],
-    imageUrl: '/portfolio/real-estate.jpg',
-    projectUrl: 'https://realestate.ekavex.com'
+    imageUrl: '/portfolio/real-estate.jpg'
   },
   {
     id: 'academic-mcq',
@@ -41,8 +40,7 @@ export const portfolioData = [
     ],
     features: ['MCQ Creation & Management', 'Image-to-MCQ Support', 'Class-Wise Controls', 'Timed Test System', 'Student Access Portal'],
     tech: ['Node.js', 'PostgreSQL', 'Next.js', 'Cloudinary'],
-    imageUrl: '/portfolio/academic-mcq.jpg',
-    projectUrl: 'https://mcq.ekavex.com'
+    imageUrl: '/portfolio/academic-mcq.jpg'
   },
   {
     id: 'nl-to-sql',
@@ -60,8 +58,7 @@ export const portfolioData = [
     ],
     features: ['Natural Language Input', 'SQL Query Generation', 'Database Integration', 'Simple UI', 'No SQL Knowledge Needed'],
     tech: ['Python', 'OpenAI API', 'PostgreSQL', 'React', 'FastAPI'],
-    imageUrl: '/portfolio/nl-to-sql.jpg',
-    projectUrl: 'https://sql.ekavex.com'
+    imageUrl: '/portfolio/nl-to-sql.jpg'
   },
   {
     id: 'cafeteria-ordering',
@@ -79,8 +76,7 @@ export const portfolioData = [
     ],
     features: ['QR-Based Ordering', 'WhatsApp Automation', 'Digital Menu', 'Order Management', 'Kitchen Notifications'],
     tech: ['React', 'Node.js', 'WhatsApp Business API', 'PostgreSQL'],
-    imageUrl: '/portfolio/cafeteria-ordering.jpg',
-    projectUrl: 'https://ordering.ekavex.com'
+    imageUrl: '/portfolio/cafeteria-ordering.jpg'
   },
   {
     id: 'clinic-management',
@@ -98,7 +94,6 @@ export const portfolioData = [
     ],
     features: ['Appointment Booking', 'Patient Management', 'CMS System', 'CRM Dashboard', 'Admin Panel'],
     tech: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
-    imageUrl: '/portfolio/clinic-management.jpg',
-    projectUrl: 'https://clinic.ekavex.com'
+    imageUrl: '/portfolio/clinic-management.jpg'
   }
 ];

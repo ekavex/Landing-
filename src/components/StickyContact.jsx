@@ -16,7 +16,7 @@ export default function StickyContact() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="hidden md:flex fixed bottom-8 right-8 z-50 items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-heading text-xs font-bold px-4 py-3 rounded-full shadow-xl shadow-green-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-green-500/40"
+        className="hidden md:flex fixed bottom-24 right-8 z-50 items-center gap-2.5 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-heading text-xs font-bold px-4 py-3 rounded-full shadow-xl shadow-green-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-green-500/40"
       >
         <MessageCircle className="w-4 h-4 shrink-0" />
         <span>Chat on WhatsApp</span>
