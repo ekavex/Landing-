@@ -19,11 +19,28 @@ const ContactForm = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Something went wrong.');
+      setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', company: '', service: '', budget: '', message: '' });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const whatsappUrl = `https://wa.me/${whatsappData.number}?text=${encodeURIComponent(whatsappData.message)}`;
@@ -242,13 +259,18 @@ const ContactForm = () => {
                 />
               </div>
 
+              {error && (
+                <p className="font-sans text-xs text-red-500 text-center">{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full group relative overflow-hidden flex items-center justify-center gap-2 bg-coral text-alabaster font-heading text-sm font-bold py-4 rounded-2xl transition-all duration-300 hover:bg-coral/90 hover:-translate-y-0.5 shadow-lg shadow-coral/20"
+                disabled={loading}
+                className="w-full group relative overflow-hidden flex items-center justify-center gap-2 bg-coral text-alabaster font-heading text-sm font-bold py-4 rounded-2xl transition-all duration-300 hover:bg-coral/90 hover:-translate-y-0.5 shadow-lg shadow-coral/20 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  <span>Send Project Inquiry</span>
-                  <Send className="w-4 h-4" />
+                  <span>{loading ? 'Sending...' : 'Send Project Inquiry'}</span>
+                  {!loading && <Send className="w-4 h-4" />}
                 </span>
               </button>
 
