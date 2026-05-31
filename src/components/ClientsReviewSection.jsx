@@ -121,7 +121,7 @@ const ClientsReviewSection = () => {
 
               {/* Title */}
               <p
-                className={`font-sans text-xs mb-5 relative z-10 ${review.featured ? "text-white/70" : "text-alabaster/50"
+                className={`font-sans text-xs mb-5 relative z-10 ${review.featured ? "text-white/80" : "text-alabaster/65"
                   }`}
               >
                 {review.title}, {review.company}
@@ -158,6 +158,7 @@ const ClientsReviewSection = () => {
       <div className="flex justify-center items-center gap-4 mt-8">
         <button
           onClick={() => swiperRef.current?.slidePrev()}
+          aria-label="Previous review"
           className="w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-coral hover:border-coral transition-all flex items-center justify-center"
         >
           <ChevronLeft className="w-5 h-5 text-alabaster" />
@@ -165,6 +166,7 @@ const ClientsReviewSection = () => {
 
         <button
           onClick={() => swiperRef.current?.slideNext()}
+          aria-label="Next review"
           className="w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-coral hover:border-coral transition-all flex items-center justify-center"
         >
           <ChevronRight className="w-5 h-5 text-alabaster" />

@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Calendar, TrendingUp, X, ArrowRight, ShieldCheck, ChevronRight } from 'lucide-react';
 
+import Image from 'next/image';
 import { portfolioData, portfolioFilters, portfolioHeader } from '../data/portfolioData';
 
 const Portfolio = () => {
@@ -80,6 +81,7 @@ const Portfolio = () => {
           {/* Left Arrow */}
           <button
             onClick={scrollLeft}
+            aria-label="Scroll filters left"
             className="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-alabaster border border-navy/10 shadow-sm flex items-center justify-center hover:bg-navy/5 transition-all duration-200 sm:hidden"
           >
             <ChevronRight className="w-4 h-4 rotate-180 text-navy" />
@@ -88,6 +90,7 @@ const Portfolio = () => {
           {/* Right Arrow */}
           <button
             onClick={scrollRight}
+            aria-label="Scroll filters right"
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-9 w-9 rounded-full bg-alabaster border border-navy/10 shadow-sm flex items-center justify-center hover:bg-navy/5 transition-all duration-200 sm:hidden"
           >
             <ChevronRight className="w-4 h-4 text-navy" />
@@ -147,10 +150,12 @@ const Portfolio = () => {
             >
               {/* Background Image with Overlay styles */}
               <div className="absolute inset-0 z-0">
-                <img
+                <Image
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/45 transition-colors duration-500" />
                 {/* Visual Depth Gradient */}

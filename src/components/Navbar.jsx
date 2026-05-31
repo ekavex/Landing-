@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, Calendar, Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { navbarData } from '../data/commonData';
 
@@ -40,10 +41,13 @@ const Navbar = ({ activeView }) => {
         >
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <img
+            <Image
               src="/logo1.png"
               alt="Ekavex Digital - Web Development & AI Automation Agency, Pune"
-              className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110"
+              width={40}
+              height={40}
+              priority
+              className="object-contain transition-transform duration-500 group-hover:scale-110"
             />
             <span className="font-heading text-lg font-black tracking-[-0.03em] text-navy">
               {navbarData.brandName}
@@ -91,6 +95,9 @@ const Navbar = ({ activeView }) => {
           <div className="flex md:hidden items-center gap-3">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav"
               className="p-2 rounded-full border border-navy/10 bg-alabaster/60 backdrop-blur-sm"
             >
               {mobileMenuOpen ? <X className="w-4 h-4 text-navy" /> : <Menu className="w-4 h-4 text-navy" />}
@@ -101,6 +108,7 @@ const Navbar = ({ activeView }) => {
           <AnimatePresence>
             {mobileMenuOpen && (
               <motion.div
+                id="mobile-nav"
                 initial={{ opacity: 0, height: 0, y: -10 }}
                 animate={{ opacity: 1, height: 'auto', y: 0 }}
                 exit={{ opacity: 0, height: 0, y: -10 }}

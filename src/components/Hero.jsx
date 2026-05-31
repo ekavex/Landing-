@@ -176,7 +176,7 @@ export default function Hero({ onNavigate }) {
               <ShieldCheck className="w-3.5 h-3.5" />
             </div>
             <div className="text-left">
-              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-alabaster/40">Delivery</span>
+              <span className="block font-mono text-[8.5px] uppercase tracking-wider text-alabaster/60">Delivery</span>
               <span className="block font-heading text-sm font-bold text-alabaster tracking-tight">On-Time</span>
             </div>
           </motion.div>
@@ -281,7 +281,7 @@ export default function Hero({ onNavigate }) {
                 </div>
                 <div className="bg-navy rounded-xl p-3 flex justify-between items-center">
                   <div className="text-left">
-                    <span className="block font-mono text-[8px] text-alabaster/40 uppercase">Delivery</span>
+                    <span className="block font-mono text-[8px] text-alabaster/60 uppercase">Delivery</span>
                     <span className="font-mono text-xs text-alabaster font-light">{heroData.stats.neuralSpeed}</span>
                   </div>
                   <span className="bg-coral/20 border border-coral/30 rounded px-2 py-0.5 font-mono text-[8px] text-coral font-bold">
@@ -307,7 +307,7 @@ export default function Hero({ onNavigate }) {
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div className="text-left">
-                  <span className="block font-mono text-[8px] uppercase text-alabaster/40">Delivery</span>
+                  <span className="block font-mono text-[8px] uppercase text-alabaster/60">Delivery</span>
                   <span className="block font-heading text-sm font-bold text-alabaster">On-Time</span>
                 </div>
               </div>
@@ -328,10 +328,10 @@ export default function Hero({ onNavigate }) {
             key={i}
             className="glass-panel rounded-2xl p-5 md:p-6 bg-white/80 bento-card-hover text-left flex flex-col justify-between"
           >
-            <h4 className="font-heading text-sm md:text-base font-black text-navy mb-2 flex items-center gap-2">
+            <h3 className="font-heading text-sm md:text-base font-black text-navy mb-2 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-coral shrink-0" />
               {card.title}
-            </h4>
+            </h3>
             <p className="font-sans text-[11px] md:text-xs text-navy/90 leading-relaxed">
               {card.desc}
             </p>

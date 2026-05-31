@@ -1,17 +1,26 @@
 'use client';
 
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { CinematicHero } from '../components/ui/cinematic-landing-hero';
 import Hero from '../components/Hero';
 import BentoGrid from '../components/BentoGrid';
 import IndustriesSection from '../components/IndustriesSection';
 import BeforeAfterSection from '../components/BeforeAfterSection';
 import Timeline from '../components/Timeline';
-import ClientsReviewSection from '../components/ClientsReviewSection';
 import FAQ from '../components/FAQ';
 import CTASection from '../components/CTASection';
+
+const CinematicHero = dynamic(
+  () => import('../components/ui/cinematic-landing-hero').then((m) => ({ default: m.CinematicHero })),
+  { ssr: false, loading: () => <div style={{ height: '100vh' }} /> }
+);
+
+const ClientsReviewSection = dynamic(
+  () => import('../components/ClientsReviewSection'),
+  { ssr: false, loading: () => <div style={{ height: '32rem' }} /> }
+);
 
 export default function HomePage() {
   const router = useRouter();

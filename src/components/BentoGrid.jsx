@@ -73,7 +73,7 @@ const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
             <div className="p-4 rounded-2xl bg-alabaster/10 text-coral">
               <IconComponent className="w-6 h-6" />
             </div>
-            <span className="font-mono text-[10px] tracking-widest text-alabaster/40 uppercase">{card.label}</span>
+            <span className="font-mono text-[10px] tracking-widest text-alabaster/60 uppercase">{card.label}</span>
           </div>
 
           <div className="my-6">
@@ -98,7 +98,7 @@ const ParallaxCard = ({ card, scrollYProgress, onNavigate, index }) => {
             <div className={`p-4 rounded-2xl ${isLight ? 'bg-navy/5 text-navy group-hover:bg-coral group-hover:text-alabaster' : 'bg-alabaster/10 text-coral'} transition-colors duration-300`}>
               <IconComponent className="w-6 h-6" />
             </div>
-            <span className={`font-mono text-[10px] tracking-widest uppercase ${isLight ? 'text-navy/90' : 'text-alabaster/40'}`}>{card.label}</span>
+            <span className={`font-mono text-[10px] tracking-widest uppercase ${isLight ? 'text-navy/90' : 'text-alabaster/60'}`}>{card.label}</span>
           </div>
 
           <div className="mt-8">

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { preloaderData } from '../data/commonData';
 
 const Preloader = ({ onComplete }) => {
@@ -57,12 +58,12 @@ const Preloader = ({ onComplete }) => {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden flex items-center justify-center border border-navy/10 bg-alabaster shadow-lg shadow-navy/5"
             >
-              <img
+              <Image
                 src="/logo.png"
                 alt="Ekavex logo"
-                className="w-full h-full object-contain p-5"
-                loading="eager"
-                decoding="async"
+                fill
+                priority
+                className="object-contain p-5"
               />
             </motion.div>
 
