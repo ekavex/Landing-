@@ -1,13 +1,12 @@
 "use client";
 
-import React from 'react';
+import React, { useRef, useState } from "react";
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { clientsReviewHeader, clientReviews } from '../data/reviewsData';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -27,6 +26,7 @@ const ClientsReviewSection = () => {
     featured: review.featured || false,
   }));
   const swiperRef = useRef(null);
+  const [expandedCard, setExpandedCard] = useState(null);
   return (
     <section className="py-16 px-6 md:px-12 bg-navy text-alabaster">
 
@@ -74,7 +74,7 @@ const ClientsReviewSection = () => {
               }}
               viewport={{ once: true }}
 
-              className={`h-72 group relative flex flex-col items-center text-center rounded-3xl pt-14 pb-8 px-6 cursor-pointer transition-all duration-300 ${review.featured
+              className={`h-auto min-h-72 group relative flex flex-col items-center text-center rounded-3xl pt-14 pb-8 px-6 cursor-pointer transition-all duration-300 ${review.featured
                 ? "bg-coral text-white shadow-2xl shadow-coral/20"
                 : "bg-white/5 border border-alabaster/10 backdrop-blur-md"
                 }`}
@@ -128,12 +128,29 @@ const ClientsReviewSection = () => {
               </p>
 
               {/* Quote */}
-              <p
-                className={`font-sans text-sm leading-relaxed max-h-24 pr-2 relative z-10 ${review.featured ? "text-white/85" : "text-alabaster/70"
-                  }`}
-              >
-                “{review.quote}”
-              </p>
+              <div className="relative z-10 flex-1">
+                <p
+                  className={`font-sans text-sm leading-relaxed ${expandedCard === idx ? "" : "line-clamp-4"
+                    } ${review.featured ? "text-white/85" : "text-alabaster/70"
+                    }`}
+                >
+                  “{review.quote}”
+                </p>
+
+                {review.quote.length > 120 && (
+                  <button
+                    onClick={() =>
+                      setExpandedCard(expandedCard === idx ? null : idx)
+                    }
+                    className={`mt-3 text-sm font-medium transition-colors ${review.featured
+                        ? "text-white hover:text-white/80"
+                        : "text-coral hover:text-coral/80"
+                      }`}
+                  >
+                    {expandedCard === idx ? "Show Less" : "Read More"}
+                  </button>
+                )}
+              </div>
             </motion.article>
           </SwiperSlide>
         ))}

@@ -123,3 +123,14 @@ html, body {
   overflow: visible !important;
   padding-top: 3rem;
 }
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
