@@ -65,8 +65,8 @@ export default function TableOfContents({ toc, mobile = false }) {
                     onClick={() => scrollTo(item.id)}
                     className={`w-full text-left px-5 py-3 font-sans text-sm transition-colors duration-200 border-l-2 ${
                       active === item.id
-                        ? 'border-coral text-coral font-semibold bg-coral/5'
-                        : 'border-transparent text-navy/60 hover:text-navy'
+                        ? 'border-coral text-black font-semibold bg-coral/5'
+                        : 'border-transparent text-black hover:text-navy'
                     }`}
                   >
                     {item.text}
@@ -92,8 +92,8 @@ export default function TableOfContents({ toc, mobile = false }) {
               onClick={() => scrollTo(item.id)}
               className={`w-full text-left pl-4 pr-2 py-2 rounded-lg font-sans text-sm transition-all duration-200 ${
                 active === item.id
-                  ? 'text-coral font-semibold bg-coral/5'
-                  : 'text-navy/50 hover:text-navy'
+                  ? 'text-black font-semibold bg-coral/5'
+                  : 'text-black hover:text-navy'
               }`}
             >
               {active === item.id && (

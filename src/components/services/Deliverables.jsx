@@ -80,9 +80,9 @@ export default function Deliverables({ deliverables, stat, caseStudy }) {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="lg:col-span-5 flex flex-col gap-5"
+          className="lg:col-span-5 gap-5"
         >
-          <div className="glass-panel rounded-3xl p-7 border-l-4 border-coral flex-1">
+          <div className="glass-panel mb-5 rounded-3xl p-7 border-l-4 border-coral flex-1">
             <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold mb-4">
               Real-World Result / {caseStudy.industry}
             </div>

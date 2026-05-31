@@ -75,22 +75,56 @@ export default function PostHero({ post, author }) {
       </motion.div>
 
       {/* Hero image placeholder with parallax */}
-      <div ref={heroRef} className="overflow-hidden rounded-[2.5rem] aspect-[16/7] relative">
-        <motion.div
-          style={{ y: imageY }}
-          className={`absolute inset-[-10%] bg-gradient-to-tr ${post.heroAccent} flex items-center justify-center`}
-        >
-          <div className="text-center px-8">
-            <div className="font-mono text-[10px] uppercase tracking-widest text-alabaster/40 mb-4">
-              Featured Post
-            </div>
-            <p className="font-heading  md:text-4xl font-black text-alabaster/80 max-w-2xl leading-tight">
-              {post.summary}
-            </p>
+    <div
+      ref={heroRef}
+      className="
+        overflow-hidden
+        rounded-[1.75rem] md:rounded-[2.5rem]
+        relative
+        min-h-[280px]
+        sm:min-h-[340px]
+        md:min-h-[420px]
+        lg:aspect-[16/7]
+      "
+    >
+      <motion.div
+        style={{ y: imageY }}
+        className={`
+          absolute inset-0
+          bg-gradient-to-tr ${post.heroAccent}
+          flex items-center justify-center
+          px-5 sm:px-8 md:px-12
+          py-8 md:py-12
+        `}
+      >
+        <div className="w-full max-w-4xl text-center">
+          <div className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-alabaster/50 mb-3 md:mb-5">
+            Featured Post
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy/40 pointer-events-none" />
-        </motion.div>
-      </div>
+
+          <p
+            className="
+              font-heading
+              text-lg
+              sm:text-2xl
+              md:text-4xl
+              lg:text-5xl
+              font-black
+              text-alabaster/90
+              leading-tight
+              break-words
+              max-w-3xl
+              mx-auto
+            "
+          >
+            {post.summary}
+          </p>
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy/40 pointer-events-none" />
+      </motion.div>
+    </div>
+
     </section>
   );
 }
