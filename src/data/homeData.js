@@ -3,9 +3,9 @@ export const heroData = {
   headline: [
     { text: "Custom Websites, AI Automation", highlight: false },
     { text: "& Digital Systems", highlight: true },
-    { text: "— Built for Indian Businesses.", highlight: false }
+    { text: "- Built for Indian Businesses.", highlight: false }
   ],
-  subHeadline: "We help startups and SMEs across Pune and India build faster, automate smarter, and grow digitally — with custom web development, AI workflows, CRM systems, and mobile apps.",
+  subHeadline: "We help startups and SMEs across Pune and India build faster, automate smarter, and grow digitally - with custom web development, AI workflows, CRM systems, and mobile apps.",
   primaryCta: "Book a Free Strategy Call",
   secondaryCta: "See Our Case Studies",
   stats: {

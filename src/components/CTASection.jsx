@@ -11,62 +11,64 @@ const CTASection = () => {
   const router = useRouter();
 
   return (
-    <section className="py-16 px-6 md:px-12">
+    <section className="relative min-h-screen bg-navy flex items-center justify-center px-6 md:px-12 overflow-hidden">
+
+      {/* Glow Effects */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-coral/10 rounded-full blur-[140px]" />
+
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-coral/5 rounded-full blur-[160px]" />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-5xl mx-auto bg-navy rounded-[2.5rem] px-8 md:px-16 py-16 text-center relative overflow-hidden"
+        transition={{ duration: 0.6 }}
+        className="max-w-5xl mx-auto text-center relative z-10"
       >
-        {/* Background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-64 bg-coral/10 rounded-full blur-3xl pointer-events-none" />
+        <motion.h2
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-alabaster leading-[0.95] tracking-[-0.04em] mb-8"
+        >
+          {ctaSectionData.heading}
+        </motion.h2>
 
-        <div className="relative z-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-heading text-3xl md:text-5xl font-black text-alabaster leading-[1.1] mb-6 max-w-3xl mx-auto"
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="font-sans text-lg md:text-xl text-alabaster/60 max-w-3xl mx-auto mb-12 leading-relaxed"
+        >
+          {ctaSectionData.subheading}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-5"
+        >
+          <button
+            onClick={() => router.push('/contact')}
+            className="group flex items-center gap-3 bg-coral text-alabaster font-heading font-bold px-10 py-5 rounded-full hover:scale-105 transition-all duration-300 shadow-xl shadow-coral/20"
           >
-            {ctaSectionData.heading}
-          </motion.h2>
+            <span>{ctaSectionData.primaryCta}</span>
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </button>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="font-sans text-alabaster/60 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+          <button
+            onClick={() => router.push('/services')}
+            className="border border-alabaster/15 hover:border-coral/60 text-alabaster hover:text-coral px-10 py-5 rounded-full font-heading font-bold transition-all duration-300"
           >
-            {ctaSectionData.subheading}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <button
-              onClick={() => router.push('/contact')}
-              className="group relative overflow-hidden flex items-center gap-2 bg-coral text-alabaster font-heading text-sm font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-coral/90 hover:-translate-y-0.5 shadow-lg shadow-coral/25"
-            >
-              <span>{ctaSectionData.primaryCta}</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
-
-            <button
-              onClick={() => router.push('/services')}
-              className="flex items-center gap-2 bg-transparent border border-alabaster/20 hover:border-coral/50 text-alabaster font-heading text-sm font-bold px-8 py-4 rounded-full transition-all duration-300 hover:text-coral"
-            >
-              {ctaSectionData.secondaryCta}
-            </button>
-          </motion.div>
-        </div>
+            {ctaSectionData.secondaryCta}
+          </button>
+        </motion.div>
       </motion.div>
+
     </section>
   );
 };

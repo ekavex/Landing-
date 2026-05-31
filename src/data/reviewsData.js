@@ -22,5 +22,6 @@ export const clientReviews = [
     name: 'Akash T.',
     title: 'Operations Head',
     company: 'Education Platform, Mumbai'
-  }
+  },
+  
 ];
