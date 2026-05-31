@@ -48,11 +48,11 @@ export default async function BlogPostPage({ params }) {
     publisher: {
       '@type': 'Organization',
       name: 'Ekavex Digital',
-      url: 'https://ekavex-demo.vercel.app',
+      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://ekavex-demo.vercel.app/blog/${slug}`,
+      '@id': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app'}/blog/${slug}`,
     },
   };
 

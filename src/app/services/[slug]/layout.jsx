@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
     title: `${svc.title} for Businesses in India | Ekavex Digital`,
     description: svc.benefit,
     alternates: {
-      canonical: `https://ekavex-demo.vercel.app/services/${svc.slug}`,
+      canonical: `/services/${svc.slug}`,
     },
     openGraph: {
       title: `${svc.title} for Businesses in India | Ekavex Digital`,

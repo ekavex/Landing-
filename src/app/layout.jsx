@@ -1,12 +1,14 @@
 import './globals.css';
 import RootClientShell from '../components/RootClientShell';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app';
+
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Ekavex Digital',
-  url: 'https://ekavex-demo.vercel.app',
-  logo: 'https://ekavex-demo.vercel.app/logo1.png',
+  url: siteUrl,
+  logo: `${siteUrl}/logo1.png`,
   description: 'Ekavex builds custom websites, AI automation workflows, CRM systems, and mobile apps for startups and businesses in India. Based in Pune, Maharashtra.',
   email: 'hello@ekavex.com',
   telephone: '+91-91720-08630',
@@ -58,7 +60,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  metadataBase: new URL('https://ekavex-demo.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://landing-six-tau-72.vercel.app'),
   title: {
     default: 'Ekavex | Custom Web Development, AI Automation & Digital Systems',
     template: '%s | Ekavex Digital',
