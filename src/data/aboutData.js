@@ -5,7 +5,15 @@ export const aboutData = [
     bgColor: "#EA6E38",
     color: "#fff",
     heading: ["We Are", "Ekavex"],
-    description: "Based in Pune, India, Ekavex is a team of developers, automation engineers, and digital strategists who build custom websites, AI-powered workflows, CRM systems, and mobile apps for startups and growing businesses."
+    description: "Based in Pune, India, Ekavex is a team of developers, automation engineers, and digital strategists who build custom websites, AI-powered workflows, CRM systems, and mobile apps for startups and growing businesses.",
+    operatingStatus: "Operating from Pune, India — Delivering Nationwide",
+    tags: [
+      "Next.js & React Apps",
+      "AI & Workflow Automation",
+      "Custom CRM Architectures",
+      "Mobile App Development",
+      "API & Cloud Integrations"
+    ]
   },
   {
     id: "section-2",
@@ -62,7 +70,10 @@ export const aboutData = [
     heading: ["The", "Team"],
     description: "Ekavex was founded by Prem Jangid with a mission to make enterprise-grade technology accessible to Indian startups and SMEs. Based in Pune, our team combines deep technical expertise with a practical understanding of how Indian businesses operate.",
     features: [
-      { title: "Prem Jangid", desc: "Founder & Lead Engineer — Full-stack developer and AI automation specialist building custom digital systems for businesses across India." }
+      { title: "Prem Jangid", desc: "Founder & Lead Engineer — Full-stack developer and AI automation specialist building custom digital systems for businesses across India." },
+      { title: "Rohit Huge", desc: "Full-Stack Developer & Automation Expert — Specialized in engineering high-performance web applications, custom API integrations, and secure workflow automations." },
+      { title: "Yadnyesh Borole", desc: "Full-Stack Developer & Automation Expert — Building clean, modular frontends, reliable backends, and scalable full-stack system architectures." },
+      { title: "Om Kambale", desc: "AI/ML Engineer — Implementing custom machine learning models, vector databases, semantic search pipelines, and smart LLM agents." }
     ]
   },
   {

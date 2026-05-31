@@ -93,6 +93,28 @@ html, body {
   display: none;
 }
 .scrollbar-none {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.3);
+  width: 10px;
+  height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff6b57; /* coral */
+}
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-wrapper {
+  overflow: visible !important;
+}
+
+.swiper-slide {
+  overflow: visible !important;
+  padding-top: 3rem;
 }

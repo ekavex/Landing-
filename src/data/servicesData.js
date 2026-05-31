@@ -40,6 +40,11 @@ export const servicesData = [
       industry: 'Service Business',
       problem: 'A local consultancy had an outdated WordPress site loading in 8 seconds with zero Google presence.',
       result: 'New Next.js site loads in under 1.2s. Ranked on page 1 for 3 target keywords within 60 days.',
+      metrics: [
+        { label: 'Load Time', value: '< 1.2s' },
+        { label: 'Google Rank', value: 'Page 1' },
+        { label: 'Page Speedup', value: '6.6x' }
+      ]
     },
     faqs: [
       { q: 'Do I need to provide content?', a: "We can work with what you have or guide you on what to write. We handle structure, layout, and optimization — you know your business best." },
@@ -84,6 +89,11 @@ export const servicesData = [
       industry: 'Education',
       problem: 'An education provider manually tracked 200+ student assessments in spreadsheets, leading to errors and delays.',
       result: 'Custom MCQ test platform with auto-grading and admin dashboard. Reduced assessment processing time from 2 days to 10 minutes.',
+      metrics: [
+        { label: 'Grading Time', value: '10 min' },
+        { label: 'Manual Effort', value: '-99%' },
+        { label: 'Error Rate', value: '0%' }
+      ]
     },
     faqs: [
       { q: 'Can you build on top of my existing system?', a: 'Yes. If you have existing data or an existing tool, we can integrate with or migrate from it.' },
@@ -128,6 +138,11 @@ export const servicesData = [
       industry: 'Clinic',
       problem: 'A dental clinic was manually calling patients to confirm appointments, consuming 3 staff hours daily.',
       result: 'Automated WhatsApp reminders 24 hours before each appointment. No-show rate dropped by 40%. Staff now focus on patients, not phones.',
+      metrics: [
+        { label: 'No-Show Rate', value: '-40%' },
+        { label: 'Staff Time Saved', value: '3 hrs/day' },
+        { label: 'ROI Delivery', value: '1st Month' }
+      ]
     },
     faqs: [
       { q: 'Do I need technical knowledge to manage automations?', a: 'No. We build with tools that have visual dashboards. We also write plain-English documentation for anything we hand over.' },
@@ -172,6 +187,11 @@ export const servicesData = [
       industry: 'Real Estate',
       problem: 'A property firm needed to qualify 300+ monthly leads manually to identify serious buyers.',
       result: 'AI lead scoring model trained on 2 years of historical data. Sales team now focuses only on top 20% of leads — conversion rate doubled.',
+      metrics: [
+        { label: 'Lead Scoring', value: '100% Auto' },
+        { label: 'Conv. Rate', value: '2x' },
+        { label: 'Sales Focus', value: 'Top 20%' }
+      ]
     },
     faqs: [
       { q: 'Do I need a lot of data to start?', a: 'Depends on the use case. For chatbots, we can start with your FAQs. For prediction models, we typically need 6+ months of clean historical data.' },
@@ -216,6 +236,11 @@ export const servicesData = [
       industry: 'Retail Chain',
       problem: 'A retail operations manager needed daily sales breakdowns by store but had to wait for the tech team every time.',
       result: 'NL-to-SQL tool deployed. Manager now asks "What were yesterday\'s top 5 products by revenue per store?" and gets instant results.',
+      metrics: [
+        { label: 'Query Time', value: 'Instant' },
+        { label: 'Tech dependency', value: '0%' },
+        { label: 'SQL Required', value: 'None' }
+      ]
     },
     faqs: [
       { q: 'Which databases do you support?', a: 'PostgreSQL, MySQL, and SQLite. Others can be integrated with additional work.' },
@@ -260,6 +285,11 @@ export const servicesData = [
       industry: 'Clinic',
       problem: 'A multi-doctor clinic managed patient appointments via WhatsApp DMs, tracked in a shared Google Sheet updated manually.',
       result: 'Custom CRM with appointment booking, automated reminders, and patient history. Admin time cut by 60%. Zero double bookings.',
+      metrics: [
+        { label: 'Admin Overhead', value: '-60%' },
+        { label: 'Double Bookings', value: '0' },
+        { label: 'Tool Reduction', value: '4 to 1' }
+      ]
     },
     faqs: [
       { q: 'Can you migrate data from our current tools?', a: 'Yes. We handle data migration from Excel, Google Sheets, existing CRMs, or other sources.' },
@@ -304,6 +334,11 @@ export const servicesData = [
       industry: 'Real Estate',
       problem: "A property agency spent ₹30,000/month on Facebook ads with no lead tracking. They couldn't tell which ads drove enquiries.",
       result: 'Rebuilt campaigns with proper conversion tracking. Cost per qualified lead dropped from ₹1,800 to ₹480 within 6 weeks.',
+      metrics: [
+        { label: 'Cost Per Lead', value: '-73%' },
+        { label: 'Tracking Setup', value: '100%' },
+        { label: 'ROAS Yield', value: '3.2x' }
+      ]
     },
     faqs: [
       { q: 'What is the minimum monthly budget for ads?', a: 'We recommend a minimum of ₹15,000/month for Google Ads and ₹10,000/month for Meta Ads to generate meaningful data.' },
@@ -348,6 +383,11 @@ export const servicesData = [
       industry: 'Cafeteria Chain',
       problem: 'A cafeteria chain needed a QR-based ordering app for customers to order from their table without staff involvement.',
       result: 'React Native app with QR scan, menu browsing, cart, and WhatsApp order confirmation. Order processing time cut by 65%.',
+      metrics: [
+        { label: 'Order Process', value: '-65%' },
+        { label: 'Staff Workload', value: '-50%' },
+        { label: 'User Rating', value: '4.8★' }
+      ]
     },
     faqs: [
       { q: 'Do I need separate apps for iOS and Android?', a: 'No. We build one React Native app that works on both platforms natively, saving you time and money.' },

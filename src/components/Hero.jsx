@@ -10,24 +10,38 @@ import { heroData } from '../data/homeData';
 // Breaks a string into individual character nodes that rotate-in on a 3D axis.
 // Centered layout friendly.
 const SplitReveal = ({ children, className = '', delay = 0 }) => {
-  const chars = String(children).split('');
+  const words = String(children).split(' ');
+
   return (
-    <span className={`inline-flex flex-wrap justify-center ${className}`} style={{ perspective: '600px' }}>
-      {chars.map((char, i) => (
-        <motion.span
-          key={i}
-          initial={{ opacity: 0, rotateX: 90, y: 20 }}
-          animate={{ opacity: 1, rotateX: 0, y: 0 }}
-          transition={{
-            delay: delay + i * 0.025,
-            duration: 0.55,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className="inline-block origin-bottom"
-          style={{ transformStyle: 'preserve-3d' }}
+    <span
+      className={`inline-flex flex-wrap justify-center ${className}`}
+      style={{ perspective: '600px' }}
+    >
+      {words.map((word, wordIndex) => (
+        <span
+          key={wordIndex}
+          className="inline-flex whitespace-nowrap"
         >
-          {char === ' ' ? '\u00A0' : char}
-        </motion.span>
+          {word.split('').map((char, charIndex) => (
+            <motion.span
+              key={`${wordIndex}-${charIndex}`}
+              initial={{ opacity: 0, rotateX: 90, y: 20 }}
+              animate={{ opacity: 1, rotateX: 0, y: 0 }}
+              transition={{
+                delay: delay + (wordIndex * 0.08) + (charIndex * 0.025),
+                duration: 0.55,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="inline-block origin-bottom"
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              {char}
+            </motion.span>
+          ))}
+
+          {/* space between words */}
+          <span className="w-[0.3em]" />
+        </span>
       ))}
     </span>
   );
@@ -91,7 +105,7 @@ export default function Hero({ onNavigate }) {
       {/* ── 3D PARALLAX ENVIRONMENT: FLOATING ELEMENTS (Desktop Only) ── */}
       {/* Positioned strictly in the upper & middle regions to prevent overlaps with value props at the bottom */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none z-20">
-        
+
         {/* 1. Top-Left Badge (AI Workflow Active) */}
         <motion.div
           style={{ x: badgeLeftTopX, y: badgeLeftTopY }}
@@ -146,7 +160,7 @@ export default function Hero({ onNavigate }) {
             </span>
           </motion.div>
         </motion.div>
-   
+
 
         {/* 6. Bottom-Right Badge (Trust Stats) - Positioned safely above value props */}
         <motion.div
@@ -191,7 +205,7 @@ export default function Hero({ onNavigate }) {
           </motion.div>
 
           {/* Headline — 3D character-split reveal, compact size on desktop to fit screen height */}
-          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[4.0rem] xl:text-[4.4rem] font-black text-navy leading-none lg:leading-[0.93] tracking-[-0.04em] max-w-4xl">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.4rem] font-black text-navy leading-none lg:leading-[0.93] tracking-[-0.04em] max-w-4xl break-normal">
             <SplitReveal delay={0.3} className={heroData.headline[0].highlight ? "text-coral" : ""}>
               {heroData.headline[0].text}
             </SplitReveal>
@@ -249,7 +263,7 @@ export default function Hero({ onNavigate }) {
             className="space-y-5"
           >
             {/* Mobile Terminal Card */}
-            <div className="rounded-3xl bg-alabaster/80 border border-navy/6 p-5 shadow-md">
+            {/* <div className="rounded-3xl bg-alabaster/80 border border-navy/6 p-5 shadow-md">
               <div className="flex justify-between items-center mb-3">
                 <div className="flex space-x-1.5">
                   <div className="w-2 h-2 rounded-full bg-coral" />
@@ -275,7 +289,7 @@ export default function Hero({ onNavigate }) {
                   </span>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Mobile Quick Stats Row */}
             <div className="grid grid-cols-2 gap-4">
