@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 export default {
-  siteUrl: process.env.SITE_URL || 'https://ekavex-demo.vercel.app',
+  siteUrl: process.env.SITE_URL || 'https://ekavex.in',
   generateRobotsTxt: false,
   sitemapSize: 7000,
   exclude: ['/api/*'],

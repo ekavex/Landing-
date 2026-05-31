@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ekavex-demo.vercel.app/sitemap.xml
+Sitemap: https://ekavex.in/sitemap.xml
