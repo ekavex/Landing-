@@ -221,19 +221,19 @@ We work with startups, SaaS businesses, fintech companies, ecommerce brands, log
 
 7. TESTIMONIAL SECTION
 Rahul Sharma
-Founder — AI Startup
+Founder - AI Startup
 “The team maintained excellent communication throughout the project and delivered a highly scalable AI solution.”
 
 Priya Mehta
-Operations Manager — SaaS Company
+Operations Manager - SaaS Company
 “The workflow was transparent, collaborative, and highly professional from start to finish.”
 
 Amit Verma
-Founder — Fintech Platform
+Founder - Fintech Platform
 “Their technical expertise and support quality helped us launch our platform successfully.”
 
 Neha Kapoor
-Product Manager — Startup
+Product Manager - Startup
 “They delivered a modern, scalable product with exceptional UI/UX quality and fast execution.”
 
 8. CALENDAR / CONSULTATION SECTION
@@ -368,6 +368,6 @@ mobile app consultation services
 
 FINAL POSITIONING
 Working with us feels collaborative, transparent, modern, and growth-focused.
-We don’t just develop technology —
+We don’t just develop technology -
  we help businesses build scalable digital systems designed for long-term success.
 

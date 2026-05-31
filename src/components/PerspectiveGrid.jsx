@@ -64,7 +64,7 @@ export default function PerspectiveGrid() {
       mouse.x += (mouse.targetX - mouse.x) * 0.08;
       mouse.y += (mouse.targetY - mouse.y) * 0.08;
 
-      // Base dot styles — Deep Ink Navy at a clearly visible but elegant opacity
+      // Base dot styles - Deep Ink Navy at a clearly visible but elegant opacity
       ctx.fillStyle = 'rgba(9, 18, 44, 0.32)';
       ctx.strokeStyle = 'rgba(9, 18, 44, 0.12)';
       ctx.lineWidth = 0.5;
@@ -124,7 +124,7 @@ export default function PerspectiveGrid() {
         positions.push(row);
       }
 
-      // Draw connecting matrix paths — horizontal and vertical grid lines
+      // Draw connecting matrix paths - horizontal and vertical grid lines
       for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
           const current = positions[r][c];

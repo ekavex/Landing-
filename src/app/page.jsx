@@ -52,7 +52,7 @@ export default function HomePage() {
           tagline2="Start building smarter."
           cardHeading="Built for Indian Businesses."
           cardDescription={<><span className="text-white font-semibold">Ekavex</span> builds custom websites, AI automation workflows, CRM systems, and mobile apps for startups and growing businesses across India.</>}
-          ctaDescription="Tell us about your project and we'll put together a clear plan, timeline, and quote — for free."
+          ctaDescription="Tell us about your project and we'll put together a clear plan, timeline, and quote - for free."
         />
       </div>
 

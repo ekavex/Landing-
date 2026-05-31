@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
             <p>
               Ekavex Digital (&quot;Ekavex&quot;, &quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is a digital agency providing web development,
               AI automation, CRM/CMS systems, mobile app development, and digital marketing services.
-              Our website is located at <strong>ekavex-demo.vercel.app</strong>.
+              Our website is located at <strong>landing-six-tau-72.vercel.app</strong>.
             </p>
           </section>
 
@@ -59,9 +59,9 @@ export default function PrivacyPolicyPage() {
             <h2 className="font-heading text-lg font-bold text-navy mb-3">5. Third-Party Services</h2>
             <p className="mb-3">We use the following third-party services that may process your data:</p>
             <ul className="list-disc list-inside space-y-1 pl-2">
-              <li><strong>Vercel</strong> — website hosting and deployment</li>
-              <li><strong>Google Analytics</strong> — website traffic analytics (if enabled)</li>
-              <li><strong>WhatsApp (Meta)</strong> — direct messaging via WhatsApp link</li>
+              <li><strong>Vercel</strong> - website hosting and deployment</li>
+              <li><strong>Google Analytics</strong> - website traffic analytics (if enabled)</li>
+              <li><strong>WhatsApp (Meta)</strong> - direct messaging via WhatsApp link</li>
             </ul>
             <p className="mt-3">
               Each of these services has its own privacy policy. We do not sell your data to any third party.
@@ -92,10 +92,10 @@ export default function PrivacyPolicyPage() {
             <p>
               For any privacy-related questions or requests, please contact us at:{' '}
               <a
-                href="mailto:hello@ekavex.com"
+                href="mailto:contact@ekavex.in"
                 className="text-coral underline underline-offset-2 hover:opacity-80 transition-opacity"
               >
-                hello@ekavex.com
+                contact@ekavex.in
               </a>
             </p>
           </section>

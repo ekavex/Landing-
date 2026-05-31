@@ -25,7 +25,7 @@ export default function ServiceCTA({ title }) {
             Let&apos;s build your {title} solution
           </h2>
           <p className="font-sans text-sm text-alabaster/60 max-w-md mx-auto mb-8 leading-relaxed">
-            Free 30-minute strategy call. We map your problem, propose a solution, and give you a timeline and cost estimate — no commitment required.
+            Free 30-minute strategy call. We map your problem, propose a solution, and give you a timeline and cost estimate - no commitment required.
           </p>
           <Link
             href="/contact"

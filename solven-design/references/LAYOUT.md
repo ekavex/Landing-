@@ -10,23 +10,23 @@
 
 | Spacing | Semantic Use |
 |---------|-------------|
-| 4px | Tight — within a component |
-| 8px | Medium — between sibling items |
-| 16px | Wide — between sections |
-| 32px | Vast — major section breaks |
+| 4px | Tight - within a component |
+| 8px | Medium - between sibling items |
+| 16px | Wide - between sections |
+| 32px | Vast - major section breaks |
 
 ## Flex Layouts
 
 | Element | Direction | Justify | Align | Gap | Children |
 |---------|-----------|---------|-------|-----|----------|
-| `nav.hidden.lg:flex` | row | — | center | 4px | 5 |
+| `nav.hidden.lg:flex` | row | - | center | 4px | 5 |
 | `div.container-x` | row | space-between | center | 16px | 2 |
-| `div.hidden.lg:flex` | row | — | center | 8px | 1 |
-| `div.orbit-centering-wrapper` | row | center | center | — | 1 |
-| `div.card-base` | column | — | — | — | 3 |
-| `div.card-base` | column | — | — | — | 3 |
-| `div.card-base` | column | — | — | — | 3 |
-| `div.card-base` | row | — | center | 16px | 2 |
+| `div.hidden.lg:flex` | row | - | center | 8px | 1 |
+| `div.orbit-centering-wrapper` | row | center | center | - | 1 |
+| `div.card-base` | column | - | - | - | 3 |
+| `div.card-base` | column | - | - | - | 3 |
+| `div.card-base` | column | - | - | - | 3 |
+| `div.card-base` | row | - | center | 16px | 2 |
 
 ## Grid Layouts
 
@@ -132,7 +132,7 @@ children:         2
 ```
 display:          flex
 flex-direction:   row
-justify-content:  —
+justify-content:  -
 align-items:      center
 gap:              4px
 children:         5
@@ -140,7 +140,7 @@ children:         5
 
 ## Layout Rules
 
-- **Container max-width:** `1280px` — always center with `margin: auto`
+- **Container max-width:** `1280px` - always center with `margin: auto`
 - Primary layout system: **Flexbox**
 - Secondary layout system: **CSS Grid** (used for card grids and multi-column layouts)
 - Every spacing value must be a multiple of **4px**

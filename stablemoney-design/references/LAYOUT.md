@@ -10,30 +10,30 @@
 
 | Spacing | Semantic Use |
 |---------|-------------|
-| 4px | Tight — within a component |
-| 8px | Medium — between sibling items |
-| 16px | Wide — between sections |
-| 32px | Vast — major section breaks |
+| 4px | Tight - within a component |
+| 8px | Medium - between sibling items |
+| 16px | Wide - between sections |
+| 32px | Vast - major section breaks |
 
 ## Flex Layouts
 
 | Element | Direction | Justify | Align | Gap | Children |
 |---------|-----------|---------|-------|-----|----------|
-| `div.qr-box.flex` | column | — | — | 6px | 2 |
-| `div.flex.w-full` | column | — | center | — | 8 |
-| `section.hero.svelte-qtyrkc` | row | center | — | — | 3 |
-| `div.slant-dotted-background.flex` | column | center | — | 56px | 2 |
-| `div.m-auto.box-border` | column | start | center | — | 1 |
-| `div.compare-wrapper.svelte-1s476lo` | column | — | center | 80px | 3 |
-| `div.flex.w-full` | column | — | center | — | 6 |
+| `div.qr-box.flex` | column | - | - | 6px | 2 |
+| `div.flex.w-full` | column | - | center | - | 8 |
+| `section.hero.svelte-qtyrkc` | row | center | - | - | 3 |
+| `div.slant-dotted-background.flex` | column | center | - | 56px | 2 |
+| `div.m-auto.box-border` | column | start | center | - | 1 |
+| `div.compare-wrapper.svelte-1s476lo` | column | - | center | 80px | 3 |
+| `div.flex.w-full` | column | - | center | - | 6 |
 | `div.flex.items-center` | row | center | center | 16px | 1 |
-| `div.flex.flex-col` | column | — | — | 80px | 3 |
-| `div.twitter-testimonial-container.svelte-131oa78` | column | — | — | 28px | 2 |
-| `div.fixed-header-wrapper.flex` | column | — | center | — | 2 |
-| `div.flex.flex-col` | column | — | — | — | 2 |
-| `div.mx-auto.flex` | row | — | — | 24px | 3 |
-| `div.flex.flex-col` | column | — | — | 20px | 3 |
-| `div.flex.flex-col` | column | — | — | 80px | 2 |
+| `div.flex.flex-col` | column | - | - | 80px | 3 |
+| `div.twitter-testimonial-container.svelte-131oa78` | column | - | - | 28px | 2 |
+| `div.fixed-header-wrapper.flex` | column | - | center | - | 2 |
+| `div.flex.flex-col` | column | - | - | - | 2 |
+| `div.mx-auto.flex` | row | - | - | 24px | 3 |
+| `div.flex.flex-col` | column | - | - | 20px | 3 |
+| `div.flex.flex-col` | column | - | - | 80px | 2 |
 
 ## Grid Layouts
 
@@ -49,7 +49,7 @@
 display:          flex
 flex-direction:   row
 justify-content:  center
-align-items:      —
+align-items:      -
 children:         3
 ```
 
@@ -76,7 +76,7 @@ children:         1
 
 ## Layout Rules
 
-- **Container max-width:** `1392px` — always center with `margin: auto`
+- **Container max-width:** `1392px` - always center with `margin: auto`
 - Primary layout system: **Flexbox**
 - Secondary layout system: **CSS Grid** (used for card grids and multi-column layouts)
 - Every spacing value must be a multiple of **4px**

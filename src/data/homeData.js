@@ -3,9 +3,9 @@ export const heroData = {
   headline: [
     { text: "Custom Websites, AI Automation", highlight: false },
     { text: "& Digital Systems", highlight: true },
-    { text: "— Built for Indian Businesses.", highlight: false }
+    { text: "- Built for Indian Businesses.", highlight: false }
   ],
-  subHeadline: "We help startups and SMEs across Pune and India build faster, automate smarter, and grow digitally — with custom web development, AI workflows, CRM systems, and mobile apps.",
+  subHeadline: "We help startups and SMEs across Pune and India build faster, automate smarter, and grow digitally - with custom web development, AI workflows, CRM systems, and mobile apps.",
   primaryCta: "Book a Free Strategy Call",
   secondaryCta: "See Our Case Studies",
   stats: {
@@ -18,7 +18,7 @@ export const heroData = {
   valueProps: [
     {
       title: '10+ Projects Delivered',
-      desc: 'Real estate platforms, clinic systems, AI automations, and more — built for businesses across India.'
+      desc: 'Real estate platforms, clinic systems, AI automations, and more - built for businesses across India.'
     },
     {
       title: '6 Industries Served',
@@ -286,7 +286,7 @@ export const faqData = [
   },
   {
     q: "Do you work with clients outside Pune?",
-    a: "Yes — we work with clients across India (Mumbai, Bengaluru, Delhi, Hyderabad, and more) and internationally."
+    a: "Yes - we work with clients across India (Mumbai, Bengaluru, Delhi, Hyderabad, and more) and internationally."
   },
   {
     q: "What happens after the project launches?",

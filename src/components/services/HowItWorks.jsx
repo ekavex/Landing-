@@ -25,7 +25,7 @@ export default function HowItWorks({ processSteps }) {
 
       {/* Steps */}
       <div className="relative">
-        {/* Connector line — desktop only */}
+        {/* Connector line - desktop only */}
         <div className="hidden lg:block absolute top-10 left-[calc(16.67%-1px)] right-[calc(16.67%-1px)] h-px bg-navy/8 z-0" />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
@@ -49,18 +49,16 @@ export default function HowItWorks({ processSteps }) {
 
               <div className="space-y-4">
                 {/* What we do */}
-                <div className="bg-navy rounded-2xl p-4 border border-white/10 shadow-lg relative overflow-hidden">
-                  {/* Subtle coral glow overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-coral/5 to-transparent pointer-events-none" />
-                  <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold mb-1.5 relative z-10">
+                <div className="bg-navy rounded-2xl p-4 border border-navy/6">
+                  <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold mb-1.5">
                     What we do
                   </div>
-                  <p className="font-sans text-xs text-alabaster/85 leading-relaxed relative z-10">{step.you}</p>
+                  <p className="font-sans text-xs text-white leading-relaxed">{step.you}</p>
                 </div>
 
                 {/* What you do */}
-                <div className="bg-navy/3 rounded-2xl p-4 border border-navy/6 glass-panel">
-                  <div className="font-mono text-[9px] uppercase tracking-widest text-navy/40 font-bold mb-1.5">
+                <div className="glass-panel rounded-2xl p-4 border border-navy/6">
+                  <div className="font-mono text-[9px] uppercase tracking-widest text-navy/80 font-extrabold mb-1.5">
                     What you do
                   </div>
                   <p className="font-sans text-xs text-navy/70 leading-relaxed">{step.client}</p>

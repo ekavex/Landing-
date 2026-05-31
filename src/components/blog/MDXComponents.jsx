@@ -49,7 +49,7 @@ const MDXComponents = {
 
   li: ({ children, ...props }) => (
     <li className="font-sans text-base text-navy/75 leading-relaxed flex gap-3" {...props}>
-      <span className="text-coral font-bold shrink-0 mt-[2px]">—</span>
+      <span className="text-coral font-bold shrink-0 mt-0.5">-</span>
       <span>{children}</span>
     </li>
   ),

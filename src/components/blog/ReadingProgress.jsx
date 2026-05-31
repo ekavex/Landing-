@@ -22,7 +22,7 @@ export default function ReadingProgress() {
   return (
     <motion.div
       style={{ scaleX, transformOrigin: 'left' }}
-      className="fixed top-0 left-0 right-0 h-[3px] bg-coral z-[200] pointer-events-none"
+      className="fixed top-0 left-0 right-0 h-0.75 bg-coral z-200 pointer-events-none"
     />
   );
 }

@@ -7,7 +7,7 @@ import { useRef, useEffect, useState } from 'react';
 function AnimatedStat({ value, label }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
-  const [displayed, setDisplayed] = useState('—');
+  const [displayed, setDisplayed] = useState('-');
 
   useEffect(() => {
     if (inView) {
@@ -35,7 +35,7 @@ export default function Deliverables({ deliverables, stat, caseStudy }) {
   return (
     <section className="py-16 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* Deliverables — dark card */}
+        {/* Deliverables - dark card */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -80,40 +80,23 @@ export default function Deliverables({ deliverables, stat, caseStudy }) {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="lg:col-span-5 flex flex-col gap-5"
+          className="lg:col-span-5 gap-5"
         >
-          <div className="glass-panel rounded-3xl p-7 border-l-4 border-coral flex-1 flex flex-col justify-between">
-            <div>
-              <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold mb-4">
-                Real-World Result / {caseStudy.industry}
-              </div>
-              <p className="font-sans text-sm text-navy/70 leading-relaxed mb-4">
-                {caseStudy.problem}
-              </p>
-              <div className="bg-coral/5 rounded-2xl p-4">
-                <div className="font-mono text-[9px] uppercase tracking-widest text-navy/40 font-bold mb-1">
-                  Outcome
-                </div>
-                <p className="font-heading text-sm font-bold text-navy leading-snug">
-                  {caseStudy.result}
-                </p>
-              </div>
+          <div className="glass-panel mb-5 rounded-3xl p-7 border-l-4 border-coral flex-1">
+            <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold mb-4">
+              Real-World Result / {caseStudy.industry}
             </div>
-
-            {caseStudy.metrics && caseStudy.metrics.length > 0 && (
-              <div className="mt-6 pt-5 border-t border-navy/6 grid grid-cols-3 gap-2">
-                {caseStudy.metrics.map((m, idx) => (
-                  <div key={idx} className="bg-navy/3 rounded-xl p-2.5 text-center border border-navy/5 shadow-xs">
-                    <div className="font-heading text-[13px] sm:text-sm font-extrabold text-coral leading-none mb-1 select-none">
-                      {m.value}
-                    </div>
-                    <div className="font-sans text-[7.5px] uppercase tracking-wider text-navy/50 font-bold leading-tight select-none">
-                      {m.label}
-                    </div>
-                  </div>
-                ))}
+            <p className="font-sans text-sm text-navy/70 leading-relaxed mb-4">
+              {caseStudy.problem}
+            </p>
+            <div className="bg-coral/5 rounded-2xl p-4">
+              <div className="font-mono text-[9px] uppercase tracking-widest text-navy/40 font-bold mb-1">
+                Outcome
               </div>
-            )}
+              <p className="font-heading text-sm font-bold text-navy leading-snug">
+                {caseStudy.result}
+              </p>
+            </div>
           </div>
 
           {/* Trust strip */}

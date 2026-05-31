@@ -1,6 +1,6 @@
 # solven DESIGN.md
 
-> Auto-generated design system — reverse-engineered via static analysis by skillui.
+> Auto-generated design system - reverse-engineered via static analysis by skillui.
 > Frameworks: None detected
 > Colors: 20 · Fonts: 3 · Components: 0
 > Icon library: not detected · State: not detected
@@ -8,7 +8,7 @@
 
 ## Visual Reference
 
-**Match this design exactly** — study colors, fonts, spacing, and component shapes before writing any UI code.
+**Match this design exactly** - study colors, fonts, spacing, and component shapes before writing any UI code.
 
 ![solven Homepage](../screenshots/homepage.png)
 
@@ -16,7 +16,7 @@
 
 ## 1. Visual Theme & Atmosphere
 
-This is a **dark-themed** interface with a warm tone. Depth is expressed through layered shadows and subtle surface color variation. Typography pairs **General Sans** for display/headings with **DM Serif Display** for body text, creating clear visual hierarchy through type contrast. Spacing follows a **4px base grid** (compact density), with scale: 2, 4, 6, 8, 10, 12, 14, 16px. The accent color **#d35528** anchors interactive elements (buttons, links, focus rings). Motion is subtle — smooth transitions (150-300ms) ease state changes without drawing attention.
+This is a **dark-themed** interface with a warm tone. Depth is expressed through layered shadows and subtle surface color variation. Typography pairs **General Sans** for display/headings with **DM Serif Display** for body text, creating clear visual hierarchy through type contrast. Spacing follows a **4px base grid** (compact density), with scale: 2, 4, 6, 8, 10, 12, 14, 16px. The accent color **#d35528** anchors interactive elements (buttons, links, focus rings). Motion is subtle - smooth transitions (150-300ms) ease state changes without drawing attention.
 
 ---
 
@@ -64,9 +64,9 @@ This is a **dark-themed** interface with a warm tone. Depth is expressed through
 ## 3. Typography Rules
 
 **Font Stack:**
-- **DM Serif Display** — Heading 1, Heading 2, Heading 3
-- **General Sans** — Body, Caption
-- **SFMono-Regular** — Code
+- **DM Serif Display** - Heading 1, Heading 2, Heading 3
+- **General Sans** - Body, Caption
+- **SFMono-Regular** - Code
 
 **Font Sources:**
 
@@ -124,18 +124,18 @@ No components detected. Scan `src/components/` or `components/` to populate this
 
 ## 6. Depth & Elevation
 
-### Raised — cards, buttons, interactive elements
+### Raised - cards, buttons, interactive elements
 
 - `0 1px 4px #00000008`
 - `rgba(0, 0, 0, 0.02) 0px 1px 3px 0px`
 - `rgba(0, 0, 0, 0.04) 0px 1px 4px 0px`
 
-### Floating — dropdowns, popovers, modals
+### Floating - dropdowns, popovers, modals
 
 - `rgba(211, 85, 40, 0.2) 0px 4px 16px 0px`
 - `rgba(0, 0, 0, 0.06) 0px 2px 16px 0px`
 
-### Overlay — full-screen overlays, top-level dialogs
+### Overlay - full-screen overlays, top-level dialogs
 
 - `0 16px 56px #00000014`
 - `0 8px 28px #d3552840`
@@ -172,18 +172,18 @@ This project uses **subtle motion**. Transitions smooth state changes without de
 
 - Use `#d35528` for interactive elements (buttons, links, focus rings)
 - Use `#1a1a1a` as the primary page background
-- Pair **DM Serif Display** (body) with **General Sans** (display) — these are the only allowed fonts
+- Pair **DM Serif Display** (body) with **General Sans** (display) - these are the only allowed fonts
 - Follow the **4px** spacing grid for all margins, padding, and gaps
-- Use the defined shadow tokens for elevation — see Section 6
+- Use the defined shadow tokens for elevation - see Section 6
 - Use border-radius from the scale: 2px, 3px, 4px, 10px, 11px
 
 ### Don'ts
 
-- Don't introduce colors outside this palette — extend the design tokens first
+- Don't introduce colors outside this palette - extend the design tokens first
 - Don't introduce additional font families beyond DM Serif Display and General Sans and SFMono-Regular
-- Don't use arbitrary spacing values — stick to multiples of 4px
+- Don't use arbitrary spacing values - stick to multiples of 4px
 - Don't create custom box-shadow values outside the system tokens
-- Don't use arbitrary border-radius values — pick from the defined scale
+- Don't use arbitrary border-radius values - pick from the defined scale
 - Don't use backdrop-blur or blur effects
 
 ### Anti-Patterns (detected from codebase)

@@ -329,7 +329,7 @@ Integrated Systems Designed For Business Growth
 Description
 We combine AI, automation, web applications, mobile technologies, SaaS systems, and cloud infrastructure into unified business ecosystems.
 Our integrated solutions help businesses centralize operations, automate workflows, and scale efficiently through connected digital systems.
-We don’t just build software — we build scalable digital growth systems.
+We don’t just build software - we build scalable digital growth systems.
 
 Benefits
 Centralized workflows
@@ -419,15 +419,15 @@ Logistics & Warehousing
 
 8. TESTIMONIAL SECTION
 Rahul Sharma
-Founder — SaaS Startup
+Founder - SaaS Startup
 “Their communication, speed, and technical execution were exceptional. The team delivered a scalable solution exactly as promised.”
 
 Priya Mehta
-Operations Manager — Fintech Company
+Operations Manager - Fintech Company
 “The AI automation systems significantly improved our workflow efficiency and reduced repetitive operational tasks.”
 
 Amit Verma
-Business Owner — Retail Brand
+Business Owner - Retail Brand
 “Their transparent process and continuous updates made the entire experience smooth and professional.”
 
 9. FAQ SECTION
@@ -1151,7 +1151,7 @@ Warehouse analytics system
 Automation workflow screens
 
 3. DETAILED CASE STUDY STRUCTURE
-CASE STUDY 1 — AI SQL ASSISTANT PLATFORM
+CASE STUDY 1 - AI SQL ASSISTANT PLATFORM
 
 A. PROJECT OVERVIEW
 Client
@@ -1216,10 +1216,10 @@ Increased accessibility for non-technical users
 
 G. CLIENT TESTIMONIAL
 Rahul Sharma
-Founder — AI Startup
+Founder - AI Startup
 “The team delivered an intelligent system that completely transformed how our internal teams access data. Their communication and technical expertise were exceptional.”
 
-CASE STUDY 2 — AGENTIC AI SAAS PLATFORM
+CASE STUDY 2 - AGENTIC AI SAAS PLATFORM
 
 A. PROJECT OVERVIEW
 Client
@@ -1279,10 +1279,10 @@ Better user workflow organization
 
 G. CLIENT TESTIMONIAL
 Priya Mehta
-Operations Manager — AI Solutions Company
+Operations Manager - AI Solutions Company
 “The platform helped us centralize our AI workflows and significantly improved operational efficiency. The development process was highly professional.”
 
-CASE STUDY 3 — FINTECH MUTUAL FUND PLATFORM
+CASE STUDY 3 - FINTECH MUTUAL FUND PLATFORM
 
 A. PROJECT OVERVIEW
 Client
@@ -1333,7 +1333,7 @@ Faster financial processing systems
 
 G. CLIENT TESTIMONIAL
 Amit Verma
-Founder — Fintech Platform
+Founder - Fintech Platform
 “The automation systems significantly improved our operational workflows and reporting processes.”
 
 4. PROJECT FILTER SECTION
@@ -1407,23 +1407,23 @@ We provide post-launch support, updates, and optimization assistance.
 
 8. TESTIMONIALS SECTION
 Rahul Sharma
-Founder — AI Startup
+Founder - AI Startup
 “Their communication and technical execution exceeded expectations. The project was delivered efficiently and professionally.”
 
 Priya Mehta
-Operations Manager — SaaS Company
+Operations Manager - SaaS Company
 “The automation workflows significantly improved our operational efficiency and scalability.”
 
 Amit Verma
-Founder — Fintech Company
+Founder - Fintech Company
 “The team delivered a premium solution with transparent communication throughout the project lifecycle.”
 
 Neha Kapoor
-Product Manager — Startup
+Product Manager - Startup
 “The UI/UX quality and system scalability were exceptional. Highly recommended for modern digital products.”
 
 Karan Desai
-Business Owner — Ecommerce Brand
+Business Owner - Ecommerce Brand
 “Their AI-powered solutions helped automate repetitive operations and improved workflow management.”
 
 9. FAQ SECTION
@@ -1741,19 +1741,19 @@ We work with startups, SaaS businesses, fintech companies, ecommerce brands, log
 
 7. TESTIMONIAL SECTION
 Rahul Sharma
-Founder — AI Startup
+Founder - AI Startup
 “The team maintained excellent communication throughout the project and delivered a highly scalable AI solution.”
 
 Priya Mehta
-Operations Manager — SaaS Company
+Operations Manager - SaaS Company
 “The workflow was transparent, collaborative, and highly professional from start to finish.”
 
 Amit Verma
-Founder — Fintech Platform
+Founder - Fintech Platform
 “Their technical expertise and support quality helped us launch our platform successfully.”
 
 Neha Kapoor
-Product Manager — Startup
+Product Manager - Startup
 “They delivered a modern, scalable product with exceptional UI/UX quality and fast execution.”
 
 8. CALENDAR / CONSULTATION SECTION
@@ -1888,7 +1888,7 @@ mobile app consultation services
 
 FINAL POSITIONING
 Working with us feels collaborative, transparent, modern, and growth-focused.
-We don’t just develop technology —
+We don’t just develop technology -
  we help businesses build scalable digital systems designed for long-term success.
 
  ## Home page section 
@@ -2755,23 +2755,23 @@ Security Auditing Tools
 
 8. CLIENT TESTIMONIAL SECTION
 Rahul Sharma
-Founder — AI Startup
+Founder - AI Startup
 “The team delivered an exceptional AI system with transparent communication and fast execution throughout the project.”
 
 Priya Mehta
-Operations Manager — SaaS Company
+Operations Manager - SaaS Company
 “The workflow automation significantly improved operational efficiency and scalability.”
 
 Amit Verma
-Founder — Fintech Platform
+Founder - Fintech Platform
 “Their technical expertise and professional process made the project execution smooth and highly effective.”
 
 Neha Kapoor
-Product Manager — Startup
+Product Manager - Startup
 “The UI/UX quality and scalable architecture exceeded our expectations.”
 
 Karan Desai
-Business Owner — Ecommerce Brand
+Business Owner - Ecommerce Brand
 “The automation systems reduced repetitive operations and improved overall workflow management.”
 
 9. FAQ SECTION

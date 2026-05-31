@@ -115,7 +115,7 @@ Warehouse analytics system
 Automation workflow screens
 
 3. DETAILED CASE STUDY STRUCTURE
-CASE STUDY 1 — AI SQL ASSISTANT PLATFORM
+CASE STUDY 1 - AI SQL ASSISTANT PLATFORM
 
 A. PROJECT OVERVIEW
 Client
@@ -180,10 +180,10 @@ Increased accessibility for non-technical users
 
 G. CLIENT TESTIMONIAL
 Rahul Sharma
-Founder — AI Startup
+Founder - AI Startup
 “The team delivered an intelligent system that completely transformed how our internal teams access data. Their communication and technical expertise were exceptional.”
 
-CASE STUDY 2 — AGENTIC AI SAAS PLATFORM
+CASE STUDY 2 - AGENTIC AI SAAS PLATFORM
 
 A. PROJECT OVERVIEW
 Client
@@ -243,10 +243,10 @@ Better user workflow organization
 
 G. CLIENT TESTIMONIAL
 Priya Mehta
-Operations Manager — AI Solutions Company
+Operations Manager - AI Solutions Company
 “The platform helped us centralize our AI workflows and significantly improved operational efficiency. The development process was highly professional.”
 
-CASE STUDY 3 — FINTECH MUTUAL FUND PLATFORM
+CASE STUDY 3 - FINTECH MUTUAL FUND PLATFORM
 
 A. PROJECT OVERVIEW
 Client
@@ -297,7 +297,7 @@ Faster financial processing systems
 
 G. CLIENT TESTIMONIAL
 Amit Verma
-Founder — Fintech Platform
+Founder - Fintech Platform
 “The automation systems significantly improved our operational workflows and reporting processes.”
 
 4. PROJECT FILTER SECTION
@@ -371,23 +371,23 @@ We provide post-launch support, updates, and optimization assistance.
 
 8. TESTIMONIALS SECTION
 Rahul Sharma
-Founder — AI Startup
+Founder - AI Startup
 “Their communication and technical execution exceeded expectations. The project was delivered efficiently and professionally.”
 
 Priya Mehta
-Operations Manager — SaaS Company
+Operations Manager - SaaS Company
 “The automation workflows significantly improved our operational efficiency and scalability.”
 
 Amit Verma
-Founder — Fintech Company
+Founder - Fintech Company
 “The team delivered a premium solution with transparent communication throughout the project lifecycle.”
 
 Neha Kapoor
-Product Manager — Startup
+Product Manager - Startup
 “The UI/UX quality and system scalability were exceptional. Highly recommended for modern digital products.”
 
 Karan Desai
-Business Owner — Ecommerce Brand
+Business Owner - Ecommerce Brand
 “Their AI-powered solutions helped automate repetitive operations and improved workflow management.”
 
 9. FAQ SECTION

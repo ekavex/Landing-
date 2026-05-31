@@ -1,7 +1,7 @@
 {
   "base": {
     "value": "4px",
-    "description": "Grid unit — all spacing must be multiples of this"
+    "description": "Grid unit - all spacing must be multiples of this"
   },
   "unit": "px",
   "scale": {

@@ -12,7 +12,7 @@ export default {
       return { loc: path, changefreq: 'weekly', priority: 1.0, lastmod: new Date().toISOString() };
     }
 
-    // Individual service pages — high priority, slow to change
+    // Individual service pages - high priority, slow to change
     if (path.startsWith('/services/') && path !== '/services') {
       return { loc: path, changefreq: 'monthly', priority: 0.9, lastmod: new Date().toISOString() };
     }

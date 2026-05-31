@@ -7,7 +7,7 @@ export async function generateMetadata({ params }) {
   if (!author) return { title: 'Author Not Found' };
 
   return {
-    title: `${author.name} — Author at Ekavex Digital`,
+    title: `${author.name} - Author at Ekavex Digital`,
     description: author.bio,
   };
 }
