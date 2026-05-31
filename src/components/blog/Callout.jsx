@@ -5,9 +5,9 @@ import { Info, Quote } from 'lucide-react';
 export default function Callout({ type = 'info', children }) {
   if (type === 'quote') {
     return (
-      <blockquote className="border-l-4 border-coral bg-coral/5 rounded-r-2xl px-4 sm:px-6 py-5 my-8 break-words">
+      <blockquote className="border-l-4 border-coral bg-coral/5 rounded-r-2xl px-4 sm:px-6 py-5 my-8 wrap-break-words">
         <Quote className="w-5 h-5 text-coral mb-3 opacity-60 shrink-0" />
-        <div className="font-heading text-base md:text-lg font-bold text-navy leading-relaxed tracking-tight break-words">
+        <div className="font-heading text-base md:text-lg font-bold text-navy leading-relaxed tracking-tight wrap-break-words">
           {children}
         </div>
       </blockquote>

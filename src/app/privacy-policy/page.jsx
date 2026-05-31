@@ -92,10 +92,10 @@ export default function PrivacyPolicyPage() {
             <p>
               For any privacy-related questions or requests, please contact us at:{' '}
               <a
-                href="mailto:hello@ekavex.com"
+                href="mailto:contact@ekavex.in"
                 className="text-coral underline underline-offset-2 hover:opacity-80 transition-opacity"
               >
-                hello@ekavex.com
+                contact@ekavex.in
               </a>
             </p>
           </section>

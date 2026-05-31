@@ -81,17 +81,17 @@ export default function PostHero({ post, author }) {
         overflow-hidden
         rounded-[1.75rem] md:rounded-[2.5rem]
         relative
-        min-h-[280px]
-        sm:min-h-[340px]
-        md:min-h-[420px]
-        lg:aspect-[16/7]
+        min-h-70
+        sm:min-h-85
+        md:min-h-105
+        lg:aspect-16/7
       "
     >
       <motion.div
         style={{ y: imageY }}
         className={`
           absolute inset-0
-          bg-gradient-to-tr ${post.heroAccent}
+          bg-linear-to-tr ${post.heroAccent}
           flex items-center justify-center
           px-5 sm:px-8 md:px-12
           py-8 md:py-12
@@ -112,7 +112,7 @@ export default function PostHero({ post, author }) {
               font-black
               text-alabaster/90
               leading-tight
-              break-words
+              wrap-break-words
               max-w-3xl
               mx-auto
             "
@@ -121,7 +121,7 @@ export default function PostHero({ post, author }) {
           </p>
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-navy/40 pointer-events-none" />
       </motion.div>
     </div>
 

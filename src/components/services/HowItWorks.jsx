@@ -50,7 +50,7 @@ export default function HowItWorks({ processSteps }) {
               <div className="space-y-4">
                 {/* What we do */}
                 <div className="bg-navy rounded-2xl p-4 border border-navy/6">
-                  <div className="font-mono text-[9px] text-alabaster uppercase tracking-widest text-coral font-bold mb-1.5">
+                  <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold mb-1.5">
                     What we do
                   </div>
                   <p className="font-sans text-xs text-white leading-relaxed">{step.you}</p>
@@ -58,7 +58,7 @@ export default function HowItWorks({ processSteps }) {
 
                 {/* What you do */}
                 <div className="glass-panel rounded-2xl p-4 border border-navy/6">
-                  <div className="font-mono text-[9px] uppercase tracking-widest text-navy/40 font-bold mb-1.5">
+                  <div className="font-mono text-[9px] uppercase tracking-widest text-navy/80 font-extrabold mb-1.5">
                     What you do
                   </div>
                   <p className="font-sans text-xs text-navy/70 leading-relaxed">{step.client}</p>

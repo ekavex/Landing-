@@ -99,7 +99,7 @@ export default function TableOfContents({ toc, mobile = false }) {
               {active === item.id && (
                 <motion.div
                   layoutId="tocActiveBar"
-                  className="absolute left-0 top-1 bottom-1 w-[3px] rounded-full bg-coral"
+                  className="absolute left-0 top-1 bottom-1 w-0.75 rounded-full bg-coral"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}

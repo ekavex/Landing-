@@ -40,7 +40,7 @@ export default function RelatedServices({ relatedSlugs, currentSlug }) {
           >
             <Link
               href={`/services/${svc.slug}`}
-              className="glass-panel rounded-3xl p-7 flex flex-col justify-between min-h-44 bento-card-hover group block border border-navy/6 hover:border-coral/20 transition-colors duration-300"
+              className="glass-panel rounded-3xl p-7 flex flex-col justify-between min-h-44 bento-card-hover group border border-navy/6 hover:border-coral/20 transition-colors duration-300"
             >
               <div>
                 <div className="font-mono text-[9px] uppercase tracking-widest text-coral font-bold mb-3">

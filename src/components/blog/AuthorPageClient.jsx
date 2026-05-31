@@ -60,7 +60,7 @@ export default function AuthorPageClient({ author, posts }) {
           >
             <Link
               href={`/blog/${post.slug}`}
-              className="glass-panel bg-alabaster rounded-4xl p-8 bento-card-hover flex flex-col justify-between min-h-56 cursor-pointer group block"
+              className="glass-panel bg-alabaster rounded-4xl p-8 bento-card-hover flex-col justify-between min-h-56 cursor-pointer group block"
             >
               <div>
                 <div className="flex items-center justify-between gap-4 mb-5">

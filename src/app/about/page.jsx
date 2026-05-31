@@ -78,9 +78,9 @@ export default function AboutPage() {
                           key={i}
                           className={`rounded-2xl border ${
                             section.bgColor === '#FFFDF6'
-                              ? 'border-[#09122C]/25 bg-[#09122C]/[0.03]'
+                              ? 'border-navy/25 bg-navy/3'
                               : 'border-white/30 bg-white/.5'
-                          } p-5 md:p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-current/50 hover:bg-current/[0.08]`}
+                          } p-5 md:p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-current/50 hover:bg-current/8`}
                         >
                           <p className="mb-3 text-sm font-bold uppercase tracking-wider">
                             {feature.title}

@@ -14,9 +14,9 @@ const CTASection = () => {
     <section className="relative min-h-screen bg-navy flex items-center justify-center px-6 md:px-12 overflow-hidden">
 
       {/* Glow Effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-coral/10 rounded-full blur-[140px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-100 bg-coral/10 rounded-full blur-[140px]" />
 
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-coral/5 rounded-full blur-[160px]" />
+      <div className="absolute bottom-0 right-0 w-125 h-125 bg-coral/5 rounded-full blur-[160px]" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
