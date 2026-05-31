@@ -15,37 +15,37 @@ The page is **6,527px** tall. Each frame below shows what the user sees at that 
 
 > **Use these screenshots to understand WHAT animates, WHEN it animates, and HOW it moves.**
 
-### 0% — Top / Hero
+### 0% - Top / Hero
 Scroll position: 0px
 
 ![Scroll 0%](../screens/scroll/scroll-000.png)
 
-### 17% — Opening Section
+### 17% - Opening Section
 Scroll position: 957px
 
 ![Scroll 17%](../screens/scroll/scroll-017.png)
 
-### 33% — First Feature Section
+### 33% - First Feature Section
 Scroll position: 1,857px
 
 ![Scroll 33%](../screens/scroll/scroll-033.png)
 
-### 50% — Mid-Page
+### 50% - Mid-Page
 Scroll position: 2,814px
 
 ![Scroll 50%](../screens/scroll/scroll-050.png)
 
-### 67% — Lower Content
+### 67% - Lower Content
 Scroll position: 3,770px
 
 ![Scroll 67%](../screens/scroll/scroll-067.png)
 
-### 83% — Near Footer
+### 83% - Near Footer
 Scroll position: 4,670px
 
 ![Scroll 83%](../screens/scroll/scroll-083.png)
 
-### 100% — Bottom / Footer
+### 100% - Bottom / Footer
 Scroll position: 5,627px
 
 ![Scroll 100%](../screens/scroll/scroll-100.png)
@@ -164,12 +164,12 @@ transition: color 0.2s;
 
 ## How to Recreate This Motion Design
 
-### Step 1 — Install Dependencies
+### Step 1 - Install Dependencies
 
 ```bash
 ```
 
-### Step 2 — Scroll-Reveal Pattern
+### Step 2 - Scroll-Reveal Pattern
 
 Elements that animate into view follow this pattern:
 
@@ -187,14 +187,14 @@ Elements that animate into view follow this pattern:
 }
 ```
 
-### Step 3 — Key Motion Principles
+### Step 3 - Key Motion Principles
 
-- **Video backgrounds** — use `<video autoplay loop muted playsinline>` for background videos. Always include a poster image fallback
-- **Canvas elements (1)** — animated via requestAnimationFrame loop. Use canvas for particle effects, gradient animations, and WebGL scenes
-- **Duration scale:** `.15s` · `45s` · `0.3s` · `0.2s` — use these values, never invent new durations
+- **Video backgrounds** - use `<video autoplay loop muted playsinline>` for background videos. Always include a poster image fallback
+- **Canvas elements (1)** - animated via requestAnimationFrame loop. Use canvas for particle effects, gradient animations, and WebGL scenes
+- **Duration scale:** `.15s` · `45s` · `0.3s` · `0.2s` - use these values, never invent new durations
 - **Always add** `@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }`
 
-### Step 4 — Scroll Journey Reference
+### Step 4 - Scroll Journey Reference
 
 Match what happens at each scroll position:
 

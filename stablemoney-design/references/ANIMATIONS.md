@@ -7,7 +7,7 @@
 | Library | Type | Notes |
 |---------|------|-------|
 | **Web Animations API (12 active)** | animation |  |
-| Canvas (1 elements) | WebGL/3D | WebGL context detected — likely Three.js or custom shader |
+| Canvas (1 elements) | WebGL/3D | WebGL context detected - likely Three.js or custom shader |
 
 ## Scroll Journey
 
@@ -15,37 +15,37 @@ The page is **7,212px** tall. Each frame below shows what the user sees at that 
 
 > **Use these screenshots to understand WHAT animates, WHEN it animates, and HOW it moves.**
 
-### 0% — Top / Hero
+### 0% - Top / Hero
 Scroll position: 0px
 
 ![Scroll 0%](../screens/scroll/scroll-000.png)
 
-### 17% — Opening Section
+### 17% - Opening Section
 Scroll position: 1,073px
 
 ![Scroll 17%](../screens/scroll/scroll-017.png)
 
-### 33% — First Feature Section
+### 33% - First Feature Section
 Scroll position: 2,083px
 
 ![Scroll 33%](../screens/scroll/scroll-033.png)
 
-### 50% — Mid-Page
+### 50% - Mid-Page
 Scroll position: 3,156px
 
 ![Scroll 50%](../screens/scroll/scroll-050.png)
 
-### 67% — Lower Content
+### 67% - Lower Content
 Scroll position: 4,229px
 
 ![Scroll 67%](../screens/scroll/scroll-067.png)
 
-### 83% — Near Footer
+### 83% - Near Footer
 Scroll position: 5,239px
 
 ![Scroll 83%](../screens/scroll/scroll-083.png)
 
-### 100% — Bottom / Footer
+### 100% - Bottom / Footer
 Scroll position: 6,312px
 
 ![Scroll 100%](../screens/scroll/scroll-100.png)
@@ -718,12 +718,12 @@ transition: scale 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 
 ## How to Recreate This Motion Design
 
-### Step 1 — Install Dependencies
+### Step 1 - Install Dependencies
 
 ```bash
 ```
 
-### Step 2 — Scroll-Reveal Pattern
+### Step 2 - Scroll-Reveal Pattern
 
 Elements that animate into view follow this pattern:
 
@@ -741,14 +741,14 @@ Elements that animate into view follow this pattern:
 }
 ```
 
-### Step 3 — Key Motion Principles
+### Step 3 - Key Motion Principles
 
-- **WebGL/3D layer detected** — product visualizations use Three.js or custom WebGL. Use `<canvas>` with Three.js for 3D product renders
-- **Canvas elements (1)** — animated via requestAnimationFrame loop. Use canvas for particle effects, gradient animations, and WebGL scenes
-- **Duration scale:** `.15s` · `0.4s` · `0.2s` — use these values, never invent new durations
+- **WebGL/3D layer detected** - product visualizations use Three.js or custom WebGL. Use `<canvas>` with Three.js for 3D product renders
+- **Canvas elements (1)** - animated via requestAnimationFrame loop. Use canvas for particle effects, gradient animations, and WebGL scenes
+- **Duration scale:** `.15s` · `0.4s` · `0.2s` - use these values, never invent new durations
 - **Always add** `@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }`
 
-### Step 4 — Scroll Journey Reference
+### Step 4 - Scroll Journey Reference
 
 Match what happens at each scroll position:
 

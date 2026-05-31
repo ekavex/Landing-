@@ -82,7 +82,7 @@ export default async function BlogPostPage({ params }) {
             <AuthorBio author={author} />
           </div>
 
-          {/* Sticky sidebar TOC — desktop only */}
+          {/* Sticky sidebar TOC - desktop only */}
           <aside className="hidden lg:block lg:col-span-4 lg:col-start-9">
             <TableOfContents toc={post.toc} />
           </aside>

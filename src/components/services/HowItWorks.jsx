@@ -25,7 +25,7 @@ export default function HowItWorks({ processSteps }) {
 
       {/* Steps */}
       <div className="relative">
-        {/* Connector line — desktop only */}
+        {/* Connector line - desktop only */}
         <div className="hidden lg:block absolute top-10 left-[calc(16.67%-1px)] right-[calc(16.67%-1px)] h-px bg-navy/8 z-0" />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">

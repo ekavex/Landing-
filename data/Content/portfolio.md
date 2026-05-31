@@ -416,23 +416,23 @@ Security Auditing Tools
 
 8. CLIENT TESTIMONIAL SECTION
 Rahul Sharma
-Founder — AI Startup
+Founder - AI Startup
 “The team delivered an exceptional AI system with transparent communication and fast execution throughout the project.”
 
 Priya Mehta
-Operations Manager — SaaS Company
+Operations Manager - SaaS Company
 “The workflow automation significantly improved operational efficiency and scalability.”
 
 Amit Verma
-Founder — Fintech Platform
+Founder - Fintech Platform
 “Their technical expertise and professional process made the project execution smooth and highly effective.”
 
 Neha Kapoor
-Product Manager — Startup
+Product Manager - Startup
 “The UI/UX quality and scalable architecture exceeded our expectations.”
 
 Karan Desai
-Business Owner — Ecommerce Brand
+Business Owner - Ecommerce Brand
 “The automation systems reduced repetitive operations and improved overall workflow management.”
 
 9. FAQ SECTION

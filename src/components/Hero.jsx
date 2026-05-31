@@ -68,25 +68,25 @@ export default function Hero({ onNavigate }) {
   const textParallaxX = useTransform(mouseX, [-0.5, 0.5], [-10, 10]);
   const textParallaxY = useTransform(mouseY, [-0.5, 0.5], [-10, 10]);
 
-  // Layer 1 — Left Card (Pulse Monitor): tilts toward cursor + drifts
+  // Layer 1 - Left Card (Pulse Monitor): tilts toward cursor + drifts
   const cardLeftX = useTransform(mouseX, [-0.5, 0.5], [45, -45]);
   const cardLeftY = useTransform(mouseY, [-0.5, 0.5], [40, -40]);
   const rotateLeftX = useTransform(mouseY, [-0.5, 0.5], [8, -8]);
   const rotateLeftY = useTransform(mouseX, [-0.5, 0.5], [-8, 8]);
 
-  // Layer 2 — Right Card (Latency Dashboard): drifts inversely + tilts
+  // Layer 2 - Right Card (Latency Dashboard): drifts inversely + tilts
   const cardRightX = useTransform(mouseX, [-0.5, 0.5], [-40, 40]);
   const cardRightY = useTransform(mouseY, [-0.5, 0.5], [-45, 45]);
   const rotateRightX = useTransform(mouseY, [-0.5, 0.5], [-10, 10]);
   const rotateRightY = useTransform(mouseX, [-0.5, 0.5], [10, -10]);
 
-  // Layer 3 — Badges on Left
+  // Layer 3 - Badges on Left
   const badgeLeftTopX = useTransform(mouseX, [-0.5, 0.5], [20, -20]);
   const badgeLeftTopY = useTransform(mouseY, [-0.5, 0.5], [25, -25]);
   const badgeLeftBottomX = useTransform(mouseX, [-0.5, 0.5], [50, -50]);
   const badgeLeftBottomY = useTransform(mouseY, [-0.5, 0.5], [50, -50]);
 
-  // Layer 4 — Badges on Right
+  // Layer 4 - Badges on Right
   const badgeRightTopX = useTransform(mouseX, [-0.5, 0.5], [-20, 20]);
   const badgeRightTopY = useTransform(mouseY, [-0.5, 0.5], [-25, 25]);
   const badgeRightBottomX = useTransform(mouseX, [-0.5, 0.5], [-50, 50]);
@@ -204,7 +204,7 @@ export default function Hero({ onNavigate }) {
             </span>
           </motion.div>
 
-          {/* Headline — 3D character-split reveal, compact size on desktop to fit screen height */}
+          {/* Headline - 3D character-split reveal, compact size on desktop to fit screen height */}
           <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3rem] xl:text-[3.4rem] font-black text-navy leading-none lg:leading-[0.93] tracking-[-0.04em] max-w-4xl break-normal">
             <SplitReveal delay={0.3} className={heroData.headline[0].highlight ? "text-coral" : ""}>
               {heroData.headline[0].text}

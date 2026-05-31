@@ -7,7 +7,7 @@ import { useRef, useEffect, useState } from 'react';
 function AnimatedStat({ value, label }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
-  const [displayed, setDisplayed] = useState('—');
+  const [displayed, setDisplayed] = useState('-');
 
   useEffect(() => {
     if (inView) {
@@ -35,7 +35,7 @@ export default function Deliverables({ deliverables, stat, caseStudy }) {
   return (
     <section className="py-16 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* Deliverables — dark card */}
+        {/* Deliverables - dark card */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}

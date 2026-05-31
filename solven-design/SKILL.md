@@ -17,33 +17,33 @@ You are building UI for **solven**. Dark-themed, warm palette, sans-serif typogr
 
 ### Scroll Journey (Cinematic Visual States)
 
-> These screenshots capture the website at different scroll depths. The design changes dramatically as you scroll — each frame shows a different cinematic state. Replicate these exact visual transitions.
+> These screenshots capture the website at different scroll depths. The design changes dramatically as you scroll - each frame shows a different cinematic state. Replicate these exact visual transitions.
 
-#### 0% — Hero / Above the fold
+#### 0% - Hero / Above the fold
 
 ![Scroll 0%](screens/scroll/scroll-000.png)
 
-#### 17% — Mid-page at 17% scroll
+#### 17% - Mid-page at 17% scroll
 
 ![Scroll 17%](screens/scroll/scroll-017.png)
 
-#### 33% — Mid-page at 33% scroll
+#### 33% - Mid-page at 33% scroll
 
 ![Scroll 33%](screens/scroll/scroll-033.png)
 
-#### 50% — Mid-page at 50% scroll
+#### 50% - Mid-page at 50% scroll
 
 ![Scroll 50%](screens/scroll/scroll-050.png)
 
-#### 67% — Mid-page at 67% scroll
+#### 67% - Mid-page at 67% scroll
 
 ![Scroll 67%](screens/scroll/scroll-067.png)
 
-#### 83% — Mid-page at 83% scroll
+#### 83% - Mid-page at 83% scroll
 
 ![Scroll 83%](screens/scroll/scroll-083.png)
 
-#### 100% — Footer / End of page
+#### 100% - Footer / End of page
 
 ![Scroll 100%](screens/scroll/scroll-100.png)
 
@@ -60,7 +60,7 @@ This package includes extended documentation. **Read these files before implemen
 | File | Contents |
 |------|----------|
 | `references/DESIGN.md` | Full design system tokens, colors, typography, spacing |
-| `references/VISUAL_GUIDE.md` | **START HERE** — Master visual guide with all screenshots embedded |
+| `references/VISUAL_GUIDE.md` | **START HERE** - Master visual guide with all screenshots embedded |
 | `references/ANIMATIONS.md` | CSS keyframes, scroll triggers, motion library stack, video specs |
 | `references/LAYOUT.md` | Flex/grid containers, page structure, spacing relationships |
 | `references/COMPONENTS.md` | DOM component patterns, HTML structure, class fingerprints |
@@ -69,17 +69,17 @@ This package includes extended documentation. **Read these files before implemen
 
 ### Animation Stack Detected
 
-- **Web Animations API (4 active)** — animation
+- **Web Animations API (4 active)** - animation
 
 ## Design Philosophy
 
-- **Layered depth** — use shadow tokens to create a sense of physical layering. Each elevation level has a specific shadow.
-- **Gradient accents** — gradients are used thoughtfully for emphasis, not decoration.
-- **Type pairing** — DM Serif Display for body/UI text, General Sans for headings/display. Never introduce a third typeface.
-- **compact density** — 4px base grid. Every dimension is a multiple of 4.
-- **warm palette** — the color temperature runs warm, matching the sans-serif typography.
-- **Restrained accent** — `#d35528` is the only pop of color. Used exclusively for CTAs, links, focus rings, and active states.
-- **Subtle motion** — transitions smooth state changes. Keep durations under 300ms, use ease-out curves.
+- **Layered depth** - use shadow tokens to create a sense of physical layering. Each elevation level has a specific shadow.
+- **Gradient accents** - gradients are used thoughtfully for emphasis, not decoration.
+- **Type pairing** - DM Serif Display for body/UI text, General Sans for headings/display. Never introduce a third typeface.
+- **compact density** - 4px base grid. Every dimension is a multiple of 4.
+- **warm palette** - the color temperature runs warm, matching the sans-serif typography.
+- **Restrained accent** - `#d35528` is the only pop of color. Used exclusively for CTAs, links, focus rings, and active states.
+- **Subtle motion** - transitions smooth state changes. Keep durations under 300ms, use ease-out curves.
 
 ## Color System
 
@@ -105,13 +105,13 @@ This package includes extended documentation. **Read these files before implemen
 ### Extended Palette
 
 - **border:** `#e2e0da`
-- **border-light:** `#edece8` — Light surface or highlight color
+- **border-light:** `#edece8` - Light surface or highlight color
 - `#888888`
 - `#2d6be4`
 - `#0e8a7d`
 - `#7048d6`
 - `#666666`
-- `#eff6ff` — Light surface or highlight color
+- `#eff6ff` - Light surface or highlight color
 
 ### CSS Variable Tokens
 
@@ -129,9 +129,9 @@ This package includes extended documentation. **Read these files before implemen
 
 ### Font Stack
 
-- **DM Serif Display** — Heading 1, Heading 2, Heading 3
-- **General Sans** — Body, Caption
-- **SFMono-Regular** — Code
+- **DM Serif Display** - Heading 1, Heading 2, Heading 3
+- **General Sans** - Body, Caption
+- **SFMono-Regular** - Code
 
 ### Font Sources
 
@@ -156,7 +156,7 @@ This package includes extended documentation. **Read these files before implemen
 
 ### Typography Rules
 
-- Body/UI: **DM Serif Display**, Headings: **General Sans** — these are the only display fonts
+- Body/UI: **DM Serif Display**, Headings: **General Sans** - these are the only display fonts
 - Max 3-4 font sizes per screen
 - Headings: weight 600-700, body: weight 400
 - Use color and opacity for text hierarchy, not additional font sizes
@@ -398,7 +398,7 @@ This project uses **subtle motion**. Transitions smooth state changes without ca
 - **Duration:** Use values from the duration scale above. Short (.3s) for micro-interactions, long (450ms) for page transitions
 - **Easing:** Use `ease` as the default easing curve
 - **Direction:** Elements enter from bottom/right, exit to top/left
-- **Reduced motion:** Always respect `prefers-reduced-motion` — disable animations when set
+- **Reduced motion:** Always respect `prefers-reduced-motion` - disable animations when set
 
 ## Depth & Elevation
 
@@ -415,27 +415,27 @@ This project uses **subtle motion**. Transitions smooth state changes without ca
 
 `10`
 
-Use these exact values — never invent z-index values.
+Use these exact values - never invent z-index values.
 
 ## Anti-Patterns (Never Do)
 
-- **No blur effects** — no backdrop-blur, no filter: blur()
-- **No zebra striping** — tables and lists use borders for separation
-- **No invented colors** — every hex value must come from the palette above
-- **No arbitrary spacing** — every dimension is a multiple of 4px
-- **No extra fonts** — only DM Serif Display and General Sans and SFMono-Regular are allowed
-- **No arbitrary border-radius** — use the scale: 2px, 3px, 4px, 10px, 11px, 12px, 14px, 16px, 20px, 28px
-- **No opacity for disabled states** — use muted colors instead
+- **No blur effects** - no backdrop-blur, no filter: blur()
+- **No zebra striping** - tables and lists use borders for separation
+- **No invented colors** - every hex value must come from the palette above
+- **No arbitrary spacing** - every dimension is a multiple of 4px
+- **No extra fonts** - only DM Serif Display and General Sans and SFMono-Regular are allowed
+- **No arbitrary border-radius** - use the scale: 2px, 3px, 4px, 10px, 11px, 12px, 14px, 16px, 20px, 28px
+- **No opacity for disabled states** - use muted colors instead
 
 ## Workflow
 
 1. **Read** `references/DESIGN.md` before writing any UI code
-2. **Pick colors** from the Color System section — never invent new ones
-3. **Set typography** — DM Serif Display, General Sans, SFMono-Regular only, using the type scale
-4. **Build layout** on the 4px grid — check every margin, padding, gap
+2. **Pick colors** from the Color System section - never invent new ones
+3. **Set typography** - DM Serif Display, General Sans, SFMono-Regular only, using the type scale
+4. **Build layout** on the 4px grid - check every margin, padding, gap
 5. **Match components** to patterns above before creating new ones
-6. **Apply elevation** — use shadow tokens
-7. **Validate** — every value traces back to a design token. No magic numbers.
+6. **Apply elevation** - use shadow tokens
+7. **Validate** - every value traces back to a design token. No magic numbers.
 
 ## Brand Spec
 
@@ -478,7 +478,7 @@ Activate this skill when:
 
 # solven DESIGN.md
 
-> Auto-generated design system — reverse-engineered via static analysis by skillui.
+> Auto-generated design system - reverse-engineered via static analysis by skillui.
 > Frameworks: None detected
 > Colors: 20 · Fonts: 3 · Components: 0
 > Icon library: not detected · State: not detected
@@ -486,7 +486,7 @@ Activate this skill when:
 
 ## Visual Reference
 
-**Match this design exactly** — study colors, fonts, spacing, and component shapes before writing any UI code.
+**Match this design exactly** - study colors, fonts, spacing, and component shapes before writing any UI code.
 
 ![solven Homepage](../screenshots/homepage.png)
 
@@ -494,7 +494,7 @@ Activate this skill when:
 
 ## 1. Visual Theme & Atmosphere
 
-This is a **dark-themed** interface with a warm tone. Depth is expressed through layered shadows and subtle surface color variation. Typography pairs **General Sans** for display/headings with **DM Serif Display** for body text, creating clear visual hierarchy through type contrast. Spacing follows a **4px base grid** (compact density), with scale: 2, 4, 6, 8, 10, 12, 14, 16px. The accent color **#d35528** anchors interactive elements (buttons, links, focus rings). Motion is subtle — smooth transitions (150-300ms) ease state changes without drawing attention.
+This is a **dark-themed** interface with a warm tone. Depth is expressed through layered shadows and subtle surface color variation. Typography pairs **General Sans** for display/headings with **DM Serif Display** for body text, creating clear visual hierarchy through type contrast. Spacing follows a **4px base grid** (compact density), with scale: 2, 4, 6, 8, 10, 12, 14, 16px. The accent color **#d35528** anchors interactive elements (buttons, links, focus rings). Motion is subtle - smooth transitions (150-300ms) ease state changes without drawing attention.
 
 ---
 
@@ -542,9 +542,9 @@ This is a **dark-themed** interface with a warm tone. Depth is expressed through
 ## 3. Typography Rules
 
 **Font Stack:**
-- **DM Serif Display** — Heading 1, Heading 2, Heading 3
-- **General Sans** — Body, Caption
-- **SFMono-Regular** — Code
+- **DM Serif Display** - Heading 1, Heading 2, Heading 3
+- **General Sans** - Body, Caption
+- **SFMono-Regular** - Code
 
 **Font Sources:**
 
@@ -602,18 +602,18 @@ No components detected. Scan `src/components/` or `components/` to populate this
 
 ## 6. Depth & Elevation
 
-### Raised — cards, buttons, interactive elements
+### Raised - cards, buttons, interactive elements
 
 - `0 1px 4px #00000008`
 - `rgba(0, 0, 0, 0.02) 0px 1px 3px 0px`
 - `rgba(0, 0, 0, 0.04) 0px 1px 4px 0px`
 
-### Floating — dropdowns, popovers, modals
+### Floating - dropdowns, popovers, modals
 
 - `rgba(211, 85, 40, 0.2) 0px 4px 16px 0px`
 - `rgba(0, 0, 0, 0.06) 0px 2px 16px 0px`
 
-### Overlay — full-screen overlays, top-level dialogs
+### Overlay - full-screen overlays, top-level dialogs
 
 - `0 16px 56px #00000014`
 - `0 8px 28px #d3552840`
@@ -650,18 +650,18 @@ This project uses **subtle motion**. Transitions smooth state changes without de
 
 - Use `#d35528` for interactive elements (buttons, links, focus rings)
 - Use `#1a1a1a` as the primary page background
-- Pair **DM Serif Display** (body) with **General Sans** (display) — these are the only allowed fonts
+- Pair **DM Serif Display** (body) with **General Sans** (display) - these are the only allowed fonts
 - Follow the **4px** spacing grid for all margins, padding, and gaps
-- Use the defined shadow tokens for elevation — see Section 6
+- Use the defined shadow tokens for elevation - see Section 6
 - Use border-radius from the scale: 2px, 3px, 4px, 10px, 11px
 
 ### Don'ts
 
-- Don't introduce colors outside this palette — extend the design tokens first
+- Don't introduce colors outside this palette - extend the design tokens first
 - Don't introduce additional font families beyond DM Serif Display and General Sans and SFMono-Regular
-- Don't use arbitrary spacing values — stick to multiples of 4px
+- Don't use arbitrary spacing values - stick to multiples of 4px
 - Don't create custom box-shadow values outside the system tokens
-- Don't use arbitrary border-radius values — pick from the defined scale
+- Don't use arbitrary border-radius values - pick from the defined scale
 - Don't use backdrop-blur or blur effects
 
 ### Anti-Patterns (detected from codebase)
@@ -757,9 +757,9 @@ Radius: 12px
 6. Elevation: shadow tokens
 ```
 
-## Visual Guide — Screenshots (VISUAL_GUIDE.md)
+## Visual Guide - Screenshots (VISUAL_GUIDE.md)
 
-# solven — Visual Guide
+# solven - Visual Guide
 
 > Master visual reference. Study every screenshot carefully before implementing any UI.
 > Match colors, layout, typography, spacing, and motion states exactly.
@@ -769,13 +769,13 @@ Radius: 12px
 ## Scroll Journey
 
 The page has cinematic scroll animations. Each screenshot below shows the exact visual state at that scroll depth.
-**Replicate these transitions precisely** — the design changes dramatically as you scroll.
+**Replicate these transitions precisely** - the design changes dramatically as you scroll.
 
-### Hero — Above the fold
+### Hero - Above the fold
 
 *Scroll position: 0px of 6527px total*
 
-![Hero — Above the fold](../screens/scroll/scroll-000.png)
+![Hero - Above the fold](../screens/scroll/scroll-000.png)
 
 ### 17% scroll depth
 
@@ -807,11 +807,11 @@ The page has cinematic scroll animations. Each screenshot below shows the exact 
 
 ![83% scroll depth](../screens/scroll/scroll-083.png)
 
-### Footer — End of page
+### Footer - End of page
 
 *Scroll position: 5627px of 6527px total*
 
-![Footer — End of page](../screens/scroll/scroll-100.png)
+![Footer - End of page](../screens/scroll/scroll-100.png)
 
 ## Video Backgrounds
 
@@ -835,7 +835,7 @@ These videos play as background elements. Use first-frame as poster image while 
 
 Clipped sections showing individual components in context.
 
-### Section 1 — `section`
+### Section 1 - `section`
 
 *1440×900px*
 
@@ -860,37 +860,37 @@ The page is **6,527px** tall. Each frame below shows what the user sees at that 
 
 > **Use these screenshots to understand WHAT animates, WHEN it animates, and HOW it moves.**
 
-### 0% — Top / Hero
+### 0% - Top / Hero
 Scroll position: 0px
 
 ![Scroll 0%](../screens/scroll/scroll-000.png)
 
-### 17% — Opening Section
+### 17% - Opening Section
 Scroll position: 957px
 
 ![Scroll 17%](../screens/scroll/scroll-017.png)
 
-### 33% — First Feature Section
+### 33% - First Feature Section
 Scroll position: 1,857px
 
 ![Scroll 33%](../screens/scroll/scroll-033.png)
 
-### 50% — Mid-Page
+### 50% - Mid-Page
 Scroll position: 2,814px
 
 ![Scroll 50%](../screens/scroll/scroll-050.png)
 
-### 67% — Lower Content
+### 67% - Lower Content
 Scroll position: 3,770px
 
 ![Scroll 67%](../screens/scroll/scroll-067.png)
 
-### 83% — Near Footer
+### 83% - Near Footer
 Scroll position: 4,670px
 
 ![Scroll 83%](../screens/scroll/scroll-083.png)
 
-### 100% — Bottom / Footer
+### 100% - Bottom / Footer
 Scroll position: 5,627px
 
 ![Scroll 100%](../screens/scroll/scroll-100.png)
@@ -1009,12 +1009,12 @@ transition: color 0.2s;
 
 ## How to Recreate This Motion Design
 
-### Step 1 — Install Dependencies
+### Step 1 - Install Dependencies
 
 ```bash
 ```
 
-### Step 2 — Scroll-Reveal Pattern
+### Step 2 - Scroll-Reveal Pattern
 
 Elements that animate into view follow this pattern:
 
@@ -1032,14 +1032,14 @@ Elements that animate into view follow this pattern:
 }
 ```
 
-### Step 3 — Key Motion Principles
+### Step 3 - Key Motion Principles
 
-- **Video backgrounds** — use `<video autoplay loop muted playsinline>` for background videos. Always include a poster image fallback
-- **Canvas elements (1)** — animated via requestAnimationFrame loop. Use canvas for particle effects, gradient animations, and WebGL scenes
-- **Duration scale:** `.15s` · `45s` · `0.3s` · `0.2s` — use these values, never invent new durations
+- **Video backgrounds** - use `<video autoplay loop muted playsinline>` for background videos. Always include a poster image fallback
+- **Canvas elements (1)** - animated via requestAnimationFrame loop. Use canvas for particle effects, gradient animations, and WebGL scenes
+- **Duration scale:** `.15s` · `45s` · `0.3s` · `0.2s` - use these values, never invent new durations
 - **Always add** `@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }`
 
-### Step 4 — Scroll Journey Reference
+### Step 4 - Scroll Journey Reference
 
 Match what happens at each scroll position:
 
@@ -1065,23 +1065,23 @@ Match what happens at each scroll position:
 
 | Spacing | Semantic Use |
 |---------|-------------|
-| 4px | Tight — within a component |
-| 8px | Medium — between sibling items |
-| 16px | Wide — between sections |
-| 32px | Vast — major section breaks |
+| 4px | Tight - within a component |
+| 8px | Medium - between sibling items |
+| 16px | Wide - between sections |
+| 32px | Vast - major section breaks |
 
 ## Flex Layouts
 
 | Element | Direction | Justify | Align | Gap | Children |
 |---------|-----------|---------|-------|-----|----------|
-| `nav.hidden.lg:flex` | row | — | center | 4px | 5 |
+| `nav.hidden.lg:flex` | row | - | center | 4px | 5 |
 | `div.container-x` | row | space-between | center | 16px | 2 |
-| `div.hidden.lg:flex` | row | — | center | 8px | 1 |
-| `div.orbit-centering-wrapper` | row | center | center | — | 1 |
-| `div.card-base` | column | — | — | — | 3 |
-| `div.card-base` | column | — | — | — | 3 |
-| `div.card-base` | column | — | — | — | 3 |
-| `div.card-base` | row | — | center | 16px | 2 |
+| `div.hidden.lg:flex` | row | - | center | 8px | 1 |
+| `div.orbit-centering-wrapper` | row | center | center | - | 1 |
+| `div.card-base` | column | - | - | - | 3 |
+| `div.card-base` | column | - | - | - | 3 |
+| `div.card-base` | column | - | - | - | 3 |
+| `div.card-base` | row | - | center | 16px | 2 |
 
 ## Grid Layouts
 
@@ -1187,7 +1187,7 @@ children:         2
 ```
 display:          flex
 flex-direction:   row
-justify-content:  —
+justify-content:  -
 align-items:      center
 gap:              4px
 children:         5
@@ -1195,7 +1195,7 @@ children:         5
 
 ## Layout Rules
 
-- **Container max-width:** `1280px` — always center with `margin: auto`
+- **Container max-width:** `1280px` - always center with `margin: auto`
 - Primary layout system: **Flexbox**
 - Secondary layout system: **CSS Grid** (used for card grids and multi-column layouts)
 - Every spacing value must be a multiple of **4px**
@@ -1405,7 +1405,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 ## Button Interactions
 
-### Button 1 — `Start building free`
+### Button 1 - `Start building free`
 
 **States:**
 
@@ -1431,7 +1431,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 **Transition:** `0.35s`
 
-### Button 2 — `Book a demo`
+### Button 2 - `Book a demo`
 
 **States:**
 
@@ -1458,7 +1458,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 **Transition:** `0.35s`
 
-### Button 3 — `Learn about us`
+### Button 3 - `Learn about us`
 
 **States:**
 
@@ -1485,7 +1485,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 ## Link Interactions
 
-### Link 1 — `CALL US
+### Link 1 - `CALL US
 +91 9552424533
 Mon – Sat, 9 AM –`
 
@@ -1504,7 +1504,7 @@ Mon – Sat, 9 AM –`
 
 **Transition:** `all`
 
-### Link 2 — `VISIT US
+### Link 2 - `VISIT US
 Pune, India
 VJ grand central, W`
 
@@ -1525,7 +1525,7 @@ VJ grand central, W`
 
 ## Input Interactions
 
-### Input 1 — `John Doe`
+### Input 1 - `John Doe`
 
 **States:**
 
@@ -1542,7 +1542,7 @@ VJ grand central, W`
 
 **Transition:** `0.3s`
 
-### Input 2 — `john@company.com`
+### Input 2 - `john@company.com`
 
 **States:**
 
@@ -1559,7 +1559,7 @@ VJ grand central, W`
 
 **Transition:** `0.3s`
 
-### Input 3 — `How can we help you?`
+### Input 3 - `How can we help you?`
 
 **States:**
 
@@ -1579,12 +1579,12 @@ VJ grand central, W`
 ## Interaction Rules
 
 - Accent color `#d35528` is used for focus rings, active states, and hover highlights
-- Hover effects include **color transitions** — use the extracted values, not approximations
-- Focus states use **outline** (not box-shadow) — always match the extracted focus ring
+- Hover effects include **color transitions** - use the extracted values, not approximations
+- Focus states use **outline** (not box-shadow) - always match the extracted focus ring
 - Transition durations in use: `0.35s`, `0.3s`
-- Always respect `prefers-reduced-motion` — set all transitions to `0s` when enabled
+- Always respect `prefers-reduced-motion` - set all transitions to `0s` when enabled
 
-## Design Tokens — JSON Files
+## Design Tokens - JSON Files
 
 ### tokens/colors.json
 ```json
@@ -1690,7 +1690,7 @@ VJ grand central, W`
 {
   "base": {
     "value": "4px",
-    "description": "Grid unit — all spacing must be multiples of this"
+    "description": "Grid unit - all spacing must be multiples of this"
   },
   "unit": "px",
   "scale": {
@@ -1899,7 +1899,7 @@ Use these local font files in `@font-face` declarations instead of fetching from
 
 ### Scroll Journey (screens/scroll/)
 
-*Cinematic scroll states — page visual at each scroll depth*
+*Cinematic scroll states - page visual at each scroll depth*
 
 ![scroll-000.png](screens/scroll/scroll-000.png)
 

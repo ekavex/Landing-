@@ -1,6 +1,6 @@
 # stablemoney DESIGN.md
 
-> Auto-generated design system — reverse-engineered via static analysis by skillui.
+> Auto-generated design system - reverse-engineered via static analysis by skillui.
 > Frameworks: None detected
 > Colors: 20 · Fonts: 3 · Components: 8
 > Icon library: not detected · State: not detected
@@ -8,7 +8,7 @@
 
 ## Visual Reference
 
-**Match this design exactly** — study colors, fonts, spacing, and component shapes before writing any UI code.
+**Match this design exactly** - study colors, fonts, spacing, and component shapes before writing any UI code.
 
 ![stablemoney Homepage](../screenshots/homepage.png)
 
@@ -16,7 +16,7 @@
 
 ## 1. Visual Theme & Atmosphere
 
-This is a **dark-themed** interface with a cool tone. Depth is expressed through layered shadows and subtle surface color variation. Typography pairs **Roboto** for display/headings with **Circular Std** for body text, creating clear visual hierarchy through type contrast. Spacing follows a **4px base grid** (compact density), with scale: 2, 4, 6, 8, 10, 12, 14, 16px. The accent color **#a66cff** anchors interactive elements (buttons, links, focus rings). Motion is expressive — spring physics, layout animations, and staggered reveals are part of the visual language.
+This is a **dark-themed** interface with a cool tone. Depth is expressed through layered shadows and subtle surface color variation. Typography pairs **Roboto** for display/headings with **Circular Std** for body text, creating clear visual hierarchy through type contrast. Spacing follows a **4px base grid** (compact density), with scale: 2, 4, 6, 8, 10, 12, 14, 16px. The accent color **#a66cff** anchors interactive elements (buttons, links, focus rings). Motion is expressive - spring physics, layout animations, and staggered reveals are part of the visual language.
 
 ---
 
@@ -90,9 +90,9 @@ This is a **dark-themed** interface with a cool tone. Depth is expressed through
 ## 3. Typography Rules
 
 **Font Stack:**
-- **Circular Std** — Heading 1, Heading 2, Heading 3
-- **Roboto** — Body, Caption
-- **SFMono-Regular** — Code
+- **Circular Std** - Heading 1, Heading 2, Heading 3
+- **Roboto** - Body, Caption
+- **SFMono-Regular** - Code
 
 **Font Sources:**
 
@@ -148,32 +148,32 @@ This is a **dark-themed** interface with a cool tone. Depth is expressed through
 
 ### Layout (1)
 
-**Footer** — `html`
+**Footer** - `html`
 
 ### Navigation (1)
 
-**Navigation** — `html`
+**Navigation** - `html`
 
 ### Data Display (2)
 
-**Card** — `html`
+**Card** - `html`
 - Variants: `cell`, `shimmer`
 
-**Badge** — `html`
+**Badge** - `html`
 
 ### Data Input (1)
 
-**Button** — `html`
+**Button** - `html`
 - Variants: `uy`
 - Animation: 
 
 ### Media (3)
 
-**Image** — `html`
+**Image** - `html`
 
-**Icon** — `html`
+**Icon** - `html`
 
-**Map/Canvas** — `html`
+**Map/Canvas** - `html`
 
 
 
@@ -199,22 +199,22 @@ This is a **dark-themed** interface with a cool tone. Depth is expressed through
 
 ## 6. Depth & Elevation
 
-### Flat — subtle depth hints
+### Flat - subtle depth hints
 
 - `0 0 0 2px #0006`
 
-### Raised — cards, buttons, interactive elements
+### Raised - cards, buttons, interactive elements
 
 - `0 0 0 1px rgb(var(--tw-prose-kbd-shadows)/10%),0 3px rgb(var(--tw-prose-kbd-shadows)/10%)`
 - `2px 0 5px #0000001a`
 
-### Floating — dropdowns, popovers, modals
+### Floating - dropdowns, popovers, modals
 
 - `0 4px 12px #0000001a`
 - `0 4px 12px #0000001a,0 0 0 2px #0003`
 - `0 0 10px #29d,0 0 5px #29d`
 
-### Overlay — full-screen overlays, top-level dialogs
+### Overlay - full-screen overlays, top-level dialogs
 
 - `inset 0 0 0 1000px #fff`
 - `0 24px 48px -12px #68533738,0 8px 16px -4px #68533724`
@@ -262,22 +262,22 @@ This project uses **expressive motion**. Animations are an integral part of the 
 
 - Use `#a66cff` for interactive elements (buttons, links, focus rings)
 - Use `#000000` as the primary page background
-- Pair **Circular Std** (body) with **Roboto** (display) — these are the only allowed fonts
+- Pair **Circular Std** (body) with **Roboto** (display) - these are the only allowed fonts
 - Follow the **4px** spacing grid for all margins, padding, and gaps
-- Use the defined shadow tokens for elevation — see Section 6
+- Use the defined shadow tokens for elevation - see Section 6
 - Use border-radius from the scale: .25rem, .3125rem, .375rem, 1rem, 2px
 - Reuse existing components from Section 4 before creating new ones
-- Always use CSS variables for colors — never hardcode hex
+- Always use CSS variables for colors - never hardcode hex
 - Test both light and dark modes for contrast
 
 ### Don'ts
 
-- Don't introduce colors outside this palette — extend the design tokens first
+- Don't introduce colors outside this palette - extend the design tokens first
 - Don't introduce additional font families beyond Circular Std and Roboto and SFMono-Regular
-- Don't use arbitrary spacing values — stick to multiples of 4px
+- Don't use arbitrary spacing values - stick to multiples of 4px
 - Don't create custom box-shadow values outside the system tokens
-- Don't use arbitrary border-radius values — pick from the defined scale
-- Don't duplicate component patterns — check Section 4 first
+- Don't use arbitrary border-radius values - pick from the defined scale
+- Don't duplicate component patterns - check Section 4 first
 - Don't use backdrop-blur or blur effects
 
 ### Anti-Patterns (detected from codebase)

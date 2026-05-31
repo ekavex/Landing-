@@ -43,7 +43,7 @@ const ClientsReviewSection = () => {
         </p>
       </div>
 
-      {/* Cards Grid — extra top padding so avatars have room to float above */}
+      {/* Cards Grid - extra top padding so avatars have room to float above */}
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         modules={[Autoplay]}

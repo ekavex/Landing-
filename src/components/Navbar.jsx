@@ -42,7 +42,7 @@ const Navbar = ({ activeView }) => {
           <Link href="/" className="flex items-center gap-2 group">
             <img
               src="/logo1.png"
-              alt="Ekavex Digital — Web Development & AI Automation Agency, Pune"
+              alt="Ekavex Digital - Web Development & AI Automation Agency, Pune"
               className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-110"
             />
             <span className="font-heading text-lg font-black tracking-[-0.03em] text-navy">

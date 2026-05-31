@@ -22,7 +22,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 ## Button Interactions
 
-### Button 1 — `Stable Money Logo`
+### Button 1 - `Stable Money Logo`
 
 **States:**
 
@@ -39,7 +39,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 **Transition:** `all`
 
-### Button 2 — `Login/Register`
+### Button 2 - `Login/Register`
 
 **States:**
 
@@ -56,7 +56,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 **Transition:** `all`
 
-### Button 3 — `Download app`
+### Button 3 - `Download app`
 
 **States:**
 
@@ -81,7 +81,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 ## Link Interactions
 
-### Link 1 — `Bonds
+### Link 1 - `Bonds
 NEW`
 
 **States:**
@@ -99,7 +99,7 @@ NEW`
 
 **Transition:** `all`
 
-### Link 2 — `Secured Credit Card`
+### Link 2 - `Secured Credit Card`
 
 **States:**
 
@@ -115,7 +115,7 @@ NEW`
 
 **Transition:** `all`
 
-### Link 3 — `DICGC`
+### Link 3 - `DICGC`
 
 **States:**
 
@@ -135,8 +135,8 @@ NEW`
 ## Interaction Rules
 
 - Accent color `#a66cff` is used for focus rings, active states, and hover highlights
-- Hover effects include **color transitions** — use the extracted values, not approximations
-- Focus states use **outline** (not box-shadow) — always match the extracted focus ring
+- Hover effects include **color transitions** - use the extracted values, not approximations
+- Focus states use **outline** (not box-shadow) - always match the extracted focus ring
 - Transition durations in use: `0.2s`
-- Always respect `prefers-reduced-motion` — set all transitions to `0s` when enabled
+- Always respect `prefers-reduced-motion` - set all transitions to `0s` when enabled
 

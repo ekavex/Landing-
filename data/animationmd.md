@@ -4,15 +4,15 @@
 
 ---
 
-### Turn 1 — 👤 You
+### Turn 1 - 👤 You
 
 Show animations that can be put on the website to display information
 
 ---
 
-### Turn 2 — 🤖 Assistant
+### Turn 2 - 🤖 Assistant
 
-Animations can make your website feel alive and help users understand information faster—but only if they’re used with purpose (not just decoration). Here are some high-impact animation ideas you can directly use in a modern website (especially for tech/agency-style sites like yours 👇):
+Animations can make your website feel alive and help users understand information faster-but only if they’re used with purpose (not just decoration). Here are some high-impact animation ideas you can directly use in a modern website (especially for tech/agency-style sites like yours 👇):
 
 🔹 1. Scroll-Based Reveal Animations
 8
@@ -186,9 +186,9 @@ Just tell me 👍
 
 ---
 
-### Turn 3 — 🤖 Assistant
+### Turn 3 - 🤖 Assistant
 
-Got it — let’s go beyond the usual ones and look at more advanced, modern, and slightly “wow-factor” animations you can use to present information effectively (especially useful for portfolio, agency, or tech websites).
+Got it - let’s go beyond the usual ones and look at more advanced, modern, and slightly “wow-factor” animations you can use to present information effectively (especially useful for portfolio, agency, or tech websites).
 
 🔸 11. Cursor-Based Interactive Effects
 7
@@ -378,15 +378,15 @@ Just tell me which ones 👍
 
 ---
 
-### Turn 4 — 👤 You
+### Turn 4 - 👤 You
 
 yes
 
 ---
 
-### Turn 5 — 🤖 Assistant
+### Turn 5 - 🤖 Assistant
 
-Nice — instead of throwing random code at you, I’ll design a clean, professional animation system for your website (like a real UI/UX designer would), and give you ready-to-use code you can plug in.
+Nice - instead of throwing random code at you, I’ll design a clean, professional animation system for your website (like a real UI/UX designer would), and give you ready-to-use code you can plug in.
 
 🚀 Your Website Animation System (Modern + Professional)
 🔹 1. Hero Section (First Impression)
@@ -691,15 +691,15 @@ const interval = setInterval(() => {
 
 ---
 
-### Turn 6 — 👤 You
+### Turn 6 - 👤 You
 
 BAckground animations
 
 ---
 
-### Turn 7 — 🤖 Assistant
+### Turn 7 - 🤖 Assistant
 
-Good call—background animations are what make a site feel premium without distracting from content. The trick is to keep them subtle, smooth, and lightweight.
+Good call-background animations are what make a site feel premium without distracting from content. The trick is to keep them subtle, smooth, and lightweight.
 Here are some of the best background animations you can use, plus ready-to-use code 👇
 
 🌌 1. Animated Gradient Background (Most Popular)

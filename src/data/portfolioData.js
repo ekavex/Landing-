@@ -1,6 +1,6 @@
 export const portfolioHeader = {
   subtitle: 'Case Studies',
-  title: 'Real Projects. Real Results. — Case Studies by Ekavex'
+  title: 'Real Projects. Real Results. - Case Studies by Ekavex'
 };
 
 export const portfolioFilters = ['All', 'Web Service', 'Automation Service', 'App Services'];

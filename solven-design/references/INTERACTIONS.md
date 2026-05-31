@@ -24,7 +24,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 ## Button Interactions
 
-### Button 1 — `Start building free`
+### Button 1 - `Start building free`
 
 **States:**
 
@@ -50,7 +50,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 **Transition:** `0.35s`
 
-### Button 2 — `Book a demo`
+### Button 2 - `Book a demo`
 
 **States:**
 
@@ -77,7 +77,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 **Transition:** `0.35s`
 
-### Button 3 — `Learn about us`
+### Button 3 - `Learn about us`
 
 **States:**
 
@@ -104,7 +104,7 @@ Apply these to all interactive elements. Never invent new durations or easings.
 
 ## Link Interactions
 
-### Link 1 — `CALL US
+### Link 1 - `CALL US
 +91 9552424533
 Mon – Sat, 9 AM –`
 
@@ -123,7 +123,7 @@ Mon – Sat, 9 AM –`
 
 **Transition:** `all`
 
-### Link 2 — `VISIT US
+### Link 2 - `VISIT US
 Pune, India
 VJ grand central, W`
 
@@ -144,7 +144,7 @@ VJ grand central, W`
 
 ## Input Interactions
 
-### Input 1 — `John Doe`
+### Input 1 - `John Doe`
 
 **States:**
 
@@ -161,7 +161,7 @@ VJ grand central, W`
 
 **Transition:** `0.3s`
 
-### Input 2 — `john@company.com`
+### Input 2 - `john@company.com`
 
 **States:**
 
@@ -178,7 +178,7 @@ VJ grand central, W`
 
 **Transition:** `0.3s`
 
-### Input 3 — `How can we help you?`
+### Input 3 - `How can we help you?`
 
 **States:**
 
@@ -198,8 +198,8 @@ VJ grand central, W`
 ## Interaction Rules
 
 - Accent color `#d35528` is used for focus rings, active states, and hover highlights
-- Hover effects include **color transitions** — use the extracted values, not approximations
-- Focus states use **outline** (not box-shadow) — always match the extracted focus ring
+- Hover effects include **color transitions** - use the extracted values, not approximations
+- Focus states use **outline** (not box-shadow) - always match the extracted focus ring
 - Transition durations in use: `0.35s`, `0.3s`
-- Always respect `prefers-reduced-motion` — set all transitions to `0s` when enabled
+- Always respect `prefers-reduced-motion` - set all transitions to `0s` when enabled
 

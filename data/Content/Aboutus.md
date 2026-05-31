@@ -327,7 +327,7 @@ Integrated Systems Designed For Business Growth
 Description
 We combine AI, automation, web applications, mobile technologies, SaaS systems, and cloud infrastructure into unified business ecosystems.
 Our integrated solutions help businesses centralize operations, automate workflows, and scale efficiently through connected digital systems.
-We don’t just build software — we build scalable digital growth systems.
+We don’t just build software - we build scalable digital growth systems.
 
 Benefits
 Centralized workflows
@@ -417,15 +417,15 @@ Logistics & Warehousing
 
 8. TESTIMONIAL SECTION
 Rahul Sharma
-Founder — SaaS Startup
+Founder - SaaS Startup
 “Their communication, speed, and technical execution were exceptional. The team delivered a scalable solution exactly as promised.”
 
 Priya Mehta
-Operations Manager — Fintech Company
+Operations Manager - Fintech Company
 “The AI automation systems significantly improved our workflow efficiency and reduced repetitive operational tasks.”
 
 Amit Verma
-Business Owner — Retail Brand
+Business Owner - Retail Brand
 “Their transparent process and continuous updates made the entire experience smooth and professional.”
 
 9. FAQ SECTION

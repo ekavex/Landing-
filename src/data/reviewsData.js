@@ -12,13 +12,13 @@ export const clientReviews = [
     company: 'Real Estate Startup, Pune'
   },
   {
-    quote: 'Our appointment booking used to be completely manual. Ekavex built us a system that handles everything — bookings, reminders, patient records. It\'s transformed how we operate.',
+    quote: 'Our appointment booking used to be completely manual. Ekavex built us a system that handles everything - bookings, reminders, patient records. It\'s transformed how we operate.',
     name: 'Dr. Priya M.',
     title: 'Clinic Owner',
     company: 'Nashik'
   },
   {
-    quote: 'The MCQ platform they built handles our entire exam workflow — from creation to student access. Delivered in 10 weeks and works flawlessly.',
+    quote: 'The MCQ platform they built handles our entire exam workflow - from creation to student access. Delivered in 10 weeks and works flawlessly.',
     name: 'Akash T.',
     title: 'Operations Head',
     company: 'Education Platform, Mumbai'

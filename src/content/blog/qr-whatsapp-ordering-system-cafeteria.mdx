@@ -4,10 +4,10 @@ Paper menus get dirty, wear out, and cannot be updated when prices change or ite
 
 For cafeterias, canteens, and small restaurants, this is a solvable problem. A QR code on each table, a mobile-friendly menu, and a WhatsApp number is all you need to run a contactless ordering system with zero hardware investment and minimal setup cost.
 
-This post walks through how we built exactly this for a corporate cafeteria — and how you can replicate it.
+This post walks through how we built exactly this for a corporate cafeteria - and how you can replicate it.
 
 <Callout type="info">
-The system we describe here requires no app installation from customers. Everything runs in the browser and WhatsApp — apps they already have on their phones.
+The system we describe here requires no app installation from customers. Everything runs in the browser and WhatsApp - apps they already have on their phones.
 </Callout>
 
 ## How the System Works
@@ -19,7 +19,7 @@ The flow is simple:
 3. Customer selects items and quantities, adds any notes
 4. Clicks "Place Order via WhatsApp"
 5. WhatsApp opens with a pre-filled message containing the order, table number, and total
-6. Customer sends the message — the kitchen receives the order on WhatsApp
+6. Customer sends the message - the kitchen receives the order on WhatsApp
 7. Kitchen confirms with a quick reply; order is prepared
 
 No app. No account creation. No payment gateway needed for cash-on-collection setups. The entire experience lives in two things the customer already uses daily.
@@ -30,15 +30,15 @@ No app. No account creation. No payment gateway needed for cash-on-collection se
 
 The full system uses:
 
-**Frontend** — Next.js for the menu interface. Static generation for speed — the menu loads in under a second even on 4G. Mobile-first design with large touch targets and a clean layout.
+**Frontend** - Next.js for the menu interface. Static generation for speed - the menu loads in under a second even on 4G. Mobile-first design with large touch targets and a clean layout.
 
-**Menu data** — A simple JSON file or Google Sheets as the data source. No database needed for basic setups. Menu items, categories, prices, and availability flags.
+**Menu data** - A simple JSON file or Google Sheets as the data source. No database needed for basic setups. Menu items, categories, prices, and availability flags.
 
-**QR codes** — Generated once per table using any QR code generator. Each code contains the URL of the menu with a table parameter: `yourdomain.com/menu?table=4`.
+**QR codes** - Generated once per table using any QR code generator. Each code contains the URL of the menu with a table parameter: `yourdomain.com/menu?table=4`.
 
-**WhatsApp link** — The `wa.me` API with a pre-filled message built from the customer's order. This is plain URL generation — no backend required for the message.
+**WhatsApp link** - The `wa.me` API with a pre-filled message built from the customer's order. This is plain URL generation - no backend required for the message.
 
-**Optional: order management** — For higher-volume setups, incoming WhatsApp messages can be parsed by an n8n workflow that logs orders to a Google Sheet or Airtable, sends kitchen notifications, and tracks order status.
+**Optional: order management** - For higher-volume setups, incoming WhatsApp messages can be parsed by an n8n workflow that logs orders to a Google Sheet or Airtable, sends kitchen notifications, and tracks order status.
 
 ## Building the Menu Interface
 
@@ -48,8 +48,8 @@ Menu items are rendered as cards with a category filter at the top. Each card ha
 
 Key design considerations:
 
-- All touch targets minimum 48px height — fat-finger friendly
-- Available / sold-out badge on each item — update the JSON to mark items as unavailable
+- All touch targets minimum 48px height - fat-finger friendly
+- Available / sold-out badge on each item - update the JSON to mark items as unavailable
 - Vegetarian / non-veg indicator if relevant to your context
 - Item photos optional but increase average order value noticeably in testing
 
@@ -62,11 +62,11 @@ Key design considerations:
 When the customer clicks "Place Order", a function builds the order string and opens WhatsApp with it pre-filled. The message format:
 
 ```
-🍽 New Order — Table 4
+🍽 New Order - Table 4
 
-1x Masala Chai — ₹30
-2x Veg Sandwich — ₹120
-1x Cold Coffee — ₹80
+1x Masala Chai - ₹30
+2x Veg Sandwich - ₹120
+1x Cold Coffee - ₹80
 
 Total: ₹230
 
@@ -83,14 +83,14 @@ For the business number, use WhatsApp Business (free) which lets you set up a bu
 
 - Test QR codes on multiple phone models (Android and iPhone)
 - Verify the menu loads correctly on 360px viewport width
-- Test the WhatsApp link on both Android and iOS — the URL format differs slightly
+- Test the WhatsApp link on both Android and iOS - the URL format differs slightly
 - Have a backup paper menu available for customers who cannot use smartphones
 - Train kitchen staff on the WhatsApp ordering flow before going live
 
 **Ongoing maintenance:**
 
-Updating the menu means editing the JSON file and redeploying — a process that takes under two minutes once the system is built. For teams that want to update the menu themselves without touching code, we connect the menu data to a Google Sheet and use a simple API route to read from it. Staff update the sheet; the menu updates automatically.
+Updating the menu means editing the JSON file and redeploying - a process that takes under two minutes once the system is built. For teams that want to update the menu themselves without touching code, we connect the menu data to a Google Sheet and use a simple API route to read from it. Staff update the sheet; the menu updates automatically.
 
-The total build time for a basic version of this system is two to three days. The cost is the domain and hosting — typically under ₹3,000 per year. For cafeterias processing 100+ orders per day, the time savings and reduction in ordering errors pay for the system within the first week.
+The total build time for a basic version of this system is two to three days. The cost is the domain and hosting - typically under ₹3,000 per year. For cafeterias processing 100+ orders per day, the time savings and reduction in ordering errors pay for the system within the first week.
 
 If you want to build this for your cafeteria or restaurant, reach out to Ekavex. We have a ready-to-deploy template that can be customised to your menu and branding in under 48 hours.

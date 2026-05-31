@@ -40,7 +40,7 @@ export const blogPosts = [
     authorSlug: 'yadnyesh-borole',
     author: 'Yadnyesh Borole',
     readTime: '6 Min Read',
-    summary: 'Fast loading, SEO-ready, and easy to scale — here is why Next.js has become the standard for building modern business websites and web apps.',
+    summary: 'Fast loading, SEO-ready, and easy to scale - here is why Next.js has become the standard for building modern business websites and web apps.',
     heroAccent: 'from-navy/80 to-navy',
     toc: [
       { id: 'why-your-tech-stack-matters', text: 'Why Your Tech Stack Matters', level: 2 },
@@ -111,7 +111,7 @@ export const blogPosts = [
     authorSlug: 'shreya-patil',
     author: 'Shreya Patil',
     readTime: '8 Min Read',
-    summary: 'A transparent breakdown of custom website development costs in India — from simple landing pages to full web apps. What affects pricing, what to watch out for, and how to plan your budget.',
+    summary: 'A transparent breakdown of custom website development costs in India - from simple landing pages to full web apps. What affects pricing, what to watch out for, and how to plan your budget.',
     heroAccent: 'from-navy/80 to-navy',
     toc: [
       { id: 'why-costs-vary-so-much', text: 'Why Costs Vary So Much', level: 2 },
@@ -125,19 +125,19 @@ export const blogPosts = [
   {
     id: 6,
     slug: 'n8n-vs-zapier-vs-make-india',
-    title: 'n8n vs Zapier vs Make.com — Best Automation Tool for Indian Businesses',
+    title: 'n8n vs Zapier vs Make.com - Best Automation Tool for Indian Businesses',
     category: 'AI Automation',
     date: 'July 2, 2026',
     authorSlug: 'yadnyesh-borole',
     author: 'Yadnyesh Borole',
     readTime: '9 Min Read',
-    summary: 'A practical comparison of the three most popular automation tools — n8n, Zapier, and Make.com — so you can choose the right one for your Indian business based on budget, complexity, and data control.',
+    summary: 'A practical comparison of the three most popular automation tools - n8n, Zapier, and Make.com - so you can choose the right one for your Indian business based on budget, complexity, and data control.',
     heroAccent: 'from-coral/20 to-navy',
     toc: [
       { id: 'why-this-choice-matters', text: 'Why This Choice Matters', level: 2 },
-      { id: 'zapier-the-beginner-friendly-option', text: 'Zapier — The Beginner-Friendly Option', level: 2 },
-      { id: 'make-the-visual-powerhouse', text: 'Make.com — The Visual Powerhouse', level: 2 },
-      { id: 'n8n-the-open-source-choice', text: 'n8n — The Open-Source Choice', level: 2 },
+      { id: 'zapier-the-beginner-friendly-option', text: 'Zapier - The Beginner-Friendly Option', level: 2 },
+      { id: 'make-the-visual-powerhouse', text: 'Make.com - The Visual Powerhouse', level: 2 },
+      { id: 'n8n-the-open-source-choice', text: 'n8n - The Open-Source Choice', level: 2 },
       { id: 'which-tool-for-which-business', text: 'Which Tool for Which Business?', level: 2 },
     ],
     relatedSlugs: ['how-ai-automation-transforms-business', 'whatsapp-automation-business-india'],
@@ -151,7 +151,7 @@ export const blogPosts = [
     authorSlug: 'kalash-baldota',
     author: 'Kalash Baldota',
     readTime: '7 Min Read',
-    summary: 'A step-by-step guide to automating your WhatsApp Business responses — for lead follow-ups, appointment reminders, order confirmations, and customer support — without losing the personal touch.',
+    summary: 'A step-by-step guide to automating your WhatsApp Business responses - for lead follow-ups, appointment reminders, order confirmations, and customer support - without losing the personal touch.',
     heroAccent: 'from-coral/15 to-navy',
     toc: [
       { id: 'why-whatsapp-automation-matters-in-india', text: 'Why WhatsApp Automation Matters in India', level: 2 },
@@ -171,7 +171,7 @@ export const blogPosts = [
     authorSlug: 'rohit-huge',
     author: 'Rohit Huge',
     readTime: '7 Min Read',
-    summary: 'Salesforce is powerful but expensive and complex. A custom CRM is flexible but requires development. Here is how Indian startups should decide — based on team size, budget, and actual workflow needs.',
+    summary: 'Salesforce is powerful but expensive and complex. A custom CRM is flexible but requires development. Here is how Indian startups should decide - based on team size, budget, and actual workflow needs.',
     heroAccent: 'from-navy/80 to-navy',
     toc: [
       { id: 'the-crm-problem-for-indian-startups', text: 'The CRM Problem for Indian Startups', level: 2 },
@@ -191,15 +191,15 @@ export const blogPosts = [
     authorSlug: 'shreya-patil',
     author: 'Shreya Patil',
     readTime: '6 Min Read',
-    summary: 'Most clinics in India still manage appointments through WhatsApp DMs and phone calls. Here are five specific reasons why that is costing you patients, staff time, and revenue — and what to do instead.',
+    summary: 'Most clinics in India still manage appointments through WhatsApp DMs and phone calls. Here are five specific reasons why that is costing you patients, staff time, and revenue - and what to do instead.',
     heroAccent: 'from-coral/25 to-navy',
     toc: [
       { id: 'the-state-of-clinic-management-in-india', text: 'The State of Clinic Management in India', level: 2 },
-      { id: 'reason-1-no-shows-cost-more-than-you-think', text: 'Reason 1 — No-Shows Cost More Than You Think', level: 2 },
-      { id: 'reason-2-staff-time-wasted-on-calls', text: 'Reason 2 — Staff Time Wasted on Calls', level: 2 },
-      { id: 'reason-3-patient-records-are-scattered', text: 'Reason 3 — Patient Records Are Scattered', level: 2 },
-      { id: 'reason-4-no-follow-up-system', text: 'Reason 4 — No Follow-Up System', level: 2 },
-      { id: 'reason-5-your-competitors-are-already-using-this', text: 'Reason 5 — Your Competitors Are Already Using This', level: 2 },
+      { id: 'reason-1-no-shows-cost-more-than-you-think', text: 'Reason 1 - No-Shows Cost More Than You Think', level: 2 },
+      { id: 'reason-2-staff-time-wasted-on-calls', text: 'Reason 2 - Staff Time Wasted on Calls', level: 2 },
+      { id: 'reason-3-patient-records-are-scattered', text: 'Reason 3 - Patient Records Are Scattered', level: 2 },
+      { id: 'reason-4-no-follow-up-system', text: 'Reason 4 - No Follow-Up System', level: 2 },
+      { id: 'reason-5-your-competitors-are-already-using-this', text: 'Reason 5 - Your Competitors Are Already Using This', level: 2 },
     ],
     relatedSlugs: ['custom-crm-vs-salesforce-india', 'how-ai-automation-transforms-business'],
   },
@@ -212,7 +212,7 @@ export const blogPosts = [
     authorSlug: 'yadnyesh-borole',
     author: 'Yadnyesh Borole',
     readTime: '10 Min Read',
-    summary: 'Everything Indian founders need to know before building their first product — what MVP actually means, realistic costs in India, how long it takes, and which tech stack to use for different types of products.',
+    summary: 'Everything Indian founders need to know before building their first product - what MVP actually means, realistic costs in India, how long it takes, and which tech stack to use for different types of products.',
     heroAccent: 'from-coral/20 to-navy',
     toc: [
       { id: 'what-mvp-actually-means', text: 'What MVP Actually Means', level: 2 },
@@ -235,7 +235,7 @@ export const blogLeadMagnet = {
 
 export const blogNewsletter = {
   title: 'Get Practical Tips on Building & Automating Your Business',
-  description: 'Join 200+ founders and business owners who get monthly insights on web development, AI automation, and digital growth — straight from the Ekavex team.',
+  description: 'Join 200+ founders and business owners who get monthly insights on web development, AI automation, and digital growth - straight from the Ekavex team.',
   successMessage: 'You are subscribed. Welcome aboard.',
   buttonText: 'Get Monthly Insights'
 };

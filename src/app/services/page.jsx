@@ -152,7 +152,7 @@ export default function ServicesPage() {
             Not Sure Which Service You Need?
           </h2>
           <p className="font-sans text-navy/70 text-base md:text-lg max-w-2xl mx-auto mb-8">
-            Book a free 30-minute strategy call. We'll understand your business, recommend the right solution, and give you a clear quote — no commitment required.
+            Book a free 30-minute strategy call. We'll understand your business, recommend the right solution, and give you a clear quote - no commitment required.
           </p>
           <Link
             href="/contact"
