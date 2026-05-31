@@ -47,7 +47,13 @@ export default function HomePage() {
       <div className="mt-0 mb-16 relative z-20 bg-alabaster">
         {/* We use a subtle top gradient/mask if needed, but since it's full-bleed, 
             it will seamlessly follow the previous section. */}
-        <CinematicHero />
+        <CinematicHero
+          tagline1="Stop losing time to manual work."
+          tagline2="Start building smarter."
+          cardHeading="Built for Indian Businesses."
+          cardDescription={<><span className="text-white font-semibold">Ekavex</span> builds custom websites, AI automation workflows, CRM systems, and mobile apps for startups and growing businesses across India.</>}
+          ctaDescription="Tell us about your project and we'll put together a clear plan, timeline, and quote — for free."
+        />
       </div>
 
       <BentoGrid onNavigate={handleNavigate} />
