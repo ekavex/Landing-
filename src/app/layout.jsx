@@ -25,7 +25,11 @@ const organizationSchema = {
     contactType: 'customer service',
     availableLanguage: ['English', 'Hindi'],
   },
-  sameAs: [],
+  sameAs: [
+    'https://www.linkedin.com/company/ekavex/',
+    'https://github.com/ekavex',
+    'https://www.instagram.com/ekavex_',
+  ],
 };
 
 const faqSchema = {

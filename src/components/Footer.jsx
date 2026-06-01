@@ -18,9 +18,11 @@ const Linkedin = (props) => (
     <circle cx="4" cy="4" r="2" />
   </svg>
 );
-const Twitter = (props) => (
+const Instagram = (props) => (
   <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 shrink-0" {...props}>
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
   </svg>
 );
 
@@ -91,11 +93,13 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {legacyFooterData.socials.map((soc) => {
                 const IconComponent = soc.iconName === 'Linkedin' ? Linkedin : 
-                                      soc.iconName === 'Github' ? Github : Twitter;
+                                      soc.iconName === 'Github' ? Github : Instagram;
                 return (
                   <li key={soc.label}>
                     <a
-                      href="#"
+                      href={soc.url || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 font-heading text-xs font-semibold text-navy/90 hover:text-coral transition-colors"
                     >
                       <IconComponent className="w-3.5 h-3.5" />

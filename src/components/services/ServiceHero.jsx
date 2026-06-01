@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, ChevronRight } from 'lucide-react';
+import { getTechLink } from '../../utils/techLinks';
 
 export default function ServiceHero({ svc }) {
   return (
@@ -20,6 +21,7 @@ export default function ServiceHero({ svc }) {
         <ChevronRight className="w-3 h-3" />
         <span className="text-navy/60">{svc.title}</span>
       </motion.div>
+
 
       {/* Hero grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -92,11 +94,24 @@ export default function ServiceHero({ svc }) {
               <div className="border-t border-white/8 pt-6">
                 <div className="font-mono text-[9px] uppercase tracking-widest text-white/30 mb-1">Tech Stack</div>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  {svc.tech.map((t) => (
-                    <span key={t} className="font-mono text-[10px] bg-white/8 text-alabaster/70 px-3 py-1 rounded-full border border-white/8">
-                      {t}
-                    </span>
-                  ))}
+                  {svc.tech.map((t) => {
+                    const url = getTechLink(t);
+                    return url ? (
+                      <a
+                        key={t}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-[10px] bg-white/8 text-alabaster/70 px-3 py-1 rounded-full border border-white/8 hover:bg-white/20 hover:text-white transition-all duration-300 hover:scale-[1.03]"
+                      >
+                        {t}
+                      </a>
+                    ) : (
+                      <span key={t} className="font-mono text-[10px] bg-white/8 text-alabaster/70 px-3 py-1 rounded-full border border-white/8">
+                        {t}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </div>

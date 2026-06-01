@@ -6,6 +6,7 @@ import { Sparkles, Calendar, TrendingUp, X, ArrowRight, ShieldCheck, ChevronRigh
 
 import Image from 'next/image';
 import { portfolioData, portfolioFilters, portfolioHeader } from '../data/portfolioData';
+import { getTechLink } from '../utils/techLinks';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -286,9 +287,22 @@ const Portfolio = () => {
                   <div>
                     <h4 className="font-mono text-[10px] uppercase tracking-wider text-navy/90 mb-3">System Stack</h4>
                     <div className="flex flex-wrap gap-1.5">
-                      {selectedProject.tech.map((t) => (
-                        <span key={t} className="font-mono text-[9px] bg-navy text-alabaster px-3 py-1 rounded-full">{t}</span>
-                      ))}
+                      {selectedProject.tech.map((t) => {
+                        const url = getTechLink(t);
+                        return url ? (
+                          <a
+                            key={t}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-mono text-[9px] bg-navy text-alabaster px-3 py-1 rounded-full hover:bg-coral transition-colors duration-300 hover:scale-[1.03]"
+                          >
+                            {t}
+                          </a>
+                        ) : (
+                          <span key={t} className="font-mono text-[9px] bg-navy text-alabaster px-3 py-1 rounded-full">{t}</span>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>

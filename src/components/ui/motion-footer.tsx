@@ -340,7 +340,7 @@ export function CinematicFooter() {
           <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 mt-24 sm:mt-20 pt-6 sm:pt-0 w-full max-w-5xl mx-auto">
             <h2
               ref={headingRef}
-              className="text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-6 sm:mb-12 text-center"
+              className="text-5xl md:text-8xl font-black footer-text-glow tracking-tighter mb-3 sm:mb-12 text-center"
             >
               {footerData.heading}
             </h2>
@@ -373,6 +373,46 @@ export function CinematicFooter() {
                   </MagneticButton>
                 ))}
               </div>
+
+              {/* Social Media Links with Magnetic Motion */}
+              {footerData.socials && (
+                <div className="flex flex-wrap justify-center gap-2.5 md:gap-4 w-full mt-1 mb-1 sm:mt-3">
+                  {footerData.socials.map((soc, idx) => {
+                    const isLinkedIn = soc.iconName === 'Linkedin';
+                    const isGitHub = soc.iconName === 'Github';
+
+                    return (
+                      <MagneticButton
+                        key={idx}
+                        as="a"
+                        href={soc.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-glass-pill px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-muted-foreground font-bold text-xs md:text-sm hover:text-foreground flex items-center gap-2.5 group"
+                      >
+                        {isLinkedIn ? (
+                          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors shrink-0">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                          </svg>
+                        ) : isGitHub ? (
+                          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors shrink-0">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                          </svg>
+                        ) : (
+                          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors shrink-0">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                          </svg>
+                        )}
+                        <span>{soc.label}</span>
+                      </MagneticButton>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
 

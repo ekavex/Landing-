@@ -82,9 +82,31 @@ export default function AboutPage() {
                               : 'border-white/30 bg-white/.5'
                           } p-5 md:p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-current/50 hover:bg-current/8`}
                         >
-                          <p className="mb-3 text-sm font-bold uppercase tracking-wider">
-                            {feature.title}
-                          </p>
+                          <div className="flex items-center justify-between mb-3">
+                            <p className="text-sm font-bold uppercase tracking-wider">
+                              {feature.title}
+                            </p>
+                            {feature.linkedin && (
+                              <a
+                                href={feature.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`transition-colors cursor-pointer ${
+                                  section.bgColor === '#FFFDF6'
+                                    ? 'text-navy/40 hover:text-coral'
+                                    : 'text-white/40 hover:text-coral'
+                                }`}
+                                aria-label={`${feature.title}'s LinkedIn`}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 shrink-0">
+                                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                  <rect x="2" y="9" width="4" height="12" />
+                                  <circle cx="4" cy="4" r="2" />
+                                </svg>
+                              </a>
+                            )}
+                          </div>
 
                           <p className="text-[clamp(0.9rem,1.3vw,1.05rem)] leading-relaxed opacity-85">
                             {feature.desc}

@@ -17,6 +17,11 @@ export const footerData = {
     { label: "Blog & Insights", href: "/blog" },
     { label: "Privacy Policy", href: "/privacy-policy" }
   ],
+  socials: [
+    { label: 'LinkedIn', iconName: 'Linkedin', url: 'https://www.linkedin.com/company/ekavex/' },
+    { label: 'GitHub', iconName: 'Github', url: 'https://github.com/ekavex' },
+    { label: 'Instagram', iconName: 'Instagram', url: 'https://www.instagram.com/ekavex_' },
+  ],
   copyright: "© 2026 Ekavex Digital. All rights reserved.",
   craftedWith: "Built by Ekavex Digital,",
   by: "Pune"
@@ -49,9 +54,9 @@ export const legacyFooterData = {
     { id: 'privacy-policy', label: 'Privacy Policy' }
   ],
   socials: [
-    { label: 'LinkedIn', iconName: 'Linkedin' },
-    { label: 'GitHub', iconName: 'Github' },
-    { label: 'Twitter / X', iconName: 'Twitter' },
+    { label: 'LinkedIn', iconName: 'Linkedin', url: 'https://www.linkedin.com/company/ekavex/' },
+    { label: 'GitHub', iconName: 'Github', url: 'https://github.com/ekavex' },
+    { label: 'Instagram', iconName: 'Instagram', url: 'https://www.instagram.com/ekavex_' },
   ],
   capabilities: [
     'Next.js Frontend',
