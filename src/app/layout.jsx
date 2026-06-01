@@ -1,7 +1,7 @@
 import './globals.css';
 import RootClientShell from '../components/RootClientShell';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ekavex.in/';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -61,7 +61,7 @@ const faqSchema = {
 };
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ekavex.in/'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/'),
   title: {
     default: 'Ekavex | Custom Web Development, AI Automation & Digital Systems',
     template: '%s | Ekavex Digital',

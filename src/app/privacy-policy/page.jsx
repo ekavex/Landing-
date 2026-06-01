@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
             <p>
               Ekavex Digital (&quot;Ekavex&quot;, &quot;we&quot;, &quot;us&quot;, &quot;our&quot;) is a digital agency providing web development,
               AI automation, CRM/CMS systems, mobile app development, and digital marketing services.
-              Our website is located at <strong>https://ekavex.in/</strong>.
+              Our website is located at <strong>https://www.ekavex.in/</strong>.
             </p>
           </section>
 
