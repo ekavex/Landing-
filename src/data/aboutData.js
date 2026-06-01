@@ -71,12 +71,12 @@ export const aboutData = [
     description: "Ekavex was founded by Prem Jangid with a mission to make enterprise-grade technology accessible to Indian startups and SMEs. Based in Pune, our team combines deep technical expertise with a practical understanding of how Indian businesses operate.",
     features: [
       { title: "Prem Jangid", desc: "Founder & Lead Engineer — Full-stack developer and AI automation specialist building custom digital systems for businesses across India.", linkedin: "https://www.linkedin.com/company/ekavex/" },
-      { title: "Sherya Patil", desc: "Full-Stack UI/UX — Designing and engineering modern, highly-interactive web applications with gorgeous visuals and seamless user journeys.", linkedin: "https://www.linkedin.com/company/ekavex/" },
-      { title: "Kalash Baldota", desc: "Full-Stack UI/UX — Building premium, performance-optimized frontend applications coupled with robust, scalable full-stack system architectures.", linkedin: "https://www.linkedin.com/company/ekavex/" },
+      { title: "Sherya Patil", desc: "Full-Stack UI/UX — Designing and engineering modern, highly-interactive web applications with gorgeous visuals and seamless user journeys.", linkedin: "https://www.linkedin.com/in/shreyapatil2142/" },
+      { title: "Kalash Baldota", desc: "Full-Stack UI/UX — Building premium, performance-optimized frontend applications coupled with robust, scalable full-stack system architectures.", linkedin: "https://www.linkedin.com/in/kalash-baldota/" },
       { title: "Aditi Kulkarni", desc: "AI/ML Expert — Implementing cutting-edge machine learning pipelines, large language model integrations, and custom intelligent automation workflows.", linkedin: "https://www.linkedin.com/company/ekavex/" },
-      { title: "Misba Momin", desc: "Graphics Designer — Designing beautiful, high-fidelity visual assets, custom branding materials, and conversion-focused user interfaces.", linkedin: "https://www.linkedin.com/company/ekavex/" },
-      { title: "Sana Nair", desc: "Marketing Specialist — Crafting data-driven growth strategies, strategic content marketing, and brand expansion campaigns across digital platforms.", linkedin: "https://www.linkedin.com/company/ekavex/" },
-      { title: "Niraj Kadekar", desc: "Marketing Specialist — Formulating performance marketing campaigns, market research insights, and targeted client outreach to accelerate business growth.", linkedin: "https://www.linkedin.com/company/ekavex/" }
+      { title: "Misba Momin", desc: "Graphics Designer — Designing beautiful, high-fidelity visual assets, custom branding materials, and conversion-focused user interfaces.", linkedin: "https://www.linkedin.com/in/misba-momin-bb3022330/" },
+      { title: "Sana Nair", desc: "Marketing Specialist — Crafting data-driven growth strategies, strategic content marketing, and brand expansion campaigns across digital platforms.", linkedin: "https://www.linkedin.com/in/sananair/" },
+      { title: "Niraj Kadekar", desc: "Marketing Specialist — Formulating performance marketing campaigns, market research insights, and targeted client outreach to accelerate business growth.", linkedin: "https://www.linkedin.com/in/niraj-kadekar-602142253/" }
     ]
   },
   {
