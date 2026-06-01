@@ -16,6 +16,20 @@ export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) return {};
+
+  return {
+    title: `${post.title} | Ekavex Digital Blog`,
+    description: post.summary,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+  };
+}
+
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
@@ -48,11 +62,11 @@ export default async function BlogPostPage({ params }) {
     publisher: {
       '@type': 'Organization',
       name: 'Ekavex Digital',
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/',
+      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://ekavex.in/',
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/'}/blog/${slug}`,
+      '@id': `${process.env.NEXT_PUBLIC_SITE_URL || 'https://ekavex.in/'}/blog/${slug}`,
     },
   };
 

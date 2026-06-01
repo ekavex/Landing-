@@ -12,6 +12,20 @@ export async function generateStaticParams() {
   return servicesData.map((svc) => ({ slug: svc.slug }));
 }
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const svc = servicesData.find((s) => s.slug === slug);
+  if (!svc) return {};
+
+  return {
+    title: `${svc.title} | Ekavex Digital`,
+    description: svc.heroSubtext || svc.benefit || svc.problem,
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
+  };
+}
+
 export default async function ServicePage({ params }) {
   const { slug } = await params;
   const svc = servicesData.find((s) => s.slug === slug);
@@ -26,14 +40,14 @@ export default async function ServicePage({ params }) {
     provider: {
       '@type': 'Organization',
       name: 'Ekavex Digital',
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/',
+      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://ekavex.in/',
     },
     serviceType: svc.title,
-    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/'}/services/${svc.slug}`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://ekavex.in/'}/services/${svc.slug}`,
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
-      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/'}/contact`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://ekavex.in/'}/contact`,
     },
   };
 
