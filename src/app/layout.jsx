@@ -11,7 +11,7 @@ const organizationSchema = {
   logo: `${siteUrl}/logo1.png`,
   description: 'Ekavex builds custom websites, AI automation workflows, CRM systems, and mobile apps for startups and businesses in India. Based in Pune, Maharashtra.',
   email: 'hello@ekavex.com',
-  telephone: '+91-91720-08630',
+  telephone: '+91-93071-09883',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Pune',
@@ -21,7 +21,7 @@ const organizationSchema = {
   },
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+91-91720-08630',
+    telephone: '+91-93071-09883',
     contactType: 'customer service',
     availableLanguage: ['English', 'Hindi'],
   },

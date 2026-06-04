@@ -14,7 +14,7 @@ export const contactDetails = [
   {
     id: 'phone',
     label: 'Phone',
-    value: '+91 91720 08630',
+    value: '+91 93071 09883',
     iconName: 'Phone'
   },
   {
@@ -27,7 +27,7 @@ export const contactDetails = [
 ];
 
 export const whatsappData = {
-  number: '+919172008630',
+  number: '+919307109883',
   message: 'Hi Ekavex, I want to discuss a project.',
   label: 'Chat on WhatsApp'
 };
