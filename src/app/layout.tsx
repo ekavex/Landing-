@@ -1,14 +1,17 @@
 import './globals.css';
+import React from 'react';
+import { Metadata } from 'next';
 import RootClientShell from '../components/RootClientShell';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Ekavex Digital',
-  url: siteUrl,
-  logo: `${siteUrl}/logo1.png`,
+  '@type': 'Organization',
+  name: 'Ekavex',
+  alternateName: 'Ekavex Digital',
+  url: 'https://www.ekavex.in',
+  logo: 'https://www.ekavex.in/logo.png',
   description: 'Ekavex builds custom websites, AI automation workflows, CRM systems, and mobile apps for startups and businesses in India. Based in Pune, Maharashtra.',
   email: 'hello@ekavex.com',
   telephone: '+91-93071-09883',
@@ -17,7 +20,6 @@ const organizationSchema = {
     addressLocality: 'Pune',
     addressRegion: 'Maharashtra',
     addressCountry: 'IN',
-    addressLocality: 'Pune',
   },
   contactPoint: {
     '@type': 'ContactPoint',
@@ -64,13 +66,17 @@ const faqSchema = {
   ],
 };
 
-export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/'),
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Ekavex | Custom Web Development, AI Automation & Digital Systems',
     template: '%s | Ekavex Digital',
   },
   description: 'Ekavex builds custom websites, AI automation workflows, CRM systems, and mobile apps for startups and businesses in India. Book a free strategy call today.',
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: {
     canonical: '/',
   },
@@ -85,7 +91,11 @@ export const metadata = {
   manifest: '/site.webmanifest',
 };
 
-export default function RootLayout({ children }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className="relative min-h-screen font-sans antialiased text-navy selection:bg-coral/20 selection:text-navy bg-alabaster overflow-x-hidden">

@@ -22,10 +22,10 @@ const ClientsReviewSection = dynamic(
   { ssr: false, loading: () => <div style={{ height: '32rem' }} /> }
 );
 
-export default function HomePage() {
+export default function HomeClient() {
   const router = useRouter();
 
-  const handleNavigate = (view) => {
+  const handleNavigate = (view: string | { startsWith?: Function }) => {
     const targetPath = typeof view === 'string'
       ? view.startsWith('/')
         ? view
@@ -42,7 +42,7 @@ export default function HomePage() {
     initial: { opacity: 0, y: 15 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -15 },
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }
   };
 
   return (
@@ -54,8 +54,6 @@ export default function HomePage() {
 
       {/* Cinematic Hero (Scroll sequence) */}
       <div className="mt-0 mb-16 relative z-20 bg-alabaster">
-        {/* We use a subtle top gradient/mask if needed, but since it's full-bleed, 
-            it will seamlessly follow the previous section. */}
         <CinematicHero
           tagline1="Stop losing time to manual work."
           tagline2="Start building smarter."
