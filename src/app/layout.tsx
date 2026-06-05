@@ -3,7 +3,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import RootClientShell from '../components/RootClientShell';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/';
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ekavex.in/').replace(/\/+$/, '');
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -102,7 +102,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link
           rel="sitemap"
           type="application/xml"
-          href={`${siteUrl}sitemap.xml`}
+          href={`${siteUrl}/sitemap.xml`}
         />
       </head>
       <body className="relative min-h-screen font-sans antialiased text-navy selection:bg-coral/20 selection:text-navy bg-alabaster overflow-x-hidden">
