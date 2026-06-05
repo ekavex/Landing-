@@ -79,6 +79,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/',
+    types: {
+      'application/xml': [{ url: 'sitemap.xml' }],
+    },
   },
   icons: {
     icon: [

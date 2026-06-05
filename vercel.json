@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ekavex.in"
+        }
+      ],
+      "destination": "https://www.ekavex.in/:path*",
+      "statusCode": 301
+    }
+  ]
+}
