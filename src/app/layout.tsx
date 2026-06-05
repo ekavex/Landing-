@@ -79,9 +79,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: '/',
-    types: {
-      'application/xml': [{ url: 'sitemap.xml' }],
-    },
   },
   icons: {
     icon: [
@@ -101,6 +98,13 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
+      <head>
+        <link
+          rel="sitemap"
+          type="application/xml"
+          href={`${siteUrl}sitemap.xml`}
+        />
+      </head>
       <body className="relative min-h-screen font-sans antialiased text-navy selection:bg-coral/20 selection:text-navy bg-alabaster overflow-x-hidden">
         <script
           type="application/ld+json"
