@@ -12,25 +12,49 @@ import {
 const SplitReveal = ({ children, className = '', delay = 0 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
-  const chars = String(children).split('');
+
+  const words = String(children).split(' ');
 
   return (
-    <span ref={ref} className={`inline-flex flex-wrap justify-center ${className}`} style={{ perspective: '600px' }}>
-      {chars.map((char, i) => (
-        <motion.span
-          key={i}
-          initial={{ opacity: 0, rotateX: 90, y: 14 }}
-          animate={inView ? { opacity: 1, rotateX: 0, y: 0 } : {}}
-          transition={{
-            delay: delay + i * 0.02,
-            duration: 0.5,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className="inline-block origin-bottom"
-          style={{ transformStyle: 'preserve-3d' }}
+    <span
+      ref={ref}
+      className={`inline-flex flex-wrap justify-center ${className}`}
+      style={{ perspective: '600px' }}
+    >
+      {words.map((word, wordIndex) => (
+        <span
+          key={wordIndex}
+          className="inline-flex whitespace-nowrap"
         >
-          {char === ' ' ? '\u00A0' : char}
-        </motion.span>
+          {word.split('').map((char, charIndex) => {
+            const index =
+              words.slice(0, wordIndex).join('').length +
+              wordIndex +
+              charIndex;
+
+            return (
+              <motion.span
+                key={charIndex}
+                initial={{ opacity: 0, rotateX: 90, y: 14 }}
+                animate={inView ? { opacity: 1, rotateX: 0, y: 0 } : {}}
+                transition={{
+                  delay: delay + index * 0.02,
+                  duration: 0.5,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="inline-block origin-bottom"
+                style={{ transformStyle: 'preserve-3d' }}
+              >
+                {char}
+              </motion.span>
+            );
+          })}
+
+          {/* Space between words */}
+          {wordIndex < words.length - 1 && (
+            <span className="inline-block">&nbsp;</span>
+          )}
+        </span>
       ))}
     </span>
   );
