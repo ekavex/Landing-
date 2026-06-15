@@ -27,16 +27,19 @@ const ContactForm = () => {
     setLoading(true);
     setError('');
     try {
+      console.log('Sending contact form data:', formData);
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
       const data = await res.json();
+      console.log('Response from /api/contact:', { status: res.status, data });
       if (!res.ok) throw new Error(data.error || 'Something went wrong.');
       setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', company: '', service: '', budget: '', message: '' });
     } catch (err) {
+      console.error('Error submitting form:', err);
       setError(err.message);
     } finally {
       setLoading(false);

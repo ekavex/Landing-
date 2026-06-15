@@ -75,7 +75,6 @@ export const aboutData = [
       { title: "Kalash Baldota", desc: "Full-Stack UI/UX — Building premium, performance-optimized frontend applications coupled with robust, scalable full-stack system architectures.", linkedin: "https://www.linkedin.com/in/kalash-baldota/" },
       { title: "Aditi Kulkarni", desc: "AI/ML Expert — Implementing cutting-edge machine learning pipelines, large language model integrations, and custom intelligent automation workflows.", linkedin: "https://www.linkedin.com/company/ekavex/" },
       { title: "Misba Momin", desc: "Graphics Designer — Designing beautiful, high-fidelity visual assets, custom branding materials, and conversion-focused user interfaces.", linkedin: "https://www.linkedin.com/in/misba-momin-bb3022330/" },
-      { title: "Sana Nair", desc: "Marketing Specialist — Crafting data-driven growth strategies, strategic content marketing, and brand expansion campaigns across digital platforms.", linkedin: "https://www.linkedin.com/in/sananair/" },
       { title: "Niraj Kadekar", desc: "Marketing Specialist — Formulating performance marketing campaigns, market research insights, and targeted client outreach to accelerate business growth.", linkedin: "https://www.linkedin.com/in/niraj-kadekar-602142253/" }
     ]
   },

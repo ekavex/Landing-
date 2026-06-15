@@ -4,13 +4,16 @@ const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key');
 
 export async function POST(request) {
   try {
-    const { name, email, phone, company, service, budget, message } = await request.json();
+    const body = await request.json();
+    console.log('Received POST request on /api/contact with body:', body);
+    const { name, email, phone, company, service, budget, message } = body;
 
     if (!name || !email || !message) {
       return Response.json({ error: 'Name, email, and message are required.' }, { status: 400 });
     }
 
-    await resend.emails.send({
+    console.log('Sending email using Resend...');
+    const resendResult = await resend.emails.send({
       from: 'Ekavex Contact Form <onboarding@resend.dev>',
       to: 'contact@ekavex.in',
       replyTo: email,
@@ -28,8 +31,9 @@ export async function POST(request) {
         </table>
       `,
     });
+    console.log('Resend send result:', resendResult);
 
-    return Response.json({ success: true });
+    return Response.json({ success: true, id: resendResult?.data?.id, resendError: resendResult?.error });
   } catch (error) {
     console.error('Contact form error:', error);
     return Response.json({ error: 'Failed to send message. Please try again.' }, { status: 500 });
